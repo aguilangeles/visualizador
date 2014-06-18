@@ -1,0 +1,592 @@
+array (
+  'id' => '52d6b03d4adf9',
+  'lastIndex' => 5,
+  'hasMore' => false,
+  'qty' => 5,
+  'images' => 
+  array (
+    0 => 
+    stdClass::__set_state(array(
+       'id' => '526feb6fe4b0b5520b406c5a',
+       '_document' => 
+      array (
+      ),
+       'IDC' => 'GND#V201111V050002#GEN05_00013239#13318',
+       'ImageQty' => NULL,
+       'Creation_date' => 
+      stdClass::__set_state(array(
+         'sec' => 1371218118,
+         'usec' => 0,
+      )),
+       'prevImage' => 
+      array (
+      ),
+       'softAttributes' => 
+      stdClass::__set_state(array(
+         'isCarat' => true,
+         'visibleCarat' => true,
+         'visiblePapel' => true,
+         'visibleImagen' => false,
+         'order' => 1,
+         'deleted' => false,
+         'c1' => '0002000000044948',
+         'c2' => '',
+         'c3' => '',
+         'c4' => '',
+         'size' => '12114',
+         'CMETA_ID' => '0002000000044948',
+         'CMETA_CAJA' => '1',
+         'CMETA_ANIO' => '1998',
+         'CMETA_MES' => '02',
+         'CMETA_LIQUIDACION' => '4121',
+         'CMETA_UNIDAD' => '20',
+         'caratType' => 'Agregado',
+         'secuencial' => 1,
+         'clrid' => NULL,
+         'image_Qty' => 6,
+         'deleted_Qty' => 0,
+         'status' => 'OCRIZADO',
+      )),
+       'oMeta' => 
+      array (
+        0 => 
+        stdClass::__set_state(array(
+           'Cód-Est' => '',
+        )),
+        1 => 
+        stdClass::__set_state(array(
+           'Gr.' => '',
+        )),
+      ),
+       'cMeta' => 
+      array (
+        0 => 
+        stdClass::__set_state(array(
+           'Caja' => '1',
+        )),
+        1 => 
+        stdClass::__set_state(array(
+           'Año' => '1998',
+        )),
+        2 => 
+        stdClass::__set_state(array(
+           'Mes' => '02',
+        )),
+        3 => 
+        stdClass::__set_state(array(
+           'Liquidación' => '4121',
+        )),
+        4 => 
+        stdClass::__set_state(array(
+           'Unidad' => '20',
+        )),
+      ),
+       'currImageIndex' => 0,
+       'currSubIndex' => NULL,
+       'prevImageIndex' => 0,
+       'nextImageIndex' => 1,
+       'idPapel' => 1,
+       'docType' => 'REC',
+       'docSubtipo' => '6',
+       'reverseImage' => 
+      array (
+      ),
+       'fileName' => '13318_0001_01209535.tif',
+       'filePath' => '/vols/GND/Leiva|GND#V201111V050002#GEN05_00013239#13318',
+       'face' => 'Anverso',
+       '_id' => 
+      stdClass::__set_state(array(
+         '$id' => '526feb6fe4b0b5520b406c5a',
+      )),
+    )),
+    1 => 
+    stdClass::__set_state(array(
+       'id' => '526feb6fe4b0b5520b406c5b',
+       '_document' => 
+      array (
+      ),
+       'IDC' => 'GND#V201111V050002#GEN05_00013239#13318',
+       'ImageQty' => NULL,
+       'Creation_date' => 
+      stdClass::__set_state(array(
+         'sec' => 1371218118,
+         'usec' => 0,
+      )),
+       'prevImage' => 
+      array (
+      ),
+       'softAttributes' => 
+      stdClass::__set_state(array(
+         'isCarat' => false,
+         'visibleCarat' => true,
+         'visiblePapel' => true,
+         'visibleImagen' => true,
+         'order' => 2,
+         'deleted' => false,
+         'c1' => '0002000000044948',
+         'c2' => '',
+         'c3' => '',
+         'c4' => '',
+         'size' => '10838',
+         'CMETA_ID' => '0002000000044948',
+         'CMETA_CAJA' => '1',
+         'CMETA_ANIO' => '1998',
+         'CMETA_MES' => '02',
+         'CMETA_LIQUIDACION' => '4121',
+         'CMETA_UNIDAD' => '20',
+         'OCR_ID IMAGEN' => '13318_0002_01209536.TIF',
+         'OCR_GRADO' => '24',
+         'OCR_CODEST' => '42862-0',
+         'OCR_NOMBRE' => '',
+         'caratType' => 'Agregado',
+         'secuencial' => 1,
+         'clrid' => NULL,
+         'image_Qty' => 6,
+         'deleted_Qty' => 0,
+         'status' => 'OCRIZADO',
+      )),
+       'oMeta' => 
+      array (
+        0 => 
+        stdClass::__set_state(array(
+           'Cód-Est' => '42862-0',
+        )),
+        1 => 
+        stdClass::__set_state(array(
+           'Gr.' => '24',
+        )),
+      ),
+       'cMeta' => 
+      array (
+        0 => 
+        stdClass::__set_state(array(
+           'Caja' => '1',
+        )),
+        1 => 
+        stdClass::__set_state(array(
+           'Año' => '1998',
+        )),
+        2 => 
+        stdClass::__set_state(array(
+           'Mes' => '02',
+        )),
+        3 => 
+        stdClass::__set_state(array(
+           'Liquidación' => '4121',
+        )),
+        4 => 
+        stdClass::__set_state(array(
+           'Unidad' => '20',
+        )),
+      ),
+       'currImageIndex' => 1,
+       'currSubIndex' => NULL,
+       'prevImageIndex' => 0,
+       'nextImageIndex' => 2,
+       'idPapel' => 2,
+       'docType' => 'REC',
+       'docSubtipo' => '6',
+       'reverseImage' => 
+      array (
+      ),
+       'fileName' => '13318_0002_01209536.tif',
+       'filePath' => '/vols/GND/Leiva|GND#V201111V050002#GEN05_00013239#13318',
+       'face' => 'Anverso',
+       '_id' => 
+      stdClass::__set_state(array(
+         '$id' => '526feb6fe4b0b5520b406c5b',
+      )),
+    )),
+    2 => 
+    stdClass::__set_state(array(
+       'id' => '526feb6fe4b0b5520b406c5c',
+       '_document' => 
+      array (
+      ),
+       'IDC' => 'GND#V201111V050002#GEN05_00013239#13318',
+       'ImageQty' => NULL,
+       'Creation_date' => 
+      stdClass::__set_state(array(
+         'sec' => 1371218118,
+         'usec' => 0,
+      )),
+       'prevImage' => 
+      array (
+      ),
+       'softAttributes' => 
+      stdClass::__set_state(array(
+         'isCarat' => false,
+         'visibleCarat' => true,
+         'visiblePapel' => true,
+         'visibleImagen' => true,
+         'order' => 3,
+         'deleted' => false,
+         'c1' => '0002000000044948',
+         'c2' => '',
+         'c3' => '',
+         'c4' => '',
+         'size' => '12076',
+         'CMETA_ID' => '0002000000044948',
+         'CMETA_CAJA' => '1',
+         'CMETA_ANIO' => '1998',
+         'CMETA_MES' => '02',
+         'CMETA_LIQUIDACION' => '4121',
+         'CMETA_UNIDAD' => '20',
+         'OCR_ID IMAGEN' => '13318_0003_01209537.TIF',
+         'OCR_GRADO' => '22',
+         'OCR_CODEST' => '30530-8',
+         'OCR_NOMBRE' => '',
+         'caratType' => 'Agregado',
+         'secuencial' => 1,
+         'clrid' => NULL,
+         'image_Qty' => 6,
+         'deleted_Qty' => 0,
+         'status' => 'OCRIZADO',
+      )),
+       'oMeta' => 
+      array (
+        0 => 
+        stdClass::__set_state(array(
+           'Cód-Est' => '30530-8',
+        )),
+        1 => 
+        stdClass::__set_state(array(
+           'Gr.' => '22',
+        )),
+      ),
+       'cMeta' => 
+      array (
+        0 => 
+        stdClass::__set_state(array(
+           'Caja' => '1',
+        )),
+        1 => 
+        stdClass::__set_state(array(
+           'Año' => '1998',
+        )),
+        2 => 
+        stdClass::__set_state(array(
+           'Mes' => '02',
+        )),
+        3 => 
+        stdClass::__set_state(array(
+           'Liquidación' => '4121',
+        )),
+        4 => 
+        stdClass::__set_state(array(
+           'Unidad' => '20',
+        )),
+      ),
+       'currImageIndex' => 2,
+       'currSubIndex' => NULL,
+       'prevImageIndex' => 1,
+       'nextImageIndex' => 3,
+       'idPapel' => 3,
+       'docType' => 'REC',
+       'docSubtipo' => '6',
+       'reverseImage' => 
+      array (
+        0 => 
+        stdClass::__set_state(array(
+           'id' => '526feb6fe4b0b5520b406c5d',
+           '_document' => 
+          array (
+          ),
+           'IDC' => 'GND#V201111V050002#GEN05_00013239#13318',
+           'ImageQty' => NULL,
+           'Creation_date' => 
+          stdClass::__set_state(array(
+             'sec' => 1371218118,
+             'usec' => 0,
+          )),
+           'prevImage' => 
+          array (
+          ),
+           'softAttributes' => 
+          stdClass::__set_state(array(
+             'isCarat' => false,
+             'visibleCarat' => true,
+             'visiblePapel' => true,
+             'visibleImagen' => true,
+             'order' => 4,
+             'deleted' => false,
+             'c1' => '0002000000044948',
+             'c2' => '',
+             'c3' => '',
+             'c4' => '',
+             'size' => '8068',
+             'CMETA_ID' => '0002000000044948',
+             'CMETA_CAJA' => '1',
+             'CMETA_ANIO' => '1998',
+             'CMETA_MES' => '02',
+             'CMETA_LIQUIDACION' => '4121',
+             'CMETA_UNIDAD' => '20',
+             'caratType' => 'Agregado',
+             'secuencial' => 1,
+             'clrid' => NULL,
+             'image_Qty' => 6,
+             'deleted_Qty' => 0,
+             'status' => 'OCRIZADO',
+          )),
+           'oMeta' => 
+          array (
+            0 => 
+            stdClass::__set_state(array(
+               'Cód-Est' => '',
+            )),
+            1 => 
+            stdClass::__set_state(array(
+               'Gr.' => '',
+            )),
+          ),
+           'cMeta' => 
+          array (
+            0 => 
+            stdClass::__set_state(array(
+               'Caja' => '1',
+            )),
+            1 => 
+            stdClass::__set_state(array(
+               'Año' => '1998',
+            )),
+            2 => 
+            stdClass::__set_state(array(
+               'Mes' => '02',
+            )),
+            3 => 
+            stdClass::__set_state(array(
+               'Liquidación' => '4121',
+            )),
+            4 => 
+            stdClass::__set_state(array(
+               'Unidad' => '20',
+            )),
+          ),
+           'currImageIndex' => 2,
+           'currSubIndex' => 0,
+           'prevImageIndex' => 1,
+           'nextImageIndex' => 2,
+           'idPapel' => 3,
+           'docType' => 'REC',
+           'docSubtipo' => '6',
+           'reverseImage' => 
+          array (
+          ),
+           'fileName' => '13318_0004_01209538.tif',
+           'filePath' => '/vols/GND/Leiva|GND#V201111V050002#GEN05_00013239#13318',
+           'face' => 'Reverso',
+           '_id' => 
+          stdClass::__set_state(array(
+             '$id' => '526feb6fe4b0b5520b406c5d',
+          )),
+        )),
+      ),
+       'fileName' => '13318_0003_01209537.tif',
+       'filePath' => '/vols/GND/Leiva|GND#V201111V050002#GEN05_00013239#13318',
+       'face' => 'Anverso',
+       '_id' => 
+      stdClass::__set_state(array(
+         '$id' => '526feb6fe4b0b5520b406c5c',
+      )),
+    )),
+    3 => 
+    stdClass::__set_state(array(
+       'id' => '526feb6fe4b0b5520b406c5e',
+       '_document' => 
+      array (
+      ),
+       'IDC' => 'GND#V201111V050002#GEN05_00013239#13318',
+       'ImageQty' => NULL,
+       'Creation_date' => 
+      stdClass::__set_state(array(
+         'sec' => 1371218118,
+         'usec' => 0,
+      )),
+       'prevImage' => 
+      array (
+      ),
+       'softAttributes' => 
+      stdClass::__set_state(array(
+         'isCarat' => false,
+         'visibleCarat' => true,
+         'visiblePapel' => true,
+         'visibleImagen' => true,
+         'order' => 5,
+         'deleted' => false,
+         'c1' => '0002000000044948',
+         'c2' => '',
+         'c3' => '',
+         'c4' => '',
+         'size' => '11482',
+         'CMETA_ID' => '0002000000044948',
+         'CMETA_CAJA' => '1',
+         'CMETA_ANIO' => '1998',
+         'CMETA_MES' => '02',
+         'CMETA_LIQUIDACION' => '4121',
+         'CMETA_UNIDAD' => '20',
+         'OCR_ID IMAGEN' => '13318_0005_01209539.TIF',
+         'OCR_GRADO' => '24',
+         'OCR_CODEST' => '37377-2',
+         'OCR_NOMBRE' => '',
+         'caratType' => 'Agregado',
+         'secuencial' => 1,
+         'clrid' => NULL,
+         'image_Qty' => 6,
+         'deleted_Qty' => 0,
+         'status' => 'OCRIZADO',
+      )),
+       'oMeta' => 
+      array (
+        0 => 
+        stdClass::__set_state(array(
+           'Cód-Est' => '37377-2',
+        )),
+        1 => 
+        stdClass::__set_state(array(
+           'Gr.' => '24',
+        )),
+      ),
+       'cMeta' => 
+      array (
+        0 => 
+        stdClass::__set_state(array(
+           'Caja' => '1',
+        )),
+        1 => 
+        stdClass::__set_state(array(
+           'Año' => '1998',
+        )),
+        2 => 
+        stdClass::__set_state(array(
+           'Mes' => '02',
+        )),
+        3 => 
+        stdClass::__set_state(array(
+           'Liquidación' => '4121',
+        )),
+        4 => 
+        stdClass::__set_state(array(
+           'Unidad' => '20',
+        )),
+      ),
+       'currImageIndex' => 3,
+       'currSubIndex' => NULL,
+       'prevImageIndex' => 2,
+       'nextImageIndex' => 4,
+       'idPapel' => 4,
+       'docType' => 'REC',
+       'docSubtipo' => '6',
+       'reverseImage' => 
+      array (
+      ),
+       'fileName' => '13318_0005_01209539.tif',
+       'filePath' => '/vols/GND/Leiva|GND#V201111V050002#GEN05_00013239#13318',
+       'face' => 'Anverso',
+       '_id' => 
+      stdClass::__set_state(array(
+         '$id' => '526feb6fe4b0b5520b406c5e',
+      )),
+    )),
+    4 => 
+    stdClass::__set_state(array(
+       'id' => '526feb6fe4b0b5520b406c5f',
+       '_document' => 
+      array (
+      ),
+       'IDC' => 'GND#V201111V050002#GEN05_00013239#13318',
+       'ImageQty' => NULL,
+       'Creation_date' => 
+      stdClass::__set_state(array(
+         'sec' => 1371218118,
+         'usec' => 0,
+      )),
+       'prevImage' => 
+      array (
+      ),
+       'softAttributes' => 
+      stdClass::__set_state(array(
+         'isCarat' => false,
+         'visibleCarat' => true,
+         'visiblePapel' => true,
+         'visibleImagen' => true,
+         'order' => 6,
+         'deleted' => false,
+         'c1' => '0002000000044948',
+         'c2' => '',
+         'c3' => '',
+         'c4' => '',
+         'size' => '11752',
+         'CMETA_ID' => '0002000000044948',
+         'CMETA_CAJA' => '1',
+         'CMETA_ANIO' => '1998',
+         'CMETA_MES' => '02',
+         'CMETA_LIQUIDACION' => '4121',
+         'CMETA_UNIDAD' => '20',
+         'OCR_ID IMAGEN' => '13318_0006_01209540.TIF',
+         'OCR_GRADO' => '24',
+         'OCR_CODEST' => '37779-1',
+         'OCR_NOMBRE' => '',
+         'caratType' => 'Agregado',
+         'secuencial' => 1,
+         'clrid' => NULL,
+         'image_Qty' => 6,
+         'deleted_Qty' => 0,
+         'status' => 'OCRIZADO',
+      )),
+       'oMeta' => 
+      array (
+        0 => 
+        stdClass::__set_state(array(
+           'Cód-Est' => '37779-1',
+        )),
+        1 => 
+        stdClass::__set_state(array(
+           'Gr.' => '24',
+        )),
+      ),
+       'cMeta' => 
+      array (
+        0 => 
+        stdClass::__set_state(array(
+           'Caja' => '1',
+        )),
+        1 => 
+        stdClass::__set_state(array(
+           'Año' => '1998',
+        )),
+        2 => 
+        stdClass::__set_state(array(
+           'Mes' => '02',
+        )),
+        3 => 
+        stdClass::__set_state(array(
+           'Liquidación' => '4121',
+        )),
+        4 => 
+        stdClass::__set_state(array(
+           'Unidad' => '20',
+        )),
+      ),
+       'currImageIndex' => 4,
+       'currSubIndex' => NULL,
+       'prevImageIndex' => 3,
+       'nextImageIndex' => 4,
+       'idPapel' => 5,
+       'docType' => 'REC',
+       'docSubtipo' => '6',
+       'reverseImage' => 
+      array (
+      ),
+       'fileName' => '13318_0006_01209540.tif',
+       'filePath' => '/vols/GND/Leiva|GND#V201111V050002#GEN05_00013239#13318',
+       'face' => 'Anverso',
+       '_id' => 
+      stdClass::__set_state(array(
+         '$id' => '526feb6fe4b0b5520b406c5f',
+      )),
+    )),
+  ),
+  'oMeta' => 
+  array (
+  ),
+)

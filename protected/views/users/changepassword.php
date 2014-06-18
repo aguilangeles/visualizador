@@ -1,0 +1,1 @@
+<?php echo $this->renderPartial('_changepasswordform', array('model'=>$model,'result'=>$result)); ?>
