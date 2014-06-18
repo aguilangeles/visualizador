@@ -1,12 +1,12 @@
 <div id="login-top"></div>
 <div id="login-form">
-	<div id="login-content" style="background: #AAADDD">
-	<!--<div id="login-content" style="background: #DEEAF5">-->
+	<!--<div id="login-content" style="background: #AAADDD">-->
+	<div id="login-content" style="background: #DEEAF5">
 		<div id="login-header">
 			<? echo CHtml::image('../images/logoB.png','UTN-Visualizador', array('style'=>'width:370px'));?>
 		</div>
 		<div id="login-dark-banner">
-			<h2>Comenzar Sesión</h2>
+			<h2>Iniciar Sesión</h2>
 		</div>
 		<div id="login-dark-banner-wrap"></div>
 	<div>
