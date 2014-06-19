@@ -263,27 +263,7 @@
             'autoOpen' => false,
           ),
         ));
-//echo '<div id="image-toolbar" style="float:left;width: 100%;"><div style="float:left">'.CHtml::link(CHtml::image("/images/Arrow-Right.png"),"",array('id'=>'prevImage','style'=>'cursor:pointer;')).'</div>';
-//echo '<div style="float:left;padding-left: 50px;">'.CHtml::link(CHtml::image("/images/prev_img.png"),"",array('id'=>'prevSubImage','style'=>'cursor:pointer;display:none')).'</div>';
-//echo '<div style="float:right">'.CHtml::link(CHtml::image("/images/Arrow-Left.png"),"",array('id'=>'nextImage','style'=>'cursor:pointer;')).'</div>';
-//echo '<div style="float:right;padding-right: 50px;">'.CHtml::link(CHtml::image("/images/next_img.png"),"",array('id'=>'nextSubImage','style'=>'cursor:pointer;display:none')).'</div>';
-//echo '</div>';
-//echo '<div id="image-cmeta" style="float:left;width: 100%;text-align: center;"></div>';
-//echo '<div id="image-meta" style="float:left;width: 100%;text-align: center;"></div>';
-//if (Yii::app()->user->isAdmin)
-//{
-//   echo '<div id="image-path" style="float:left;width: 100%;text-align: center;"></div>';
-//}
-//else
-//{
-//    echo '<div id="image-path" style="float:left;display:none;width: 100%;text-align: center;"></div>';
-//}
         echo '<div id="image" style="float:left;width:100%"></div>';
-//echo '<div id="image-toolbar-footer" style="float:left;width: 100%;"><div style="float:left">'.CHtml::link(CHtml::image("/images/Arrow-Right.png"),"javascript:void(0);",array('id'=>'prevImage-footer','style'=>'cursor:pointer;')).'</div>';
-//echo '<div style="float:left;padding-left: 50px;">'.CHtml::link(CHtml::image("/images/prev_img.png"),"javascript:void(0)",array('id'=>'prevSubImage-footer','style'=>'cursor:pointer;display:none')).'</div>';
-//echo '<div style="float:right">'.CHtml::link(CHtml::image("/images/Arrow-Left.png"),"",array('id'=>'nextImage-footer','style'=>'cursor:pointer;')).'</div>';
-//echo '<div style="float:right;padding-right: 50px;">'.CHtml::link(CHtml::image("/images/next_img.png"),"",array('id'=>'nextSubImage-footer','style'=>'cursor:pointer;display:none')).'</div>';
-//echo '</div>';
         $this->endWidget('zii.widgets.jui.CJuiDialog');
 
         $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
@@ -328,64 +308,6 @@
             }
         });
     }
-
-
-
-    function SearchDocs(page)
-    {
-        if (checkGroupType()) {
-            if (page == null)
-            {
-                page = 1;
-            }
-            if ($("#searchType_0").attr("checked"))
-            {
-                searchType = "Exacta";
-            }
-            else
-            {
-                searchType = "Parecida";
-            }
-            groupType = ($("#groupType_1").attr("checked")) ? 'image' : 'carat';
-            $('html, body').animate({scrollTop: 0}, 'slow');
-            docLevel1Id = $("#docLevel1").val();
-            docLevel2Id = $("#docLevel2").val();
-            docLevel3Id = $("#docLevel3").val();
-            docLevel4Id = $("#docLevel4").val();
-            $("#results").empty().html('<img src="../images/ajax-loader.gif" />');
-            var dataCMeta = $("input[id='CMETA_']").map(function() {
-                return $(this).val();
-            }).get();
-            var CmetaFields = '';
-            for (i in dataCMeta)
-            {
-                CmetaFields = CmetaFields + "&CMETA_[" + i + "]=" + dataCMeta[i];
-            }
-            var dataOcrMeta = $("input[id='OCR_']").map(function() {
-                return $(this).val();
-            }).get();
-            var OcrFields = '';
-            for (i in dataOcrMeta)
-            {
-                OcrFields = OcrFields + "&OCR_[" + i + "]=" + dataOcrMeta[i];
-            }
-            $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/searchByDocType/searchByDocType",
-                context: document.body,
-                type: "POST",
-                data: "page=" + page + "&docLevel1=" + docLevel1Id + "&docLevel2=" + docLevel2Id + "&docLevel3=" + docLevel3Id + "&docLevel4=" + docLevel4Id + CmetaFields + OcrFields + "&searchType=" + searchType + "&groupType=" + groupType,
-                dataType: "text",
-                success: function(data) {
-                    $("#results").empty();
-                    $("#results").append(data);
-                }
-            });
-        }
-        else {
-            alert('Si va a agrupar por imagen, debe filtrar su búsqueda con al menos 1 metadato de imagen.');
-            $("#groupType_0").attr("checked", "checked");
-        }
-    }
-
     function SearchGralDocs(page, docType)
     {
         var Docs = [];
