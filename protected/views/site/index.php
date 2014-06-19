@@ -369,7 +369,7 @@
             {
                 OcrFields = OcrFields + "&OCR_[" + i + "]=" + dataOcrMeta[i];
             }
-            $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/site/searchByDocType",
+            $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/searchByDocType/searchByDocType",
                 context: document.body,
                 type: "POST",
                 data: "page=" + page + "&docLevel1=" + docLevel1Id + "&docLevel2=" + docLevel2Id + "&docLevel3=" + docLevel3Id + "&docLevel4=" + docLevel4Id + CmetaFields + OcrFields + "&searchType=" + searchType + "&groupType=" + groupType,
@@ -639,7 +639,7 @@
         });
 
 //                var query =$("#query_"+id).html();
-//		window.open("<?php // echo Yii::app()->request->hostinfo  ?>/site/exportPDF/?conditions="+query);
+//		window.open("<?php // echo Yii::app()->request->hostinfo   ?>/site/exportPDF/?conditions="+query);
     }
 
 
