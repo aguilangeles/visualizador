@@ -9,7 +9,7 @@
         Yii::app()->clientScript->registerScriptFile('/js/jquery.rotate.min.js');
         //Yii::app()->clientScript->registerScriptFile('/js/rotar.js');
         Yii::app()->clientScript->registerScriptFile('/js/seadragon/seadragon-min.js');
-        Yii::app()->clientScript->registerScriptFile('/js/toggleFirstSearch.js');
+        include('paths.php');
         ?>
 
         <!-- blueprint CSS framework -->
