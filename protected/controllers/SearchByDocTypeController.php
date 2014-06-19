@@ -2,16 +2,12 @@
 
 include('GetGroupController.php');
 include('GetContentResultController.php');
+
 /**
  * Búsqueda por tipo de documento.
  * @param int $currentPage
  * @return string
  * @author GDM
- */
-
-/**
- * Description of SearchByDocTypeController
- *
  */
 class SearchByDocTypeController extends Controller {
 

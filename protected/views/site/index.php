@@ -293,68 +293,16 @@
     var rotate_angle = 0;
     var ultAnchoImg;
 
-    function toggleGeneralSearch()
-    {
-        $("#results").empty();
-        $("#first-search").slideToggle();
-        $("#second-general-search").slideToggle();
-        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/site/searchGeneral",
-            context: document.body,
-            type: "POST",
-            dataType: "text",
-            success: function(data) {
-                $("#filterRestict").empty();
-                $("#filterRestict").append(data);
-            }
-        });
-    }
-    function SearchGralDocs(page, docType)
-    {
-        var Docs = [];
-        var doc = $("#searchField").val();
-        if (page == null)
-        {
-            page = 1;
-        }
-        if ($("#searchGeneralType_0").attr("checked"))
-        {
-            searchType = "Exacta";
-        }
-        else
-        {
-            searchType = "Parecida";
-        }
-        $("#filterRestict :checked").each(function() {
-            Docs.push($(this).val());
-        });
-        if (Docs == "") {
-            alert("Debe seleccionar al menos un tipo documento.");
-        }
-        else if (doc == "") {
-            alert("La búsqueda no se puede realizar, si el campo 'Buscar', está vacío.");
-        }
-        else {
-            $("#resultsGeneral").empty().html('<img src="../images/ajax-loader.gif" />');
-            $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/site/searchGeneralDoc",
-                context: document.body,
-                type: "POST",
-                data: "page=" + page + "&docs=" + Docs + "&field=" + doc + "&searchType=" + searchType + "&docType=" + docType,
-                dataType: "text",
-                success: function(data) {
-                    $("#resultsGeneral").empty();
-                    $("#resultsGeneral").append(data);
-                }
-            });
-        }
-    }
-
-//    function SearchRotulos(page)
+   
+//    function SearchGralDocs(page, docType)
 //    {
+//        var Docs = [];
+//        var doc = $("#searchField").val();
 //        if (page == null)
 //        {
 //            page = 1;
 //        }
-//        if ($("#searchRotType_0").attr("checked"))
+//        if ($("#searchGeneralType_0").attr("checked"))
 //        {
 //            searchType = "Exacta";
 //        }
@@ -362,25 +310,28 @@
 //        {
 //            searchType = "Parecida";
 //        }
-//        $("#resultsRotulos").empty().html('<img src="../images/ajax-loader.gif" />');
-//        var dataCMeta = $("input[id='CMETA_']").map(function() {
-//            return $(this).val();
-//        }).get();
-//        var CmetaFields = '';
-//        for (i in dataCMeta)
-//        {
-//            CmetaFields = CmetaFields + "&CMETA_[" + i + "]=" + dataCMeta[i];
-//        }
-//        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/searchByRotulo/searchByRotulo",
-//            context: document.body,
-//            type: "POST",
-//            data: "page=" + page + "&rotulo=" + rotuloId + CmetaFields + "&searchType=" + searchType,
-//            dataType: "text",
-//            success: function(data) {
-//                $("#resultsRotulos").empty();
-//                $("#resultsRotulos").append(data);
-//            }
+//        $("#filterRestict :checked").each(function() {
+//            Docs.push($(this).val());
 //        });
+//        if (Docs == "") {
+//            alert("Debe seleccionar al menos un tipo documento.");
+//        }
+//        else if (doc == "") {
+//            alert("La búsqueda no se puede realizar, si el campo 'Buscar', está vacío.");
+//        }
+//        else {
+//            $("#resultsGeneral").empty().html('<img src="../images/ajax-loader.gif" />');
+//            $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/searchGeneralDoc/searchGeneralDoc",
+//                context: document.body,
+//                type: "POST",
+//                data: "page=" + page + "&docs=" + Docs + "&field=" + doc + "&searchType=" + searchType + "&docType=" + docType,
+//                dataType: "text",
+//                success: function(data) {
+//                    $("#resultsGeneral").empty();
+//                    $("#resultsGeneral").append(data);
+//                }
+//            });
+//        }
 //    }
 
     function showImage(id, currIndex, currSubIndex)
@@ -561,7 +512,7 @@
         });
 
 //                var query =$("#query_"+id).html();
-//		window.open("<?php // echo Yii::app()->request->hostinfo    ?>/site/exportPDF/?conditions="+query);
+//		window.open("<?php // echo Yii::app()->request->hostinfo      ?>/site/exportPDF/?conditions="+query);
     }
 
 
