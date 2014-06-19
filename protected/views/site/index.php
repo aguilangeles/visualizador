@@ -348,40 +348,40 @@
         }
     }
 
-    function SearchRotulos(page)
-    {
-        if (page == null)
-        {
-            page = 1;
-        }
-        if ($("#searchRotType_0").attr("checked"))
-        {
-            searchType = "Exacta";
-        }
-        else
-        {
-            searchType = "Parecida";
-        }
-        $("#resultsRotulos").empty().html('<img src="../images/ajax-loader.gif" />');
-        var dataCMeta = $("input[id='CMETA_']").map(function() {
-            return $(this).val();
-        }).get();
-        var CmetaFields = '';
-        for (i in dataCMeta)
-        {
-            CmetaFields = CmetaFields + "&CMETA_[" + i + "]=" + dataCMeta[i];
-        }
-        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/site/searchByRotulo",
-            context: document.body,
-            type: "POST",
-            data: "page=" + page + "&rotulo=" + rotuloId + CmetaFields + "&searchType=" + searchType,
-            dataType: "text",
-            success: function(data) {
-                $("#resultsRotulos").empty();
-                $("#resultsRotulos").append(data);
-            }
-        });
-    }
+//    function SearchRotulos(page)
+//    {
+//        if (page == null)
+//        {
+//            page = 1;
+//        }
+//        if ($("#searchRotType_0").attr("checked"))
+//        {
+//            searchType = "Exacta";
+//        }
+//        else
+//        {
+//            searchType = "Parecida";
+//        }
+//        $("#resultsRotulos").empty().html('<img src="../images/ajax-loader.gif" />');
+//        var dataCMeta = $("input[id='CMETA_']").map(function() {
+//            return $(this).val();
+//        }).get();
+//        var CmetaFields = '';
+//        for (i in dataCMeta)
+//        {
+//            CmetaFields = CmetaFields + "&CMETA_[" + i + "]=" + dataCMeta[i];
+//        }
+//        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/searchByRotulo/searchByRotulo",
+//            context: document.body,
+//            type: "POST",
+//            data: "page=" + page + "&rotulo=" + rotuloId + CmetaFields + "&searchType=" + searchType,
+//            dataType: "text",
+//            success: function(data) {
+//                $("#resultsRotulos").empty();
+//                $("#resultsRotulos").append(data);
+//            }
+//        });
+//    }
 
     function showImage(id, currIndex, currSubIndex)
     {
@@ -561,7 +561,7 @@
         });
 
 //                var query =$("#query_"+id).html();
-//		window.open("<?php // echo Yii::app()->request->hostinfo   ?>/site/exportPDF/?conditions="+query);
+//		window.open("<?php // echo Yii::app()->request->hostinfo    ?>/site/exportPDF/?conditions="+query);
     }
 
 

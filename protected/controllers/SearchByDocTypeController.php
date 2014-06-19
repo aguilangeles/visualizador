@@ -112,6 +112,10 @@ class SearchByDocTypeController extends Controller {
         }
     }
 
+    /**
+     * Busqueda inicial por tipo de documento. Devuelve las caratulas.
+     *
+     */
     private function getDocsByType($c, $carats, $conditions, $docsLevel = 'c1', $groupBy = 'carat', $fields = null) {
         $currentPage = ($c->getOffset() == 0) ? 1 : (($c->getOffset() / Idc::PAGE_SIZE) + 1);
         $getGroup = new GetGroupController();

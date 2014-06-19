@@ -1,5 +1,7 @@
 <?php
 
+include('getGroupController.php');
+
 class SiteController extends Controller {
 
     /**
@@ -110,8 +112,6 @@ class SiteController extends Controller {
         }
     }
 
-
-
     public function actionLogin() {
         $model = new LoginForm;
         $this->layout = 'login';
@@ -140,19 +140,17 @@ class SiteController extends Controller {
         $this->redirect(Yii::app()->homeUrl);
     }
 
-    
-    private function getCaratMeta($docs) {
-        $docs = array_flip($docs);
-        $caratMeta = array();
-        foreach ($docs as $doc) {
-            $document = DocTypes::model()->findByPk($doc);
-            foreach ($document->Carats as $carat) {
-                $caratMeta = $caratMeta + array($carat->carat_meta_id => $carat->carat_meta_desc);
-            }
-        }
-        return $caratMeta;
-    }
-
+//    private function getCaratMeta($docs) {
+//        $docs = array_flip($docs);
+//        $caratMeta = array();
+//        foreach ($docs as $doc) {
+//            $document = DocTypes::model()->findByPk($doc);
+//            foreach ($document->Carats as $carat) {
+//                $caratMeta = $caratMeta + array($carat->carat_meta_id => $carat->carat_meta_desc);
+//            }
+//        }
+//        return $caratMeta;
+//    }
 //    /**
 //     * Búsqueda por tipo de documento.
 //     * @param int $currentPage
@@ -255,56 +253,7 @@ class SiteController extends Controller {
 //            echo $content;
 //        }
 //    }
-    
-    public function actionSearchByRotulo($currentPage = 1) {
-        if (isset($_POST['rotulo'])) {
-            $conditions = array();
-            $c = new EMongoCriteria;
-            $rotuloId = $_POST['rotulo'];
-            $searchType = $_POST['searchType'];
-            $currentPage = $_POST['page'];
-            $rotulo = Rotulos::model()->findByPk($rotuloId);
-            $fields = array();
-            if (!Yii::app()->user->isAdmin) {
-                $c->addCond('visibleCarat', '==', TRUE);
-                $condition = new Condition('visibleCarat', '==', TRUE);
-                array_push($conditions, $condition);
-                $c->addCond('visiblePapel', '==', TRUE);
-                $condition = new Condition('visiblePapel', '==', TRUE);
-                array_push($conditions, $condition);
-                $c->addCond('visibleImagen', '==', TRUE);
-                $condition = new Condition('visibleImagen', '==', TRUE);
-                array_push($conditions, $condition);
-            }
-            foreach ($rotulo->Docs as $doc) {
-                $document = DocTypes::model()->findByPk($doc->doc_type_id);
-                $c->addCond('docType', 'or', $document->doc_type_desc);
-//                                $condition = new Condition('docType','or',$document->doc_type_desc);
-//                                array_push($conditions, $condition);
-            }
-            $carats = $this->getCaratMeta(array($doc->doc_type_id => $doc->doc_type_id));
-            $i = 0;
-            foreach ($carats as $caratM) {
-                array_push($fields, Field::getField($caratM, 'CARAT', $document->doc_type_desc));
-                $carat = CaratMeta::model()->find('carat_meta_desc = :desc', array(':desc' => $caratM));
-                $campo = $carat->carat_meta_desc;
-                if ($_POST['CMETA_'][$i] != '') {
-                    if ($searchType == "Parecida") {
-                        $query = new MongoRegex('/' . $_POST['CMETA_'][$i] . '/i');
-                        $c->addCond('CMETA_' . $carat->carat_meta_desc, '==', $query);
-                    } else {
-                        $c->addCond('CMETA_' . $carat->carat_meta_desc, '==', $_POST['CMETA_'][$i]);
-                    }
-                }
-                $i++;
-            }
 
-            $c->limit(Idc::PAGE_SIZE);
-            $c->offset(($currentPage - 1) * Idc::PAGE_SIZE);
-            $c->setSort(array('order', EMongoCriteria::SORT_ASC));
-            echo $this->getDocsByRotulo($c, $document, $conditions, $fields);
-        }
-    }
 
     public function actionSearchGeneral() {
         $result = "";
@@ -380,56 +329,6 @@ class SiteController extends Controller {
         }
     }
 
-    /**
-     * Devuelve el encabezado de la búsqueda.
-     * @param type $group
-     * @param type $currentPage
-     * @param type $docsLevel
-     * @param type $fields
-     * @return string 
-     */
-//    private function getContentResult($result, $currentPage, $docsLevel, $fields, $view = 'results', $groupBy = 'carat') {
-//        if ($result['data']['ok']) {
-//            if ($result['data']['count'] > 10000) {
-//                $content = '<div class="errorMessage">Se encontraron mas de 10.000 coincidencias, Por favor, refine aún mas su busqueda.</div>';
-//            } else {
-//                if ($result['data']['count'] == 0) {
-//                    $content = '<div class="errorMessage"><img src="../images/error.png" style="height:25px;margin-bottom:-6px;"> No se encontraron resultados.</div>';
-//                } else {
-//                    if ($result['data'] != null) {
-//                        $finded = (int) $result['data']["keys"];
-//                        if ($finded == 0) {
-//                            $content = '<div class="errorMessage"><img src="../images/error.png" style="height:25px;margin-bottom:-6px;"> No se encontraron resultados.</div>';
-//                        } else {
-//                            $content = '<div class="okMessage"><img src="../images/ok.png" style="height:25px;margin-bottom:-6px;">Se encontraron ' . $finded . ' resultados</div>';
-//                            $pages = ceil($finded / Idc::PAGE_SIZE);
-//                            $content = $content . $this->renderPartial($view, array('pages' => $pages, 'currentPage' => $currentPage, 'group' => $result, 'docsLevel' => $docsLevel, 'fields' => $fields, 'groupBy' => $groupBy), true, false);
-//                        }
-//                    } else {
-//                        $content = '<div class="errorMessage"><img src="../images/error.png" style="height:25px;margin-bottom:-6px;">  Por favor, filtre aún mas su busqueda.</div>';
-//                    }
-//                }
-//            }
-//        } else {
-//            if ($result["data"]["code"] == 10334) {
-//                $content = '<div class="errorMessage">Se encontraron mas de 10.000 coincidencias, Por favor, refine aún mas su busqueda.</div>';
-//            } else {
-//                $content = '<div class="errorMessage"><img src="../images/error.png" style="height:25px;margin-bottom:-6px;">  ' . $result["data"]["errmsg"] . '.</div>';
-//            }
-//        }
-//        return $content;
-//    }
-
-    /**
-     * Busqueda inicial por tipo de documento. Devuelve las caratulas.
-     *
-     */
-//    private function getDocsByType($c, $carats, $conditions, $docsLevel = 'c1', $groupBy = 'carat', $fields = null) {
-//        $currentPage = ($c->getOffset() == 0) ? 1 : (($c->getOffset() / Idc::PAGE_SIZE) + 1);
-//        $group = $this->getGroup($c, $carats, $conditions, $docsLevel, $groupBy, $fields);
-//        return $this->getContentResult($group, $currentPage, $docsLevel, $fields, 'results', $groupBy);
-//    }
-
     private function getDocsGeneralByType($c, $carats, $ocrs, $docsLevel1 = null, $currentdoc = null) {
         $content = "";
         $offset = $c->getOffset();
@@ -458,15 +357,17 @@ class SiteController extends Controller {
         return $content;
     }
 
-    /**
-     * Busqueda inicial por rótulo. Devuelve las caratulas.
-     *
-     */
-    private function getDocsByRotulo($c, $carats, $ocrs, $fields, $docsLevel = 'c1') {
-        $currentPage = ($c->getOffset() == 0) ? 1 : (($c->getOffset() / Idc::PAGE_SIZE) + 1);
-        $group = $this->getGroup($c, $carats, $ocrs, $docsLevel, 'carat', $fields);
-        return $this->getContentResult($group, $currentPage, $docsLevel, $fields, 'results_rotulos');
-    }
+//    /**
+//     * Busqueda inicial por rótulo. Devuelve las caratulas.
+//     *
+//     */
+//    private function getDocsByRotulo($c, $carats, $ocrs, $fields, $docsLevel = 'c1') {
+//        $currentPage = ($c->getOffset() == 0) ? 1 : (($c->getOffset() / Idc::PAGE_SIZE) + 1);
+//        $getGroup = new GetGroupController();
+//        $group = $getGroup ->getGroup($c, $carats, $ocrs, $docsLevel, 'carat', $fields);
+////        $group = $this->getGroup($c, $carats, $ocrs, $docsLevel, 'carat', $fields);
+//        return $this->getContentResult($group, $currentPage, $docsLevel, $fields, 'results_rotulos');
+//    }
 
     public function actionGetImagesById() {
         if (isset($_POST["items"])) {
@@ -857,46 +758,6 @@ class SiteController extends Controller {
         $group['retval'][0]['images'] = $result;
         return $group;
     }
-
-//    protected function getGroup($criteria, $doctype, $conditions, $docsLevel = 'c1', $groupBy = 'carat', $fields = null) {
-//        $keys = array('docType');
-//        if ($groupBy == 'carat') {
-//            $keys = array($docsLevel, 'docType');
-//        }
-//        foreach ($fields as $field) {
-//            array_push($keys, $field->prefix . $field->name);
-//        }
-//        $c = '';
-//        $reduce5 = '';
-//        $carats = DocTypes::model()->getMetaCarats($doctype->doc_type_id);
-//        foreach ($carats as $carat) {
-//            $reduce5 = $reduce5 . 'prev.images.push(obj.' . 'CMETA_' . $carat . ');';
-//            $c = $c . $carat . ",";
-//        }
-//        $reduce5 = 'prev.images.push("' . $c . '");' . $reduce5;
-//        $keys = array_flip($keys);
-//        $initial = array("images" => array(), "index" => 0, "info" => array());
-//        $reduce1 = "function (obj, prev) { ";
-//        $reduce2 = 'prev.images.push(obj._id);';
-//        $reduce3 = 'prev.info.push(obj.order);prev.images.push(obj.docType);prev.images.push(obj.docSubtipo);prev.images.push(obj.visibleCarat);prev.images.push(obj.order);prev.images.push(obj.visibleImagen);prev.images.push(obj.fileName);prev.images.push(obj.filePath);prev.images.push(obj.face);prev.images.push(obj.idPapel);prev.images.push(obj.IDC);';
-//        $reduce4 = '';
-//        $o = "";
-//        $ocrs = DocTypes::model()->getMetaOcrs($doctype->doc_type_id);
-//        if ($ocrs != null) {
-//            foreach ($ocrs as $ocr) {
-//                $reduce4 = $reduce4 . 'prev.images.push(obj.' . 'OCR_' . $ocr . ');';
-//                $o = $o . $ocr . ",";
-//            }
-//        }
-//
-//        $reduce4 = 'prev.images.push("' . $o . '");' . $reduce4;
-//        $reduce6 = 'prev.index += 1;}';
-//        $reduce = $reduce1 . $reduce2 . $reduce3 . $reduce5 . $reduce4 . $reduce6;
-//        $group = Idc::model()->group($keys, $initial, $reduce, $criteria);
-//        $result = array('keys' => $conditions, 'data' => $group);
-//
-//        return $result;
-//    }
 
     function output_file($file, $name, $mime_type = '') {
         /*
