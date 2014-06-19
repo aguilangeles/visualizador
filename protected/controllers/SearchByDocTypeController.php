@@ -1,5 +1,7 @@
 <?php
 
+include('GetGroupController.php');
+include('GetContentResultController.php');
 /**
  * Búsqueda por tipo de documento.
  * @param int $currentPage
@@ -112,80 +114,10 @@ class SearchByDocTypeController extends Controller {
 
     private function getDocsByType($c, $carats, $conditions, $docsLevel = 'c1', $groupBy = 'carat', $fields = null) {
         $currentPage = ($c->getOffset() == 0) ? 1 : (($c->getOffset() / Idc::PAGE_SIZE) + 1);
-        $group = $this->getGroup($c, $carats, $conditions, $docsLevel, $groupBy, $fields);
-        return $this->getContentResult($group, $currentPage, $docsLevel, $fields, '/getResults/results', $groupBy);
-    }
-
-    protected function getGroup($criteria, $doctype, $conditions, $docsLevel = 'c1', $groupBy = 'carat', $fields = null) {
-        $keys = array('docType');
-        if ($groupBy == 'carat') {
-            $keys = array($docsLevel, 'docType');
-        }
-        foreach ($fields as $field) {
-            array_push($keys, $field->prefix . $field->name);
-        }
-        $c = '';
-        $reduce5 = '';
-        $carats = DocTypes::model()->getMetaCarats($doctype->doc_type_id);
-        foreach ($carats as $carat) {
-            $reduce5 = $reduce5 . 'prev.images.push(obj.' . 'CMETA_' . $carat . ');';
-            $c = $c . $carat . ",";
-        }
-        $reduce5 = 'prev.images.push("' . $c . '");' . $reduce5;
-        $keys = array_flip($keys);
-        $initial = array("images" => array(), "index" => 0, "info" => array());
-        $reduce1 = "function (obj, prev) { ";
-        $reduce2 = 'prev.images.push(obj._id);';
-        $reduce3 = 'prev.info.push(obj.order);prev.images.push(obj.docType);prev.images.push(obj.docSubtipo);prev.images.push(obj.visibleCarat);prev.images.push(obj.order);prev.images.push(obj.visibleImagen);prev.images.push(obj.fileName);prev.images.push(obj.filePath);prev.images.push(obj.face);prev.images.push(obj.idPapel);prev.images.push(obj.IDC);';
-        $reduce4 = '';
-        $o = "";
-        $ocrs = DocTypes::model()->getMetaOcrs($doctype->doc_type_id);
-        if ($ocrs != null) {
-            foreach ($ocrs as $ocr) {
-                $reduce4 = $reduce4 . 'prev.images.push(obj.' . 'OCR_' . $ocr . ');';
-                $o = $o . $ocr . ",";
-            }
-        }
-
-        $reduce4 = 'prev.images.push("' . $o . '");' . $reduce4;
-        $reduce6 = 'prev.index += 1;}';
-        $reduce = $reduce1 . $reduce2 . $reduce3 . $reduce5 . $reduce4 . $reduce6;
-        $group = Idc::model()->group($keys, $initial, $reduce, $criteria);
-        $result = array('keys' => $conditions, 'data' => $group);
-
-        return $result;
-    }
-
-    private function getContentResult($result, $currentPage, $docsLevel, $fields, $view = 'results', $groupBy = 'carat') {
-        if ($result['data']['ok']) {
-            if ($result['data']['count'] > 10000) {
-                $content = '<div class="errorMessage">Se encontraron mas de 10.000 coincidencias, Por favor, refine aún mas su busqueda.</div>';
-            } else {
-                if ($result['data']['count'] == 0) {
-                    $content = '<div class="errorMessage"><img src="../images/error.png" style="height:25px;margin-bottom:-6px;"> No se encontraron resultados.</div>';
-                } else {
-                    if ($result['data'] != null) {
-                        $finded = (int) $result['data']["keys"];
-                        if ($finded == 0) {
-                            $content = '<div class="errorMessage"><img src="../images/error.png" style="height:25px;margin-bottom:-6px;"> No se encontraron resultados.</div>';
-                        } else {
-                            $content = '<div class="okMessage"><img src="../images/ok.png" style="height:25px;margin-bottom:-6px;">Se encontraron ' . $finded . ' resultados</div>';
-                            $pages = ceil($finded / Idc::PAGE_SIZE);
-                            $content = $content . $this->renderPartial($view, array('pages' => $pages, 'currentPage' => $currentPage, 'group' => $result, 'docsLevel' => $docsLevel, 'fields' => $fields, 'groupBy' => $groupBy), true, false);
-                        }
-                    } else {
-                        $content = '<div class="errorMessage"><img src="../images/error.png" style="height:25px;margin-bottom:-6px;">  Por favor, filtre aún mas su busqueda.</div>';
-                    }
-                }
-            }
-        } else {
-            if ($result["data"]["code"] == 10334) {
-                $content = '<div class="errorMessage">Se encontraron mas de 10.000 coincidencias, Por favor, refine aún mas su busqueda.</div>';
-            } else {
-                $content = '<div class="errorMessage"><img src="../images/error.png" style="height:25px;margin-bottom:-6px;">  ' . $result["data"]["errmsg"] . '.</div>';
-            }
-        }
-        return $content;
+        $getGroup = new GetGroupController();
+        $group = $getGroup->getGroup($c, $carats, $conditions, $docsLevel, $groupBy, $fields);
+        $getCResult = new GetContentResultController();
+        return $getCResult->getContentResult($group, $currentPage, $docsLevel, $fields, '/getResults/results', $groupBy);
     }
 
 }
