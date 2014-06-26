@@ -27,5 +27,27 @@ function getImageInfo(items, id)
     }
     $("#row" + id).toggle();
 }
-
+function seeMore(id)
+    {
+        $("#downloading").dialog({title: "Cargando Datos"})
+        $("#downloading").dialog("open");
+        var query = $("#query_" + id).html();
+        var imageList = $("#imageList" + id).html();
+        $.ajax({url: "/seeMore/seeMore",
+//        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/seeMore/seeMore",
+            context: document.body,
+            type: "POST",
+            data: "query=" + query + "&imageList=" + imageList,
+            dataType: "json",
+            success: function(data) {
+                $("#" + data.id).append(data.table);
+                $("#imageList" + id).empty();
+                $("#imageList" + id).html(data.imageList);
+                if (!data.hasMore) {
+                    $("#seeMore" + data.id).remove();
+                }
+                $("#downloading").dialog("close");
+            }
+        });
+    }
 
