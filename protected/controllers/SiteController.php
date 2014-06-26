@@ -133,7 +133,7 @@ class SiteController extends Controller {
         $this->redirect(Yii::app()->homeUrl);
     }
 
-    
+    //=========================================================================
 
     /**
      * Cast an object to another class, keeping the properties, but changing the methods
