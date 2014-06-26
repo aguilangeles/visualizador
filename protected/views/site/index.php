@@ -459,7 +459,7 @@
         $("#downloading").dialog({title: "Exportando a PDF"})
         $("#downloading").dialog("open");
         var query = $("#query_" + id).html();
-        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/site/exportPDF",
+        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/exportPDF/exportPDF",
             context: document.body,
             type: "POST",
             data: "conditions=" + query,
@@ -593,7 +593,7 @@
             action = "hide";
         }
         var imageList = $("#imageList" + id).html();
-        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/site/toogleImageVisibility",
+        $.ajax({url: "/toggleImageVisibility/toggleImageVisibility",
             context: document.body,
             type: "POST",
             data: "imageList=" + imageList + "&currIndex=" + currIndex + "&action=" + action,

@@ -90,13 +90,13 @@ class Users extends CActiveRecord
 		));
 	}
 
-	public function getGroups()
-	{
-//		foreach ($this->GroupsAsoc as group)
-//		{
-//			'';
-//		}
-	}
+//	public function getGroups()
+//	{
+////		foreach ($this->GroupsAsoc as group)
+////		{
+////			'';
+////		}
+//	}
 
 	public static  function getAllDocTypes($userId, $level)
 	{
