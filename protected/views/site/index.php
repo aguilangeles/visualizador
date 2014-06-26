@@ -97,7 +97,7 @@
                 <!-- Bloque 2 -->
 
                 <div id="filtersMeta" style="float:left;">
-                    <div id="filtersCarat">
+                    <div id="filter">
                         <fieldset class="form" style="width:260px;">
                             <legend>Metadata de carátula</legend>
                             <div id="MetaCarats" style="width: 260px;"></div>
@@ -495,36 +495,7 @@
         }
         return true;
     }
-
-    function getImageInfo(items, id)
-    {
-        var infoId = items;
-        id = infoId;
-        var query = $("#query_" + id).html();
-
-        query = encodeURIComponent(query);
-
-        items = $("#imageData" + items).html();
-        if (!$("#row" + id).hasClass('fetched'))
-        {
-            $("#downloading").dialog({title: "Cargando Datos"})
-            $("#downloading").dialog("open");
-            $("#row" + id).addClass('fetched');
-            $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/site/getImagesById",
-                context: document.body,
-                type: "POST",
-                data: "items=" + items + "&infoId=" + infoId + "&query=" + query,
-                dataType: "json",
-                success: function(data) {
-                    $("#row" + id).prepend(data.html);
-                    $("#imageData" + id).empty();
-                    $("#imageData" + id).html(data.imageData);
-                    $("#downloading").dialog("close");
-                }
-            });
-        }
-        $("#row" + id).toggle();
-    }
+    
     function seeMore(id)
     {
         $("#downloading").dialog({title: "Cargando Datos"})
