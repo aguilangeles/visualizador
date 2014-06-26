@@ -318,6 +318,8 @@
         $("#showImage").dialog({height: $(window).height() - 50});
         $("#showImage").dialog("open");
     }
+    
+    
     function showImageSmall(id, currIndex, currSubIndex)
     {
         $("#image").html('<img src="../images/ajax-loader.gif" />');
@@ -404,37 +406,7 @@
             }});
     }
 
-    function setOrder(id, order, c1, c2, c3, c4) {
-        oldPos = order;
-        newPos = $("#orden_" + id).val();
-        if (isNaN(newPos)) {
-            alert("Escriba solo numeros");
-            $("#orden_" + id).val(oldPos);
-        }
-        else {
-            if (newPos <= 0) {
-                alert("La posición debe ser mayor a cero.");
-                $("#orden_" + id).val(oldPos);
-            }
-            else {
-                $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/site/setOrder",
-                    context: document.body,
-                    type: "POST",
-                    data: "id=" + id + "&oldPos=" + oldPos + "&newPos=" + newPos + "&c1=" + c1 + "&c2=" + c2 + "&c3=" + c3 + "&c4=" + c4,
-                    dataType: "text",
-                    success: function(data) {
-                        if (data != '')
-                        {
-                            alert(data);
-                        }
-                        else
-                        {
-                            alert("Refresque la búsqueda, para ver reflejados los cambios.");
-                        }
-                    }});
-            }
-        }
-    }
+    
 
     function exportZIP(id)
     {
