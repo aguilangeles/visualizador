@@ -1,4 +1,5 @@
 <?php
+
 include('GetDocsGeneralByTypeController.php');
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,6 +13,7 @@ include('GetDocsGeneralByTypeController.php');
  * @author aguilangeles@gmail.com
  */
 class SearchGeneralDocController extends Controller {
+    
 
     public function actionSearchGeneralDoc($currentPage = 1, $currentdoc = null) {
         $c = new EMongoCriteria;
@@ -75,41 +77,11 @@ class SearchGeneralDocController extends Controller {
         $c->limit(Idc::PAGE_SIZE);
         $c->offset(($currentPage - 1) * Idc::PAGE_SIZE);
         if ($hasSpecialField) {
-            echo $this->getDocsGeneralByType($c, $docType, $conditions, $docs, $currentdoc);
+            $getDocsGenByType = new GetDocsGeneralByTypeController();
+            echo $getDocsGenByType->getDocsGeneralByType($c, $docType, $conditions, $docs, $currentdoc);
         } else {
             echo '<div class="errorMessage"><img src="../images/error.png" style="height:25px;margin-bottom:-6px;"> No hay definido ningún campo especial. Por favor, configure un campo especial antes de usar esta búsqueda.</div>';
         }
-    }
-  private function getDocsGeneralByType($c, $carats, $ocrs, $docsLevel1 = null, $currentdoc = null) {
-        $content = "";
-        $offset = $c->getOffset();
-        foreach ($docsLevel1 as $docl) {
-            if (isset($currentdoc)) {
-                if ($currentdoc == $docl) {
-                    $c->setOffset($offset);
-                } else {
-                    $c->setOffset(0);
-                }
-            }
-            $d = array($docl => 'doc');
-            $docType = DocTypes::model()->findByPk($docl);
-
-
-            $caratList = $this->getCaratMeta($d);
-            $fields = array();
-            foreach ($caratList as $caratM) {
-                array_push($fields, Field::getField($caratM, 'CARAT', $docType->doc_type_desc));
-            }
-            $c->addCond('docType', '==', $docType->doc_type_desc);
-            $currentPage = ($c->getOffset() == 0) ? 1 : (($c->getOffset() / Idc::PAGE_SIZE) + 1);
-            $getGroup = new GetGroupController();
-
-            $group = $getGroup->getGroup($c, $docType, $ocrs, $docType->doc_type_level, 'carat', $fields);
-            
-
-            $content = $content . $this->getContentResult($group, $currentPage, $docType->doc_type_level, $fields, 'results_general');
-        }
-        return $content;
     }
 
 }

@@ -2,6 +2,7 @@
 
 include('GetGroupController.php');
 include('GetContentResultController.php');
+include('GetCaratMetaController.php');
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -38,10 +39,9 @@ class SearchByRotuloController extends Controller {
             foreach ($rotulo->Docs as $doc) {
                 $document = DocTypes::model()->findByPk($doc->doc_type_id);
                 $c->addCond('docType', 'or', $document->doc_type_desc);
-//                                $condition = new Condition('docType','or',$document->doc_type_desc);
-//                                array_push($conditions, $condition);
             }
-            $carats = $this->getCaratMeta(array($doc->doc_type_id => $doc->doc_type_id));
+            $getCrtMeta = new GetCaratMetaController();
+            $carats = $getCrtMeta->getCaratMeta(array($doc->doc_type_id => $doc->doc_type_id));
             $i = 0;
             foreach ($carats as $caratM) {
                 array_push($fields, Field::getField($caratM, 'CARAT', $document->doc_type_desc));
@@ -65,17 +65,6 @@ class SearchByRotuloController extends Controller {
         }
     }
 
-    private function getCaratMeta($docs) {
-        $docs = array_flip($docs);
-        $caratMeta = array();
-        foreach ($docs as $doc) {
-            $document = DocTypes::model()->findByPk($doc);
-            foreach ($document->Carats as $carat) {
-                $caratMeta = $caratMeta + array($carat->carat_meta_id => $carat->carat_meta_desc);
-            }
-        }
-        return $caratMeta;
-    }
 
     /**
      * Busqueda inicial por rótulo. Devuelve las caratulas.
