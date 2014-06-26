@@ -293,47 +293,6 @@
     var rotate_angle = 0;
     var ultAnchoImg;
 
-   
-//    function SearchGralDocs(page, docType)
-//    {
-//        var Docs = [];
-//        var doc = $("#searchField").val();
-//        if (page == null)
-//        {
-//            page = 1;
-//        }
-//        if ($("#searchGeneralType_0").attr("checked"))
-//        {
-//            searchType = "Exacta";
-//        }
-//        else
-//        {
-//            searchType = "Parecida";
-//        }
-//        $("#filterRestict :checked").each(function() {
-//            Docs.push($(this).val());
-//        });
-//        if (Docs == "") {
-//            alert("Debe seleccionar al menos un tipo documento.");
-//        }
-//        else if (doc == "") {
-//            alert("La búsqueda no se puede realizar, si el campo 'Buscar', está vacío.");
-//        }
-//        else {
-//            $("#resultsGeneral").empty().html('<img src="../images/ajax-loader.gif" />');
-//            $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/searchGeneralDoc/searchGeneralDoc",
-//                context: document.body,
-//                type: "POST",
-//                data: "page=" + page + "&docs=" + Docs + "&field=" + doc + "&searchType=" + searchType + "&docType=" + docType,
-//                dataType: "text",
-//                success: function(data) {
-//                    $("#resultsGeneral").empty();
-//                    $("#resultsGeneral").append(data);
-//                }
-//            });
-//        }
-//    }
-
     function showImage(id, currIndex, currSubIndex)
     {
         $("#image").html('<img src="../images/ajax-loader.gif" />');
@@ -605,7 +564,7 @@
         }
         var query = $("#query_" + id).html();
         var fields = $("#fields_" + id).html();
-        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/site/toogleCaratVisibility",
+        $.ajax({url: "/toggleCaratVisibility/toggleCaratVisibility",
             context: document.body,
             type: "POST",
             data: "id=" + id + "&query=" + query + "&fields=" + fields + "&action=" + action,
