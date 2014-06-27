@@ -1,9 +1,10 @@
 <?php
 
-/**
+/*
  * Description of ViewImageController
  *
  */
+
 class ViewImageController extends Controller {
 
     /**
@@ -114,18 +115,6 @@ class ViewImageController extends Controller {
         return $html;
     }
 
-    /**
-     * Revisa la ruta, determinado si el sistema operativo es Windows o Linux.
-     * Devuelve la ruta valida.
-     * @return string Ruta válida.
-     * @author GDM
-     */
-    private function getValidFile() {
-        $pathW = str_replace('|', '\\', $this->filePath);
-        $pathL = str_replace('|', '/', $this->filePath);
-        return (file_exists($pathW)) ? $pathW : $pathL;
-    }
-
     private function createOZStructure($destination, $fileInfo, $tempAbsolutePath, $tempRelativePath) {
         set_time_limit(0);
         if (strcasecmp($fileInfo['extension'], 'jpg') != 0 && strcasecmp($fileInfo['extension'], 'png') != 0) {
@@ -160,4 +149,15 @@ class ViewImageController extends Controller {
             unlink($source);
     }
 
+    /**
+     * Revisa la ruta, determinado si el sistema operativo es Windows o Linux.
+     * Devuelve la ruta valida.
+     * @return string Ruta válida.
+     * @author GDM
+     */
+    private function getValidFile() {
+        $pathW = str_replace('|', '\\', $this->filePath);
+        $pathL = str_replace('|', '/', $this->filePath);
+        return (file_exists($pathW)) ? $pathW : $pathL;
+    }
 }

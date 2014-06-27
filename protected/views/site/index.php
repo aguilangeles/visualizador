@@ -333,14 +333,14 @@
         $("#downloading").dialog("open");
         var query = $("#query_" + id).html();
 //                window.open("<?php echo Yii::app()->request->hostinfo ?>/site/exportZIP/?conditions="+query);
-        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/site/exportZIP",
+        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/exportZIP/exportZIP",
             context: document.body,
             type: "POST",
             data: "conditions=" + query,
             dataType: "text",
             success: function(data) {
                 $("#downloading").dialog("close");
-                window.open("<?php echo Yii::app()->request->hostinfo ?>/site/GetZip/?fileName=" + data);
+                window.open("<?php echo Yii::app()->request->hostinfo ?>/exportZIP/GetZip/?fileName=" + data);
             }
         });
     }
@@ -350,7 +350,7 @@
         $("#downloading").dialog({title: "Exportando a PDF"})
         $("#downloading").dialog("open");
         var query = $("#query_" + id).html();
-        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/exportPDF/exportPDF",
+        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/site/exportPDF",
             context: document.body,
             type: "POST",
             data: "conditions=" + query,
