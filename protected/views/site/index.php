@@ -302,7 +302,7 @@
         $("#image").empty();
         var widthSize = ($(window).width() - 200);
         ultAnchoImg = widthSize;
-        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/site/viewImage",
+        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/viewImage/viewImage",
             context: document.body,
             type: "POST",
             data: "imageList=" + imageList + "&imageList2=" + imageList2 + "&widthsize=" + widthSize + "&currIndex=" + currIndex + "&currSubIndex=" + currSubIndex + "&rotar=" + rotate_angle,
@@ -329,7 +329,7 @@
         $("#image").empty();
         var widthSize = ($(window).width() - 200);
         ultAnchoImg = 500;
-        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/site/viewImage",
+        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/viewImage/viewImage",
             context: document.body,
             type: "POST",
             data: "imageList=" + imageList + "&imageList2=" + imageList2 + "&widthsize=500&currIndex=" + currIndex + "&currSubIndex=" + currSubIndex + "&rotar=" + rotate_angle,
@@ -355,7 +355,7 @@
         var widthSize = ($(window).width() - 200);
         rotate_angle = (rotate_angle >= 270) ? 0 : rotate_angle + 90;
         //$('#imgprincipal').rotate({ angle : rotate_angle });
-        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/site/viewImage",
+        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/viewImage/viewImage",
             context: document.body,
             type: "POST",
             data: "imageList=" + imageList + "&imageList2=" + imageList2 + "&widthsize=" + ultAnchoImg + "&currIndex=" + currIndex + "&currSubIndex=" + currSubIndex + "&rotar=" + rotate_angle,
