@@ -160,4 +160,5 @@ class ViewImageController extends Controller {
         $pathL = str_replace('|', '/', $this->filePath);
         return (file_exists($pathW)) ? $pathW : $pathL;
     }
+
 }
