@@ -8,6 +8,7 @@ Yii::app()->clientScript->registerScriptFile('/js/toggleGeneralSearch.js');
 Yii::app()->clientScript->registerScriptFile('/js/searchGralDocs.js');
 Yii::app()->clientScript->registerScriptFile('/js/getImageInfo.js');
 Yii::app()->clientScript->registerScriptFile('/js/setOrder.js');
+Yii::app()->clientScript->registerScriptFile('/js/showImage.js');
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
