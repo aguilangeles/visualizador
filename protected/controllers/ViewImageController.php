@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Description of ViewImageController
  *
@@ -115,6 +114,12 @@ class ViewImageController extends Controller {
         return $html;
     }
 
+    /**
+     * Revisa la ruta, determinado si el sistema operativo es Windows o Linux.
+     * Devuelve la ruta valida.
+     * @return string Ruta válida.
+     * @author GDM
+     */
     private function getValidFile() {
         $pathW = str_replace('|', '\\', $this->filePath);
         $pathL = str_replace('|', '/', $this->filePath);

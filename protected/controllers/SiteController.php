@@ -126,12 +126,9 @@ class SiteController extends Controller {
         return unserialize(preg_replace('/^O:\d+:"[^"]++"/', 'O:' . strlen($class) . ':"' . $class . '"', serialize($object)));
     }
 
-
     /**
      * Acción muestra imagen. 
      */
-   
-  
     protected function orderResults($group, $qty = 1) {
         $result = array();
         $r = $group['retval'][0]['images'];
@@ -256,7 +253,7 @@ class SiteController extends Controller {
         $fileName = $_GET['fileName'];
         $this->output_file($fileName, uniqid() . '.zip', 'zip');
     }
- 
+
     public function actionRemoveTempZip() {
         $filename = Yii::app()->session['tempFileName'];
         unset(Yii::app()->session['tempFileName']);
@@ -395,51 +392,5 @@ class SiteController extends Controller {
         }
         return $destination;
     }
-
-    /**
-     * Revisa la ruta, determinado si el sistema operativo es Windows o Linux.
-     * Devuelve la ruta valida.
-     * @return string Ruta válida.
-     * @author GDM
-     */
-   /* private function getValidFile() {
-        $pathW = str_replace('|', '\\', $this->filePath);
-        $pathL = str_replace('|', '/', $this->filePath);
-        return (file_exists($pathW)) ? $pathW : $pathL;
-    }
-
-    private function createOZStructure($destination, $fileInfo, $tempAbsolutePath, $tempRelativePath) {
-        set_time_limit(0);
-        if (strcasecmp($fileInfo['extension'], 'jpg') != 0 && strcasecmp($fileInfo['extension'], 'png') != 0) {
-            $im = new Imagick();
-            $im->readImage($this->filePath);
-            $im->setFormat('jpg');
-            $im->setImageCompressionQuality(100);
-            ;
-            $tempFile = $tempAbsolutePath . $fileInfo['filename'] . '.jpg';
-            if ($im->writeImage($tempFile)) {
-                $source = $tempRelativePath . $fileInfo['filename'] . '.jpg';
-                $this->newOZConverter($source, $destination, TRUE);
-            }
-            $im->destroy();
-        } else {
-            $source = $this->filePath; //$tempAbsolutePath.$fileInfo['basename'];
-            $this->newOZConverter($source, $destination);
-        }
-    }
-
-    /**
-     * Crea la estructura piramidal de Open Zoom.
-     * @param string $source Ruta origen de la imagen jpg o png.
-     * @param string $destination Ruta destino del xml.
-     * @param bool $delete Borra el temporal creado.
-     * @author GDM
-     */
-    /*private function newOZConverter($source, $destination, $delete = false) {
-        $converter = new Oz_Deepzoom_ImageCreator();
-        $converter->create($source, $destination);
-        if ($delete)
-            unlink($source);
-    }*/
 
 }
