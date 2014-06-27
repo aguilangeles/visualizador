@@ -333,36 +333,33 @@
         $("#downloading").dialog("open");
         var query = $("#query_" + id).html();
 //                window.open("<?php echo Yii::app()->request->hostinfo ?>/site/exportZIP/?conditions="+query);
-        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/exportZIP/exportZIP",
+        $.ajax({url: "/exportZIP/exportZIP",
             context: document.body,
             type: "POST",
             data: "conditions=" + query,
             dataType: "text",
             success: function(data) {
                 $("#downloading").dialog("close");
-                window.open("<?php echo Yii::app()->request->hostinfo ?>/exportZIP/GetZip/?fileName=" + data);
+                window.open("/exportZIP/GetZip/?fileName=" + data);
             }
         });
     }
-
+ 
     function exportPDF(id)
     {
         $("#downloading").dialog({title: "Exportando a PDF"})
         $("#downloading").dialog("open");
         var query = $("#query_" + id).html();
-        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/site/exportPDF",
+        $.ajax({url: "/exportPDF/exportPDF",
             context: document.body,
             type: "POST",
             data: "conditions=" + query,
             dataType: "text",
             success: function(data) {
                 $("#downloading").dialog("close");
-                window.open("<?php echo Yii::app()->request->hostinfo ?>/site/GetPdf/?fileName=" + data);
+                window.open("/exportPDF/GetPdf/?fileName=" + data);
             }
         });
-
-//                var query =$("#query_"+id).html();
-//		window.open("<?php // echo Yii::app()->request->hostinfo      ?>/site/exportPDF/?conditions="+query);
     }
 
 
