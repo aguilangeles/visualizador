@@ -14,6 +14,7 @@
 class SetOrderController extends Controller {
 
     public function actionSetOrder() {
+        
         MongoCursor::$timeout = -1;
         $oldPos = (int) $_POST['oldPos'];
         $newPos = (int) $_POST['newPos'];
