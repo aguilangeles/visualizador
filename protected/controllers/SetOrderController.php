@@ -14,7 +14,7 @@
 class SetOrderController extends Controller {
 
     public function actionSetOrder() {
-        
+
         MongoCursor::$timeout = -1;
         $oldPos = (int) $_POST['oldPos'];
         $newPos = (int) $_POST['newPos'];
@@ -46,7 +46,7 @@ class SetOrderController extends Controller {
         } else if ($newPos < 1) {
             echo "Error, el valor no puede ser menor que 0";
         } else {
-            
+
             $criteria->setSort(array('idPapel' => EMongoCriteria::SORT_ASC));
             if ($oldPos > $newPos) {//se mueve para abajo
                 $criteria->addCond('idPapel', '<', $oldPos);
