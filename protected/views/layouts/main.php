@@ -5,7 +5,7 @@
         <meta name="language" content="en" />
         <?php
         //Yii::app()->clientScript->registerCoreScript('jquery');
-        Yii::app()->clientScript->registerScriptFile('/js/jquery.js');
+//        Yii::app()->clientScript->registerScriptFile('/js/jquery.js');
         Yii::app()->clientScript->registerScriptFile('/js/jquery.rotate.min.js');
         //Yii::app()->clientScript->registerScriptFile('/js/rotar.js');
         Yii::app()->clientScript->registerScriptFile('/js/seadragon/seadragon-min.js');
