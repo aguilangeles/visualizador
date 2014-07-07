@@ -6480,3 +6480,1575 @@ in /media/windows/utn-visu/protected/extensions/YiiMongoDbSuite/EMongoDocument.p
 in /media/windows/utn-visu/protected/extensions/YiiMongoDbSuite/EMongoDB.php (134)
 in /media/windows/utn-visu/protected/extensions/YiiMongoDbSuite/EMongoDB.php (181)
 in /media/windows/utn-visu/protected/extensions/YiiMongoDbSuite/EMongoDocument.php (166)
+2014/07/07 17:04:15 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/protected/controllers/SiteController.php (56)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/protected/controllers/SiteController.php (56)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/models/Users.php (21)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (59)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/models/Users.php (21)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (59)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `users`
+in /media/windows/utn-visu/protected/models/Users.php (21)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (59)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `users`
+in /media/windows/utn-visu/protected/models/Users.php (21)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (59)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.ar.CActiveRecord] Users.findByPk()
+in /media/windows/utn-visu/protected/controllers/SiteController.php (59)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `users` `t` WHERE `t`.`userId`=1 LIMIT 1
+in /media/windows/utn-visu/protected/controllers/SiteController.php (59)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.ar.CActiveRecord] lazy loading Users.GroupsAsoc
+in /media/windows/utn-visu/protected/models/Users.php (150)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (59)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `usergroups`
+in /media/windows/utn-visu/protected/models/Users.php (150)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (59)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usergroups`
+in /media/windows/utn-visu/protected/models/Users.php (150)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (59)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT `GroupsAsoc`.`usergroup_id` AS `t1_c0`, `GroupsAsoc`.`user_id` AS `t1_c1`, `GroupsAsoc`.`group_id` AS `t1_c2` FROM `usergroups` `GroupsAsoc`  WHERE (`GroupsAsoc`.`user_id`=:ypl0)
+in /media/windows/utn-visu/protected/models/Users.php (150)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (59)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.ar.CActiveRecord] lazy loading Usergroups.Group
+in /media/windows/utn-visu/protected/controllers/SiteController.php (66)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `groups`
+in /media/windows/utn-visu/protected/controllers/SiteController.php (66)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `groups`
+in /media/windows/utn-visu/protected/controllers/SiteController.php (66)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Group`.`group_id` AS `t1_c0`, `Group`.`group_name` AS `t1_c1` FROM `groups` `Group`  WHERE (`Group`.`group_id`=:ypl0)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (66)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.ar.CActiveRecord] lazy loading Groups.DoctypesAsoc
+in /media/windows/utn-visu/protected/models/Groups.php (94)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (66)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `doctypegroups`
+in /media/windows/utn-visu/protected/models/Groups.php (94)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (66)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `doctypegroups`
+in /media/windows/utn-visu/protected/models/Groups.php (94)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (66)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT `DoctypesAsoc`.`doctypegroup_id` AS `t1_c0`, `DoctypesAsoc`.`doctype_id` AS `t1_c1`, `DoctypesAsoc`.`group_id` AS `t1_c2` FROM `doctypegroups` `DoctypesAsoc`  WHERE (`DoctypesAsoc`.`group_id`=:ypl0)
+in /media/windows/utn-visu/protected/models/Groups.php (94)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (66)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.ar.CActiveRecord] lazy loading Doctypegroups.DocumentType
+in /media/windows/utn-visu/protected/controllers/SiteController.php (67)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `doc_types`
+in /media/windows/utn-visu/protected/controllers/SiteController.php (67)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `doc_types`
+in /media/windows/utn-visu/protected/controllers/SiteController.php (67)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT `DocumentType`.`doc_type_id` AS `t1_c0`, `DocumentType`.`doc_type_desc` AS `t1_c1`, `DocumentType`.`doc_type_label` AS `t1_c2`, `DocumentType`.`doc_type_level` AS `t1_c3`, `DocumentType`.`water_mark_text` AS `t1_c4`, `DocumentType`.`water_mark_font_size` AS `t1_c5`, `DocumentType`.`water_mark_opacity` AS `t1_c6`, `DocumentType`.`water_mark_angle` AS `t1_c7`, `DocumentType`.`enabled` AS `t1_c8` FROM `doc_types` `DocumentType`  WHERE (`DocumentType`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (67)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.ar.CActiveRecord] lazy loading Doctypegroups.DocumentType
+in /media/windows/utn-visu/protected/controllers/SiteController.php (67)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT `DocumentType`.`doc_type_id` AS `t1_c0`, `DocumentType`.`doc_type_desc` AS `t1_c1`, `DocumentType`.`doc_type_label` AS `t1_c2`, `DocumentType`.`doc_type_level` AS `t1_c3`, `DocumentType`.`water_mark_text` AS `t1_c4`, `DocumentType`.`water_mark_font_size` AS `t1_c5`, `DocumentType`.`water_mark_opacity` AS `t1_c6`, `DocumentType`.`water_mark_angle` AS `t1_c7`, `DocumentType`.`enabled` AS `t1_c8` FROM `doc_types` `DocumentType`  WHERE (`DocumentType`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (67)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.ar.CActiveRecord] lazy loading Doctypegroups.DocumentType
+in /media/windows/utn-visu/protected/controllers/SiteController.php (67)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT `DocumentType`.`doc_type_id` AS `t1_c0`, `DocumentType`.`doc_type_desc` AS `t1_c1`, `DocumentType`.`doc_type_label` AS `t1_c2`, `DocumentType`.`doc_type_level` AS `t1_c3`, `DocumentType`.`water_mark_text` AS `t1_c4`, `DocumentType`.`water_mark_font_size` AS `t1_c5`, `DocumentType`.`water_mark_opacity` AS `t1_c6`, `DocumentType`.`water_mark_angle` AS `t1_c7`, `DocumentType`.`enabled` AS `t1_c8` FROM `doc_types` `DocumentType`  WHERE (`DocumentType`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (67)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `rotulos`
+in /media/windows/utn-visu/protected/models/Rotulos.php (19)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (80)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `rotulos`
+in /media/windows/utn-visu/protected/models/Rotulos.php (19)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (80)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.ar.CActiveRecord] Rotulos.findAll()
+in /media/windows/utn-visu/protected/controllers/SiteController.php (80)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `rotulos` `t`
+in /media/windows/utn-visu/protected/controllers/SiteController.php (80)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.ar.CActiveRecord] lazy loading Rotulos.Docs
+in /media/windows/utn-visu/protected/models/Rotulos.php (92)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (80)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulos.php (92)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (80)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulos.php (92)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (80)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Docs`.`rotulos_doctype_id` AS `t1_c0`, `Docs`.`rotulo_id` AS `t1_c1`, `Docs`.`doc_type_id` AS `t1_c2` FROM `rotulos_doctype` `Docs`  WHERE (`Docs`.`rotulo_id`=:ypl0)
+in /media/windows/utn-visu/protected/models/Rotulos.php (92)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (80)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.ar.CActiveRecord] Users.findByPk()
+in /media/windows/utn-visu/protected/models/Users.php (119)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (82)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `users` `t` WHERE `t`.`userId`=1 LIMIT 1
+in /media/windows/utn-visu/protected/models/Users.php (119)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (82)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.ar.CActiveRecord] lazy loading Users.GroupsAsoc
+in /media/windows/utn-visu/protected/models/Users.php (150)
+in /media/windows/utn-visu/protected/models/Users.php (119)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (82)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT `GroupsAsoc`.`usergroup_id` AS `t1_c0`, `GroupsAsoc`.`user_id` AS `t1_c1`, `GroupsAsoc`.`group_id` AS `t1_c2` FROM `usergroups` `GroupsAsoc`  WHERE (`GroupsAsoc`.`user_id`=:ypl0)
+in /media/windows/utn-visu/protected/models/Users.php (150)
+in /media/windows/utn-visu/protected/models/Users.php (119)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (82)
+2014/07/07 17:04:15 [trace] [system.db.ar.CActiveRecord] DocTypes.findByPk()
+in /media/windows/utn-visu/protected/models/Users.php (125)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (82)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `doc_types` `t` WHERE `t`.`doc_type_id`=2 LIMIT 1
+in /media/windows/utn-visu/protected/models/Users.php (125)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (82)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.ar.CActiveRecord] lazy loading DocTypes.Groups
+in /media/windows/utn-visu/protected/models/Users.php (129)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (82)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Groups`.`doctypegroup_id` AS `t1_c0`, `Groups`.`doctype_id` AS `t1_c1`, `Groups`.`group_id` AS `t1_c2` FROM `doctypegroups` `Groups`  WHERE (`Groups`.`doctype_id`=:ypl0)
+in /media/windows/utn-visu/protected/models/Users.php (129)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (82)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.ar.CActiveRecord] DocTypes.findByPk()
+in /media/windows/utn-visu/protected/models/Users.php (125)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (82)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `doc_types` `t` WHERE `t`.`doc_type_id`=3 LIMIT 1
+in /media/windows/utn-visu/protected/models/Users.php (125)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (82)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.ar.CActiveRecord] lazy loading DocTypes.Groups
+in /media/windows/utn-visu/protected/models/Users.php (129)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (82)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Groups`.`doctypegroup_id` AS `t1_c0`, `Groups`.`doctype_id` AS `t1_c1`, `Groups`.`group_id` AS `t1_c2` FROM `doctypegroups` `Groups`  WHERE (`Groups`.`doctype_id`=:ypl0)
+in /media/windows/utn-visu/protected/models/Users.php (129)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (82)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.CModule] Loading "mongodb" application component
+in /media/windows/utn-visu/protected/extensions/YiiMongoDbSuite/EMongoDocument.php (144)
+in /media/windows/utn-visu/protected/extensions/YiiMongoDbSuite/EMongoDocument.php (166)
+in /media/windows/utn-visu/protected/extensions/YiiMongoDbSuite/EMongoDocument.php (191)
+2014/07/07 17:04:15 [trace] [ext.MongoDb.EMongoDB] Opening MongoDB connection
+in /media/windows/utn-visu/protected/extensions/YiiMongoDbSuite/EMongoDB.php (134)
+in /media/windows/utn-visu/protected/extensions/YiiMongoDbSuite/EMongoDB.php (181)
+in /media/windows/utn-visu/protected/extensions/YiiMongoDbSuite/EMongoDocument.php (166)
+2014/07/07 17:04:15 [trace] [system.CModule] Loading "widgetFactory" application component
+in /media/windows/utn-visu/protected/views/site/index.php (265)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (97)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.CModule] Loading "clientScript" application component
+in /media/windows/utn-visu/protected/views/site/index.php (265)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (97)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:15 [trace] [system.CModule] Loading "assetManager" application component
+in /media/windows/utn-visu/protected/views/site/index.php (265)
+in /media/windows/utn-visu/protected/controllers/SiteController.php (97)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:20 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:20 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:20 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:20 [trace] [system.web.filters.CFilterChain] Running filter OcrmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:20 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:20 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:20 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (137)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:20 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (137)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `ocr_meta`
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (137)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `ocr_meta`
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (137)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:20 [trace] [system.CModule] Loading "widgetFactory" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:20 [trace] [system.db.ar.CActiveRecord] OcrMeta.count()
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `ocr_meta` `t`
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:21 [trace] [system.db.ar.CActiveRecord] OcrMeta.findAll()
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `ocr_meta` `t` LIMIT 10
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:21 [trace] [system.CModule] Loading "assetManager" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:21 [trace] [system.CModule] Loading "clientScript" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:21 [trace] [system.CModule] Loading "coreMessages" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:21 [trace] [system.CModule] Loading "format" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:21 [trace] [system.db.ar.CActiveRecord] lazy loading OcrMeta.Doc
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `doc_types`
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `doc_types`
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:21 [trace] [system.db.ar.CActiveRecord] lazy loading OcrMeta.Doc
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.web.filters.CFilterChain] Running filter OcrmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/models/OcrMeta.php (20)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (169)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (121)
+2014/07/07 17:04:26 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/models/OcrMeta.php (20)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (169)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (121)
+2014/07/07 17:04:26 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `ocr_meta`
+in /media/windows/utn-visu/protected/models/OcrMeta.php (20)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (169)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (121)
+2014/07/07 17:04:26 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `ocr_meta`
+in /media/windows/utn-visu/protected/models/OcrMeta.php (20)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (169)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (121)
+2014/07/07 17:04:26 [trace] [system.db.ar.CActiveRecord] OcrMeta.findByPk()
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (169)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (121)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `ocr_meta` `t` WHERE `t`.`ocr_meta_id`=8 LIMIT 1
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (169)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (121)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.db.ar.CActiveRecord] OcrMeta.delete()
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (121)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.db.ar.CActiveRecord] OcrMeta.deleteByPk()
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (121)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.db.CDbCommand] Executing SQL: DELETE FROM `ocr_meta` WHERE `ocr_meta`.`ocr_meta_id`=8
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (121)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.web.filters.CFilterChain] Running filter OcrmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (137)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (137)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `ocr_meta`
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (137)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `ocr_meta`
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (137)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.CModule] Loading "widgetFactory" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.db.ar.CActiveRecord] OcrMeta.count()
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `ocr_meta` `t`
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.db.ar.CActiveRecord] OcrMeta.findAll()
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `ocr_meta` `t` LIMIT 10
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.CModule] Loading "assetManager" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.CModule] Loading "clientScript" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.CModule] Loading "coreMessages" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.CModule] Loading "format" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.db.ar.CActiveRecord] lazy loading OcrMeta.Doc
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `doc_types`
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `doc_types`
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:26 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:30 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:30 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:30 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:30 [trace] [system.web.filters.CFilterChain] Running filter OcrmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:30 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:30 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:30 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:30 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `ocr_meta`
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `ocr_meta`
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:30 [trace] [system.CModule] Loading "widgetFactory" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/_form.php (6)
+in /media/windows/utn-visu/protected/views/ocrmeta/create.php (1)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (81)
+2014/07/07 17:04:30 [trace] [system.CModule] Loading "clientScript" application component
+in /media/windows/utn-visu/protected/extensions/ETooltip/ETooltip.php (37)
+in /media/windows/utn-visu/protected/extensions/ETooltip/ETooltip.php (61)
+in /media/windows/utn-visu/protected/views/ocrmeta/_form.php (6)
+2014/07/07 17:04:30 [trace] [system.CModule] Loading "assetManager" application component
+in /media/windows/utn-visu/protected/extensions/ETooltip/ETooltip.php (40)
+in /media/windows/utn-visu/protected/extensions/ETooltip/ETooltip.php (61)
+in /media/windows/utn-visu/protected/views/ocrmeta/_form.php (6)
+2014/07/07 17:04:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `doc_types`
+in /media/windows/utn-visu/protected/models/DocTypes.php (25)
+in /media/windows/utn-visu/protected/views/ocrmeta/_form.php (35)
+in /media/windows/utn-visu/protected/views/ocrmeta/create.php (1)
+2014/07/07 17:04:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `doc_types`
+in /media/windows/utn-visu/protected/models/DocTypes.php (25)
+in /media/windows/utn-visu/protected/views/ocrmeta/_form.php (35)
+in /media/windows/utn-visu/protected/views/ocrmeta/create.php (1)
+2014/07/07 17:04:30 [trace] [system.db.ar.CActiveRecord] DocTypes.findAll()
+in /media/windows/utn-visu/protected/views/ocrmeta/_form.php (35)
+in /media/windows/utn-visu/protected/views/ocrmeta/create.php (1)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (81)
+2014/07/07 17:04:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `doc_types` `t`
+in /media/windows/utn-visu/protected/views/ocrmeta/_form.php (35)
+in /media/windows/utn-visu/protected/views/ocrmeta/create.php (1)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (81)
+2014/07/07 17:04:35 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:35 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:35 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:35 [trace] [system.web.filters.CFilterChain] Running filter OcrmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:35 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:35 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:35 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:35 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:35 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `ocr_meta`
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:35 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `ocr_meta`
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:35 [trace] [system.CModule] Loading "coreMessages" application component
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (183)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (67)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:43 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:43 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:43 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.web.filters.CFilterChain] Running filter OcrmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `ocr_meta`
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `ocr_meta`
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.web.filters.CFilterChain] Running filter OcrmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `ocr_meta`
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `ocr_meta`
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.ar.CActiveRecord] OcrMeta.insert()
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (75)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ocr_meta` (`is_special`, `ocr_meta_desc`, `ocr_meta_label`, `doc_type_id`) VALUES (:yp0, :yp1, :yp2, :yp3)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (75)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.web.filters.CFilterChain] Running filter OcrmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (137)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (137)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `ocr_meta`
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (137)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `ocr_meta`
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (137)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "widgetFactory" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.ar.CActiveRecord] OcrMeta.count()
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `ocr_meta` `t`
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.ar.CActiveRecord] OcrMeta.findAll()
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `ocr_meta` `t` LIMIT 10
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "assetManager" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "clientScript" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "coreMessages" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.CModule] Loading "format" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.ar.CActiveRecord] lazy loading OcrMeta.Doc
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `doc_types`
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `doc_types`
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.ar.CActiveRecord] lazy loading OcrMeta.Doc
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:44 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.web.filters.CFilterChain] Running filter CaratmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (131)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (131)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (131)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (131)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.CModule] Loading "widgetFactory" application component
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.ar.CActiveRecord] CaratMeta.count()
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `carat_meta` `t`
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.ar.CActiveRecord] CaratMeta.findAll()
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `carat_meta` `t` LIMIT 10
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.CModule] Loading "assetManager" application component
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.CModule] Loading "clientScript" application component
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.CModule] Loading "coreMessages" application component
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.CModule] Loading "format" application component
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `doc_types`
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `doc_types`
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:04:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.web.filters.CFilterChain] Running filter CaratmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/models/CaratMeta.php (21)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (163)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (115)
+2014/07/07 17:05:18 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/models/CaratMeta.php (21)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (163)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (115)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `carat_meta`
+in /media/windows/utn-visu/protected/models/CaratMeta.php (21)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (163)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (115)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `carat_meta`
+in /media/windows/utn-visu/protected/models/CaratMeta.php (21)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (163)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (115)
+2014/07/07 17:05:18 [trace] [system.db.ar.CActiveRecord] CaratMeta.findByPk()
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (163)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (115)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `carat_meta` `t` WHERE `t`.`carat_meta_id`=5 LIMIT 1
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (163)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (115)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.ar.CActiveRecord] CaratMeta.delete()
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (115)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.ar.CActiveRecord] CaratMeta.deleteByPk()
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (115)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Executing SQL: DELETE FROM `carat_meta` WHERE `carat_meta`.`carat_meta_id`=5
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (115)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.web.filters.CFilterChain] Running filter CaratmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (131)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (131)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (131)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (131)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.CModule] Loading "widgetFactory" application component
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.ar.CActiveRecord] CaratMeta.count()
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `carat_meta` `t`
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.ar.CActiveRecord] CaratMeta.findAll()
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `carat_meta` `t` LIMIT 10
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.CModule] Loading "assetManager" application component
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.CModule] Loading "clientScript" application component
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.CModule] Loading "coreMessages" application component
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.CModule] Loading "format" application component
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `doc_types`
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `doc_types`
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:32 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:32 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:32 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:32 [trace] [system.web.filters.CFilterChain] Running filter CaratmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:32 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:32 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:32 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:32 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:32 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:32 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:32 [trace] [system.CModule] Loading "widgetFactory" application component
+in /media/windows/utn-visu/protected/views/caratmeta/_form.php (6)
+in /media/windows/utn-visu/protected/views/caratmeta/create.php (1)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (78)
+2014/07/07 17:05:32 [trace] [system.CModule] Loading "clientScript" application component
+in /media/windows/utn-visu/protected/extensions/ETooltip/ETooltip.php (37)
+in /media/windows/utn-visu/protected/extensions/ETooltip/ETooltip.php (61)
+in /media/windows/utn-visu/protected/views/caratmeta/_form.php (6)
+2014/07/07 17:05:32 [trace] [system.CModule] Loading "assetManager" application component
+in /media/windows/utn-visu/protected/extensions/ETooltip/ETooltip.php (40)
+in /media/windows/utn-visu/protected/extensions/ETooltip/ETooltip.php (61)
+in /media/windows/utn-visu/protected/views/caratmeta/_form.php (6)
+2014/07/07 17:05:32 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `doc_types`
+in /media/windows/utn-visu/protected/models/DocTypes.php (25)
+in /media/windows/utn-visu/protected/views/caratmeta/_form.php (36)
+in /media/windows/utn-visu/protected/views/caratmeta/create.php (1)
+2014/07/07 17:05:32 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `doc_types`
+in /media/windows/utn-visu/protected/models/DocTypes.php (25)
+in /media/windows/utn-visu/protected/views/caratmeta/_form.php (36)
+in /media/windows/utn-visu/protected/views/caratmeta/create.php (1)
+2014/07/07 17:05:32 [trace] [system.db.ar.CActiveRecord] DocTypes.findAll()
+in /media/windows/utn-visu/protected/views/caratmeta/_form.php (36)
+in /media/windows/utn-visu/protected/views/caratmeta/create.php (1)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (78)
+2014/07/07 17:05:32 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `doc_types` `t`
+in /media/windows/utn-visu/protected/views/caratmeta/_form.php (36)
+in /media/windows/utn-visu/protected/views/caratmeta/create.php (1)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (78)
+2014/07/07 17:05:37 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:37 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:37 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:37 [trace] [system.web.filters.CFilterChain] Running filter CaratmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:37 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:37 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:37 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:37 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:37 [trace] [system.CModule] Loading "coreMessages" application component
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (67)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulosdoctype.php (19)
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+2014/07/07 17:05:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulosdoctype.php (19)
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+2014/07/07 17:05:37 [trace] [system.db.ar.CActiveRecord] Rotulosdoctype.findAll()
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (67)
+2014/07/07 17:05:37 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `rotulos_doctype` `t` WHERE doc_type_id = :doc_type_id
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (67)
+2014/07/07 17:05:41 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:41 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:41 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:41 [trace] [system.web.filters.CFilterChain] Running filter CaratmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:41 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:41 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:41 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:41 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulosdoctype.php (19)
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+2014/07/07 17:05:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulosdoctype.php (19)
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+2014/07/07 17:05:41 [trace] [system.db.ar.CActiveRecord] Rotulosdoctype.findAll()
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (67)
+2014/07/07 17:05:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `rotulos_doctype` `t` WHERE doc_type_id = :doc_type_id
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (67)
+2014/07/07 17:05:47 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:47 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:47 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:47 [trace] [system.web.filters.CFilterChain] Running filter CaratmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:47 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:47 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:47 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:47 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:47 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:47 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:47 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulosdoctype.php (19)
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+2014/07/07 17:05:47 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulosdoctype.php (19)
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+2014/07/07 17:05:47 [trace] [system.db.ar.CActiveRecord] Rotulosdoctype.findAll()
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (67)
+2014/07/07 17:05:47 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `rotulos_doctype` `t` WHERE doc_type_id = :doc_type_id
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (67)
+2014/07/07 17:05:48 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:48 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:48 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:48 [trace] [system.web.filters.CFilterChain] Running filter CaratmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:48 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:48 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:48 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:48 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulosdoctype.php (19)
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+2014/07/07 17:05:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulosdoctype.php (19)
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+2014/07/07 17:05:48 [trace] [system.db.ar.CActiveRecord] Rotulosdoctype.findAll()
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (67)
+2014/07/07 17:05:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `rotulos_doctype` `t` WHERE doc_type_id = :doc_type_id
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (67)
+2014/07/07 17:05:49 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:49 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:49 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:49 [trace] [system.web.filters.CFilterChain] Running filter CaratmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:49 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:49 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:49 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:49 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulosdoctype.php (19)
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+2014/07/07 17:05:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulosdoctype.php (19)
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+2014/07/07 17:05:49 [trace] [system.db.ar.CActiveRecord] Rotulosdoctype.findAll()
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (67)
+2014/07/07 17:05:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `rotulos_doctype` `t` WHERE doc_type_id = :doc_type_id
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (67)
+2014/07/07 17:05:50 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:50 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:50 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:50 [trace] [system.web.filters.CFilterChain] Running filter CaratmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:50 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:50 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:50 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:50 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulosdoctype.php (19)
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+2014/07/07 17:05:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulosdoctype.php (19)
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+2014/07/07 17:05:50 [trace] [system.db.ar.CActiveRecord] Rotulosdoctype.findAll()
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (67)
+2014/07/07 17:05:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `rotulos_doctype` `t` WHERE doc_type_id = :doc_type_id
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (67)
+2014/07/07 17:05:53 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:53 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:53 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:53 [trace] [system.web.filters.CFilterChain] Running filter CaratmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:53 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:53 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:53 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:53 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulosdoctype.php (19)
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+2014/07/07 17:05:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulosdoctype.php (19)
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+2014/07/07 17:05:53 [trace] [system.db.ar.CActiveRecord] Rotulosdoctype.findAll()
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (67)
+2014/07/07 17:05:53 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `rotulos_doctype` `t` WHERE doc_type_id = :doc_type_id
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (67)
+2014/07/07 17:05:54 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:54 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:54 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:54 [trace] [system.web.filters.CFilterChain] Running filter CaratmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:54 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:54 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:54 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:54 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (64)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulosdoctype.php (19)
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+2014/07/07 17:05:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `rotulos_doctype`
+in /media/windows/utn-visu/protected/models/Rotulosdoctype.php (19)
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+2014/07/07 17:05:54 [trace] [system.db.ar.CActiveRecord] Rotulosdoctype.findAll()
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (67)
+2014/07/07 17:05:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `rotulos_doctype` `t` WHERE doc_type_id = :doc_type_id
+in /media/windows/utn-visu/protected/models/CaratMeta.php (104)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (177)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (67)
+2014/07/07 17:05:55 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.web.filters.CFilterChain] Running filter CaratmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (131)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (131)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (131)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `carat_meta`
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (131)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.CModule] Loading "widgetFactory" application component
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.ar.CActiveRecord] CaratMeta.count()
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `carat_meta` `t`
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.ar.CActiveRecord] CaratMeta.findAll()
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `carat_meta` `t` LIMIT 10
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.CModule] Loading "assetManager" application component
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.CModule] Loading "clientScript" application component
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.CModule] Loading "coreMessages" application component
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.CModule] Loading "format" application component
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `doc_types`
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `doc_types`
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.ar.CActiveRecord] lazy loading CaratMeta.Doc
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:05:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/caratmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/CaratmetaController.php (138)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.CModule] Loading "log" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.CModule] Loading "request" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.CModule] Loading "urlManager" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.web.filters.CFilterChain] Running filter OcrmetaController.filteraccessControl()
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.CModule] Loading "user" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.CModule] Loading "session" application component
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.CModule] Loading "db" application component
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (137)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.db.CDbConnection] Opening DB connection
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (137)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `ocr_meta`
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (137)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `ocr_meta`
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (137)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.CModule] Loading "widgetFactory" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.db.ar.CActiveRecord] OcrMeta.count()
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `ocr_meta` `t`
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.db.ar.CActiveRecord] OcrMeta.findAll()
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `ocr_meta` `t` LIMIT 10
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.CModule] Loading "assetManager" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.CModule] Loading "clientScript" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.CModule] Loading "coreMessages" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.CModule] Loading "format" application component
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.db.ar.CActiveRecord] lazy loading OcrMeta.Doc
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `doc_types`
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `doc_types`
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.db.ar.CActiveRecord] lazy loading OcrMeta.Doc
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
+2014/07/07 17:06:09 [trace] [system.db.CDbCommand] Querying SQL: SELECT `Doc`.`doc_type_id` AS `t1_c0`, `Doc`.`doc_type_desc` AS `t1_c1`, `Doc`.`doc_type_label` AS `t1_c2`, `Doc`.`doc_type_level` AS `t1_c3`, `Doc`.`water_mark_text` AS `t1_c4`, `Doc`.`water_mark_font_size` AS `t1_c5`, `Doc`.`water_mark_opacity` AS `t1_c6`, `Doc`.`water_mark_angle` AS `t1_c7`, `Doc`.`enabled` AS `t1_c8` FROM `doc_types` `Doc`  WHERE (`Doc`.`doc_type_id`=:ypl0)
+in /media/windows/utn-visu/protected/views/ocrmeta/index.php (55)
+in /media/windows/utn-visu/protected/controllers/OcrmetaController.php (144)
+in /media/windows/utn-visu/index.php (13)
