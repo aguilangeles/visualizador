@@ -13,6 +13,7 @@ class SearchByDocTypeController extends Controller {
 
     public function actionSearchByDocType($currentPage = 1) {
         if (isset($_POST['docLevel1'])) {
+            MongoCursor::$timeout = -1;
             $carats = null;
             $conditions = array();
             $currentPage = $_POST['page'];

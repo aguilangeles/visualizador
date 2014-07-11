@@ -5,7 +5,8 @@
         <meta name="language" content="en" />
         <?php
         //Yii::app()->clientScript->registerCoreScript('jquery');
-//        Yii::app()->clientScript->registerScriptFile('/js/jquery.js');
+        /* Se comenta para evitar que el CRUD pueda borrar filas
+          Yii::app()->clientScript->registerScriptFile('/js/jquery.js'); */
         Yii::app()->clientScript->registerScriptFile('/js/jquery.rotate.min.js');
         //Yii::app()->clientScript->registerScriptFile('/js/rotar.js');
         Yii::app()->clientScript->registerScriptFile('/js/seadragon/seadragon-min.js');
@@ -100,12 +101,12 @@
                 </div>
             </div>
 
-<?php echo $content; ?>
+            <?php echo $content; ?>
 
             <div id="footer">
-      <!--		Copyright &copy; <?php //echo date('Y');  ?> by My Company.<br/>-->
+      <!--		Copyright &copy; <?php //echo date('Y');   ?> by My Company.<br/>-->
                 <!--		All Rights Reserved.<br/>-->
-<?php //echo Yii::powered();  ?>
+                <?php //echo Yii::powered();  ?>
             </div><!-- footer -->
 
         </div><!-- page -->
