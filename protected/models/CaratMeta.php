@@ -103,7 +103,9 @@ class CaratMeta extends CActiveRecord
 		$c->condition = 'doc_type_id = :doc_type_id';
 		if (count (Rotulosdoctype::model()->findAll($c))!= 0)
 		{
-			$this->addError('doc_type_id','<img src="../images/error.png" width="16" height="16"> El tipo de documento que seleccionó pertenece a uno o varios rótulos, por favor desvincule el mismo para agregar el metadato de carátula.');
+			$this->addError('doc_type_id','<img src="../images/error.png" width="16" height="16"> 
+			El tipo de documento que seleccionó pertenece a uno o varios rótulos, por favor 
+                  desvincule el mismo para agregar el metadato de carátula.');
 		}
 	}
         
