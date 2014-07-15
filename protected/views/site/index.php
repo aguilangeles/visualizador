@@ -149,7 +149,6 @@
         <div id="second-general-search" style="display:none;">
             <div id="second-search-left">
                 <div id="buttons" style="float:left;width: 260px;padding: 30px 0 0 0;">
-                    <!--uno-->
                     <div class="login-form" style="float:left;">
                         <button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="goBack();">
                             <?php echo CHtml::image('../images/back.png', 'Ingresar'); ?>
@@ -182,7 +181,7 @@
                     <div id="filter" style="float:left;">
                         <fieldset class="form" style="width:260px;">
                             <legend>Restringir</legend>
-                            <div id="filterRestict" style="width: 260px;padding-left:10px;">
+                            <div id="filterRestict" style="width: 250px;padding-left:10px;">
                             </div>
                         </fieldset>
                     </div>
@@ -202,7 +201,8 @@
                     </div>
                 </div>
             </div>
-            <div id="second-search-right" style="padding-left:10px;">
+            <!--importante//////////////////////////////////////////////////////////////////////-->
+            <div id="second-search-right" style="padding-left:10px;padding-top:57px;">
                 <fieldset class="form" style="width:auto">
                     <legend>Resultados</legend>
                     <div id="resultsGeneral">
@@ -210,6 +210,7 @@
                     </div>
                 </fieldset>
             </div>
+            <!--importante//////////////////////////////////////////////////////////////////////-->
         </div>
         <!--			Busqueda general-->
 
@@ -234,7 +235,7 @@
                     <div id="filtersRotulosCarat" style="float:left;">
                         <fieldset class="form" style="width:260px;">
                             <legend>Búsqueda por rótulos</legend>
-                            <div id="searchType" style="width: 300px;float:left;padding: 20px 0 10px 0">
+                            <div id="searchType" style="width: 260px;float:left;padding: 20px 0 10px 0">
                                 <div style="float:left;width:100%;padding: 0 0 10px;"><?php echo CHtml::label('Tipo de Busqueda', 'searchType', array('style' => 'text-align: left;')) ?></div>
                                 <?php echo CHtml::radioButtonList('searchRotType', '0', array('0' => 'Exacta', '1' => 'Parecida'), array('style' => 'width:50px;float:left;', 'labelOptions' => array('style' => 'width:60px;text-align: left;'), 'separator' => " ")) ?>
                             </div>
@@ -243,13 +244,15 @@
                     </div>
                 </div>
             </div>
-            <div id="second-search-right" style="padding-left:10px;">
+            <!--importante//////////////////////////////////////////-->
+            <div id="second-search-right" style="padding-left:10px;padding-top:57px;">
                 <fieldset class="form" style="width:auto">
                     <legend>Resultados</legend>
                     <div id="resultsRotulos">
                     </div>
                 </fieldset>
             </div>
+            <!--importante//////////////////////////////////////////-->
         </div>
         <!--			Busqueda x rótulos-->
         <div id="result"></div>

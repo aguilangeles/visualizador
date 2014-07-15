@@ -32,7 +32,7 @@ button {
 #content
 {
     padding: 5px;
-	float:left;
+	//float:left;
 }
 
 #sidebar
@@ -471,6 +471,7 @@ select
 	float:left;
 	width: 270px;
 }
+
 
 #second-search-right
 {

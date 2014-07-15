@@ -15,8 +15,8 @@ class SearchRotulosController extends Controller {
             $docId = $rotulo->Docs[0]->doc_type_id;
             $doc = DocTypes::model()->findByPk($docId);
             foreach ($doc->Carats as $carat) {
-                $content = $content . '<div class="level-tag" style="width:300px">' . $carat->carat_meta_label . '</div>';
-                $content = $content . '<div class="level-tag" style="width:300px">' . CHtml::textField('CMETA_[]') . '</div>';
+                $content = $content . '<div class="level-tag" style="width:260px">' . $carat->carat_meta_label . '</div>';
+                $content = $content . '<div class="level-tag" style="width:260px">' . CHtml::textField('CMETA_[]') . '</div>';
             }
             echo $content;
         }
