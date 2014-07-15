@@ -49,7 +49,7 @@
 		<? echo $model->isNewRecord ? 'Crear' : 'Actualizar';?>
 		</button>
 		<button type="button" name="Submit" onClick="back()">
-		<?php echo CHtml::image('../images/back.png','Volver');?>
+		<?php echo CHtml::image('../images/back.png','Volver', array ("width" => 16));?>
 		Volver
 		</button>
 	</p>
