@@ -189,15 +189,15 @@
                 </div>
                 <div id="buttons" style="float:left;width: 260px;padding: 30px 0 0 0;">
                     <div class="login-form" style="float:left;">
-                        <button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="SearchGralDocs();">
-                            <?php echo CHtml::image('../images/xmag.png', 'Ingresar'); ?>
-                            Buscar
-                        </button>
-                    </div>
-                    <div class="login-form" style="float:left;">
                         <button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="goBack();">
                             <?php echo CHtml::image('../images/back.png', 'Ingresar'); ?>
                             Volver
+                        </button>
+                    </div>
+                    <div class="login-form" style="float:left;">
+                        <button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="SearchGralDocs();">
+                            <?php echo CHtml::image('../images/xmag.png', 'Ingresar'); ?>
+                            Buscar
                         </button>
                     </div>
                 </div>
