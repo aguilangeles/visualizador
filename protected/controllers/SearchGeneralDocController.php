@@ -85,7 +85,7 @@ class SearchGeneralDocController extends Controller {
         $c->offset(($currentPage - 1) * Idc::PAGE_SIZE);
         if ($hasSpecialField) {
             $getDocsGenByType = new GetDocsGeneralByTypeController();
-            echo $getDocsGenByType->getDocsGeneralByType($c, $docType, $conditions, $docs, $currentdoc);
+            echo $getDocsGenByType->getDocsGeneralByType($c, $docType, $conditions, $docs, $currentdoc,$arraydocs);
         } else {
             echo '<div class="errorMessage"><img src="../images/error.png" '
             . 'style="height:25px;margin-bottom:-6px;"> No hay definido ningún campo especial. '

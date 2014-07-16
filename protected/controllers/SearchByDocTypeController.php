@@ -118,7 +118,7 @@ class SearchByDocTypeController extends Controller {
         $getGroup = new GetGroupController();
         $group = $getGroup->getGroup($c, $carats, $conditions, $docsLevel, $groupBy, $fields);
         $getCResult = new GetContentResultController();
-        return $getCResult->getContentResult($group, $currentPage, $docsLevel, $fields, '/getResults/results', $groupBy);
+        return $getCResult->getContentResult($group, $currentPage, $docsLevel, $fields,null, '/getResults/results', $groupBy);
     }
 
 }

@@ -75,7 +75,7 @@ class SearchByRotuloController extends Controller {
         $getGroup = new GetGroupController();
         $group = $getGroup->getGroup($c, $carats, $ocrs, $docsLevel, 'carat', $fields);
         $getCResult = new GetContentResultController();
-        return $getCResult->getContentResult($group, $currentPage, $docsLevel, $fields, '/getResults/results_rotulos');
+        return $getCResult->getContentResult($group, $currentPage, $docsLevel, $fields,null, '/getResults/results_rotulos');
     }
 
 }

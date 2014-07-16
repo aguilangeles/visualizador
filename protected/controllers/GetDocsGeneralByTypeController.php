@@ -20,7 +20,7 @@ class GetDocsGeneralByTypeController extends Controller {
         
     }
 
-    public function getDocsGeneralByType($c, $carats, $ocrs, $docsLevel1 = null, $currentdoc = null) {
+    public function getDocsGeneralByType($c, $carats, $ocrs, $docsLevel1 = null, $currentdoc = null, $arraydocs) {
         $content = "";
         $offset = $c->getOffset();
         foreach ($docsLevel1 as $docl) {
@@ -44,8 +44,9 @@ class GetDocsGeneralByTypeController extends Controller {
             $currentPage = ($c->getOffset() == 0) ? 1 : (($c->getOffset() / Idc::PAGE_SIZE) + 1);
             $getGroup = new GetGroupController();
             $group = $getGroup->getGroup($c, $docType, $ocrs, $docType->doc_type_level, 'carat', $fields);
+           
             $result = new GetContentResultController();
-            $content = $content . $result->getContentResult_1($group, $currentPage, $docType->doc_type_level, $fields, '/getResults/results_general');
+            $content = $content . $result->getContentResult($group, $currentPage, $docType->doc_type_level, $fields, $docType->doc_type_label, '/getResults/results_general' );
         }
         return $content;
     }
