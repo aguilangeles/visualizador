@@ -13,7 +13,6 @@ include('GetDocsGeneralByTypeController.php');
  * @author aguilangeles@gmail.com
  */
 class SearchGeneralDocController extends Controller {
-    
 
     public function actionSearchGeneralDoc($currentPage = 1, $currentdoc = null) {
         $c = new EMongoCriteria;
@@ -31,7 +30,9 @@ class SearchGeneralDocController extends Controller {
         }
         $currentPage = $_POST['page'];
         $currentdoc = $_POST['docType'];
+        
         $docsLevel1 = Users::getAllDocTypes((int) Yii::app()->user->id, 1);
+        
         $ocrs = null; //$this->getOcrMeta($docsLevel1);
         $carats = null; //$this->getCaratMeta($docsLevel1);
         $searchType = $_POST['searchType'];
@@ -72,6 +73,12 @@ class SearchGeneralDocController extends Controller {
         }
         $arraydocs = explode(',', $arraydocs);
         $c->addCond("docType", 'in', $arraydocs);
+        ////////////////////////////////////////////////////////////
+        $handle = fopen("doctypename.txt", "w");
+        fwrite($handle, var_export($arraydocs, true));
+        fclose($handle);
+        ////////////////////////////////////////////////////////////
+
         $condition = new Condition("docType", 'in', $arraydocs);
         array_push($conditions, $condition);
         $c->limit(Idc::PAGE_SIZE);
@@ -80,7 +87,9 @@ class SearchGeneralDocController extends Controller {
             $getDocsGenByType = new GetDocsGeneralByTypeController();
             echo $getDocsGenByType->getDocsGeneralByType($c, $docType, $conditions, $docs, $currentdoc);
         } else {
-            echo '<div class="errorMessage"><img src="../images/error.png" style="height:25px;margin-bottom:-6px;"> No hay definido ningún campo especial. Por favor, configure un campo especial antes de usar esta búsqueda.</div>';
+            echo '<div class="errorMessage"><img src="../images/error.png" '
+            . 'style="height:25px;margin-bottom:-6px;"> No hay definido ningún campo especial. '
+            . 'Por favor, configure un campo especial antes de usar esta búsqueda.</div>';
         }
     }
 

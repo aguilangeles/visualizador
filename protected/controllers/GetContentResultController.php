@@ -55,7 +55,8 @@ class GetContentResultController extends Controller {
     public function getContentResult($result, $currentPage, $docsLevel, $fields, $view = 'results', $groupBy = 'carat') {
         $style='style="height:25px;margin-bottom:-6px;">';
         $errormsg = '<div class="errorMessage"><img src="../images/error.png"'.$style;
-        $result100000 = '<div class="errorMessage">Se encontraron mas de 10.000 coincidencias, Por favor, refine aún mas su busqueda.</div>';
+        $result100000 = '<div class="errorMessage">Se encontraron mas de 10.000 coincidencias'
+            . ', Por favor, refine aún mas su busqueda.</div>';
         $sinResultados = $errormsg . 'No se encontraron resultados.</div>';
         $afineFiltro = $errormsg . 'Por favor, filtre aún mas su busqueda.</div>';
         $resultado = '<div class="okMessage"><img src="../images/ok.png" '.$style.' Se encontraron ';
@@ -69,6 +70,7 @@ class GetContentResultController extends Controller {
                 } else {
                     if ($result['data'] != null) {
                         $finded = (int) $result['data']["keys"];
+                        
                         if ($finded == 0) {
                             $content = $sinResultados;
                         } else {
@@ -99,7 +101,7 @@ class GetContentResultController extends Controller {
         }
         return $content;
     }
-    public function getContentResult_1($result, $currentPage, $docsLevel, $fields, $view = 'results', $groupBy = 'carat') {
+    public function getContentResult_1($result, $currentPage, $docsLevel, $fields, $view = 'results', $groupBy = 'carat' ,$algo = '') {
         $style='style="height:25px;margin-bottom:-6px;">';
         $errormsg = '<div class="errorMessage"><img src="../images/error.png"'.$style;
         $result100000 = '<div class="errorMessage">Se encontraron mas de 10.000 coincidencias, Por favor, refine aún mas su busqueda.</div>';
@@ -120,7 +122,7 @@ class GetContentResultController extends Controller {
                             $content = $sinResultados;
                         } else {
 
-                            $content = $resultado. $finded . ' resultados en  DELECTRICO </div>';
+                            $content = $resultado. $finded . ' resultados en '.$algo.' </div>';
                             $pages = ceil($finded / Idc::PAGE_SIZE);
                             $content = $content . $this->renderPartial($view
                                 , array('pages' => $pages
