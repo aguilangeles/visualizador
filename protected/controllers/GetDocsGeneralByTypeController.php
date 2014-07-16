@@ -44,9 +44,9 @@ class GetDocsGeneralByTypeController extends Controller {
             $currentPage = ($c->getOffset() == 0) ? 1 : (($c->getOffset() / Idc::PAGE_SIZE) + 1);
             $getGroup = new GetGroupController();
             $group = $getGroup->getGroup($c, $docType, $ocrs, $docType->doc_type_level, 'carat', $fields);
-
+            $nametypedoc= 'soy el nombre';
             $result = new GetContentResultController();
-            $content = $content . $result->getContentResult($group, $currentPage, $docType->doc_type_level, $fields, '/getResults/results_general');
+            $content = $content . $result->getContentResult($group, $currentPage, $docType->doc_type_level, $fields, '/getResults/results_general',$nametypedoc);
         }
         return $content;
     }
