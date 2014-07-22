@@ -7,9 +7,9 @@
         //Yii::app()->clientScript->registerCoreScript('jquery');
         /* Se comenta para evitar que el CRUD pueda borrar filas
           Yii::app()->clientScript->registerScriptFile('/js/jquery.js'); */
-        Yii::app()->clientScript->registerScriptFile('/js/jquery.rotate.min.js');
+        Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/js/jquery.rotate.min.js');
         //Yii::app()->clientScript->registerScriptFile('/js/rotar.js');
-        Yii::app()->clientScript->registerScriptFile('/js/seadragon/seadragon-min.js');
+        Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/js/seadragon/seadragon-min.js');
         include('paths.php');
         ?>
 
