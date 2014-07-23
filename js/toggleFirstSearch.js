@@ -59,12 +59,15 @@ function toggleFirstSearch()
         else {
             $("#filterLevel4").hide();
         }
-        $.ajax({url: "/searchMetaCarat/searchMetaCarat",
-            context: document.body,
+	//    $.ajax({url: "<?php echo Yii::app()->requet->hostinfo ?>/searchGeneral/searchGeneral",
+
+//        $.ajax({url: "/site/logout",
+        $.ajax({url: "/site1/index",
+		  context: document.body,
             type: "POST",
             data: "docLevel1=" + docLevel1Id + "&docLevel2=" + docLevel2Id + "&docLevel3=" + docLevel3Id + "&docLevel4=" + docLevel4Id,
             dataType: "text",
-            success: function(data) {
+           success: function(data) {
                 $("#filtersMeta").empty();
                 $("#filtersMeta").append(data);
             }

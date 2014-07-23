@@ -46,7 +46,10 @@ class SiteController extends Controller {
     public function actionInfo() {
         $this->render('info');
     }
+public function actionSearchMetaCarat_1() {
+echo 'entre';
 
+}
     /**
      * This is the default 'index' action that is invoked
      * when an action is not explicitly requested by users.
