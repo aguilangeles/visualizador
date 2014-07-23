@@ -1,21 +1,13 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of Site1Controller
+ * Description of SearchMetaCaratController
  *
- * @author aguilangeles@gmail.com
  */
-class Site1Controller extends Controller
-{
+class MetaController extends Controller {
 
-	public function actionIndex(){
-		       if (isset($_POST['docLevel1'])) {
+     public function actionSearchMetaCarat() {
+        if (isset($_POST['docLevel1'])) {
             $docLevel1 = (int) $_POST['docLevel1'];
             $docLevel2 = (int) $_POST['docLevel2'];
             $docLevel3 = (int) $_POST['docLevel3'];
@@ -45,6 +37,6 @@ class Site1Controller extends Controller
             $content = $content . '</div></fieldset></div><div id="filtersOCR"><fieldset class="form" style="width:260px;">
 					<legend>Metadata de imagen</legend><div id="MetaOCRs" style="width: 260px;">' . $OcrContent . '</div></fieldset></div>';
             echo $content;
-        }
-	}
+    }
+}
 }

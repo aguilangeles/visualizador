@@ -14,6 +14,7 @@ return array(
   'import' => array(
     'application.models.*',
     'application.components.*',
+    'application.controllers.*',
     'ext.YiiMongoDbSuite.*',
     'application.extensions.EZip.EZip',
     'application.extensions.yiidebugtb.*',
