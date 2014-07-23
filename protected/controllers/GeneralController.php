@@ -11,7 +11,7 @@
  *
  * @author aguilangeles@gmail.com
  */
-class SearchGeneralController extends Controller {
+class GeneralController extends Controller {
 
     public function actionSearchGeneral() {
         $result = "";
