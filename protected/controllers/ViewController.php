@@ -5,7 +5,7 @@
  *
  */
 
-class ViewImageController extends Controller {
+class ViewController extends Controller {
 
     /**
      * Constante que define un layout vacío.
