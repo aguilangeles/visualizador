@@ -361,7 +361,7 @@
             dataType: "text",
             success: function(data) {
                 $("#downloading").dialog("close");
-                window.open("/pdf/GetPdf/?fileName=" + data);
+                window.open("/pdfG/etPdf/?fileName=" + data);
             }
         });
     }
@@ -436,7 +436,7 @@
             action = "hide";
         }
         var imageList = $("#imageList" + id).html();
-        $.ajax({url: "/toggleImageVisibility/toggleImageVisibility",
+        $.ajax({url: "/visibleimg/toggleImageVisibility",
             context: document.body,
             type: "POST",
             data: "imageList=" + imageList + "&currIndex=" + currIndex + "&action=" + action,
