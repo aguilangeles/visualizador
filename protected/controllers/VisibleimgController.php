@@ -11,7 +11,7 @@
  *
  * @author aguilangeles@gmail.com
  */
-class ToggleImageVisibilityController extends Controller{
+class VisibleimgController extends Controller{
     
      public function actionToggleImageVisibility() {
         $message = '';

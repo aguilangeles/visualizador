@@ -9,7 +9,7 @@ include('GetContentResultController.php');
  * @return string
  * @author GDM
  */
-class SearchByDocTypeController extends Controller {
+class Typedocs_Controller extends Controller {
 
     public function actionSearchByDocType($currentPage = 1) {
         if (isset($_POST['docLevel1'])) {

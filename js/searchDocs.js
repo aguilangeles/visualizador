@@ -46,7 +46,7 @@ function SearchDocs(page)
         {
             OcrFields = OcrFields + "&OCR_[" + i + "]=" + dataOcrMeta[i];
         }
-        $.ajax({url: "/searchByDocType/searchByDocType",
+        $.ajax({url: "/typedocs_/searchByDocType",
 //        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/searchByDocType/searchByDocType",
             context: document.body,
             type: "POST",

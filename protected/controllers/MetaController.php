@@ -4,8 +4,9 @@
  * Description of SearchMetaCaratController
  *
  */
-class SearchMetaCaratController extends Controller {
+class MetaController extends Controller {
 
+<<<<<<< HEAD:protected/controllers/SearchMetaCaratController.php
     public function actionSearchMetaCarat() {
 	 if (isset($_POST['docLevel1'])) {
 			$docLevel1 = (int) $_POST['docLevel1'];
@@ -22,6 +23,24 @@ class SearchMetaCaratController extends Controller {
 				}
 			}
 			$content = '<div id="filtersCarat"><fieldset class="form" style="width:260px;">
+=======
+     public function actionSearchMetaCarat() {
+        if (isset($_POST['docLevel1'])) {
+            $docLevel1 = (int) $_POST['docLevel1'];
+            $docLevel2 = (int) $_POST['docLevel2'];
+            $docLevel3 = (int) $_POST['docLevel3'];
+            $docLevel4 = (int) $_POST['docLevel4'];
+            $docs = array($docLevel1, $docLevel2, $docLevel3, $docLevel4);
+            $OcrContent = '';
+            $docsLevels = array();
+            for ($i = 0; $i < 4; $i++) {
+                if ($docs[$i] != 0) {
+                    $doc = DocTypes::model()->findByPk($docs[$i]);
+                    $docsLevels = $docsLevels + array($doc->doc_type_id => $doc->doc_type_desc);
+                }
+            }
+            $content = '<div id="filtersCarat"><fieldset class="form" style="width:260px;">
+>>>>>>> rotulos:protected/controllers/MetaController.php
 				<legend>Metadata de carátula</legend><div id="MetaCarats" style="width: 260px;">';
 			foreach ($docsLevels as $docL) {
 				$document = DocTypes::model()->find('doc_type_desc = :doc', array(':doc' => $docL));
@@ -36,9 +55,16 @@ class SearchMetaCaratController extends Controller {
 			}
 			$content = $content . '</div></fieldset></div><div id="filtersOCR"><fieldset class="form" style="width:260px;">
 					<legend>Metadata de imagen</legend><div id="MetaOCRs" style="width: 260px;">' . $OcrContent . '</div></fieldset></div>';
+<<<<<<< HEAD:protected/controllers/SearchMetaCaratController.php
 
 			echo $content;
 		}
 	}
 
         }
+=======
+            echo $content;
+    }
+}
+}
+>>>>>>> rotulos:protected/controllers/MetaController.php

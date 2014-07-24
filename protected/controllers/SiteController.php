@@ -29,7 +29,8 @@ class SiteController extends Controller {
      * Declares class-based actions.
      */
     public function actions() {
-        return array(
+       
+	    return array(
           // captcha action renders the CAPTCHA image displayed on the contact page
           'captcha' => array(
             'class' => 'CCaptchaAction',
@@ -46,7 +47,10 @@ class SiteController extends Controller {
     public function actionInfo() {
         $this->render('info');
     }
+public function actionSearchMetaCarat_1() {
+echo 'entre';
 
+}
     /**
      * This is the default 'index' action that is invoked
      * when an action is not explicitly requested by users.

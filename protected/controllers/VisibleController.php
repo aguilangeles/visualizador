@@ -12,7 +12,7 @@ include('GetGroupController.php');
  *
  * @author aguilangeles@gmail.com
  */
-class ToggleCaratVisibilityController extends Controller{
+class VisibleController extends Controller{
 
     public function actionToggleCaratVisibility() {
         $result = array('message', 'data');

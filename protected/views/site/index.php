@@ -337,14 +337,14 @@
         $("#downloading").dialog("open");
         var query = $("#query_" + id).html();
 //                window.open("<?php echo Yii::app()->request->hostinfo ?>/site/exportZIP/?conditions="+query);
-        $.ajax({url: "/exportZIP/exportZIP",
+        $.ajax({url: "/zip/exportZIP",
             context: document.body,
             type: "POST",
             data: "conditions=" + query,
             dataType: "text",
             success: function(data) {
                 $("#downloading").dialog("close");
-                window.open("/exportZIP/GetZip/?fileName=" + data);
+                window.open("/zip/GetZip/?fileName=" + data);
             }
         });
     }
@@ -354,14 +354,14 @@
         $("#downloading").dialog({title: "Exportando a PDF"})
         $("#downloading").dialog("open");
         var query = $("#query_" + id).html();
-        $.ajax({url: "/exportPDF/exportPDF",
+        $.ajax({url: "/pdf/exportPDF",
             context: document.body,
             type: "POST",
             data: "conditions=" + query,
             dataType: "text",
             success: function(data) {
                 $("#downloading").dialog("close");
-                window.open("/exportPDF/GetPdf/?fileName=" + data);
+                window.open("/pdf/GetPdf/?fileName=" + data);
             }
         });
     }
@@ -406,7 +406,8 @@
         }
         var query = $("#query_" + id).html();
         var fields = $("#fields_" + id).html();
-        $.ajax({url: "/toggleCaratVisibility/toggleCaratVisibility",
+	//CrtVisibController
+        $.ajax({url: "/visible/toggleCaratVisibility",
             context: document.body,
             type: "POST",
             data: "id=" + id + "&query=" + query + "&fields=" + fields + "&action=" + action,
@@ -435,7 +436,7 @@
             action = "hide";
         }
         var imageList = $("#imageList" + id).html();
-        $.ajax({url: "/toggleImageVisibility/toggleImageVisibility",
+        $.ajax({url: "/visibleimg/toggleImageVisibility",
             context: document.body,
             type: "POST",
             data: "imageList=" + imageList + "&currIndex=" + currIndex + "&action=" + action,

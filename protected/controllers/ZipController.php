@@ -11,7 +11,7 @@ include ('Funciones.php');
  * Description of ExportZipController
  *
  */
-class ExportZIPController extends Controller {
+class ZipController extends Controller {
     /* Constante que define un layout vacío.
      */
 

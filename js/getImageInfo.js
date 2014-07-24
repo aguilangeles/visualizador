@@ -12,7 +12,7 @@ function getImageInfo(items, id)
         $("#downloading").dialog({title: "Cargando Datos"})
         $("#downloading").dialog("open");
         $("#row" + id).addClass('fetched');
-        $.ajax({url: "/getImagesById/getImagesById",
+        $.ajax({url: "/images/getImagesById",
             context: document.body,
             type: "POST",
             data: "items=" + items + "&infoId=" + infoId + "&query=" + query,
@@ -33,7 +33,7 @@ function seeMore(id)
         $("#downloading").dialog("open");
         var query = $("#query_" + id).html();
         var imageList = $("#imageList" + id).html();
-        $.ajax({url: "/seeMore/seeMore",
+        $.ajax({url: "/more/seeMore",
 //        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/seeMore/seeMore",
             context: document.body,
             type: "POST",

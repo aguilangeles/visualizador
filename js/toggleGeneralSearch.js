@@ -13,8 +13,8 @@ function toggleGeneralSearch()
     $("#results").empty();
     $("#first-search").slideToggle();
     $("#second-general-search").slideToggle();
-    $.ajax({url: "/searchGeneral/searchGeneral",
-//    $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/searchGeneral/searchGeneral",
+    $.ajax({url: "/general/searchGeneral",
+//    $.ajax({url: "<?php echo Yii::app()->request->hostinfo ;?>/searchGeneral/searchGeneral",
         context: document.body,
         type: "POST",
         dataType: "text",
