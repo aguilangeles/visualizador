@@ -361,7 +361,7 @@
             dataType: "text",
             success: function(data) {
                 $("#downloading").dialog("close");
-                window.open("/pdfG/etPdf/?fileName=" + data);
+                window.open("/pdf/GetPdf/?fileName=" + data);
             }
         });
     }
