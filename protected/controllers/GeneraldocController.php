@@ -12,7 +12,7 @@ include('GetDocsGeneralByTypeController.php');
  *
  * @author aguilangeles@gmail.com
  */
-class SearchGeneralDocController extends Controller {
+class GeneraldocController extends Controller {
 
     public function actionSearchGeneralDoc($currentPage = 1, $currentdoc = null) {
         $c = new EMongoCriteria;

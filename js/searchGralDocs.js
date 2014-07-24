@@ -36,7 +36,7 @@ function SearchGralDocs(page, docType)
     }
     else {
         $("#resultsGeneral").empty().html('<img src="../images/ajax-loader.gif" />');
-        $.ajax({url: "/searchGeneralDoc/searchGeneralDoc",
+        $.ajax({url: "/generaldoc/searchGeneralDoc",
             context: document.body,
             type: "POST",
             data: "page=" + page + "&docs=" + Docs + "&field=" + doc + "&searchType=" + searchType + "&docType=" + docType,
