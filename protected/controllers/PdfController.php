@@ -12,7 +12,7 @@ include('Funciones.php');
  *
  * @author aguilangeles@gmail.com
  */
-class ExportPDFController extends Controller {
+class PdfController extends Controller {
 
     /**
      * Constante que define un layout vacío.
