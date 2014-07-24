@@ -11,7 +11,7 @@
  *
  * @author aguilangeles@gmail.com
  */
-class SeeMoreController extends Controller {
+class MoreController extends Controller {
 
     public function actionSeeMore() {
         $limit = 50;

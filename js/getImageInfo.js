@@ -33,7 +33,7 @@ function seeMore(id)
         $("#downloading").dialog("open");
         var query = $("#query_" + id).html();
         var imageList = $("#imageList" + id).html();
-        $.ajax({url: "/seeMore/seeMore",
+        $.ajax({url: "/more/seeMore",
 //        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/seeMore/seeMore",
             context: document.body,
             type: "POST",
