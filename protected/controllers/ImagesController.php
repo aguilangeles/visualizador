@@ -11,7 +11,7 @@
  *
  * @author aguilangeles@gmail.com
  */
-class GetImagesByIdController extends Controller {
+class ImagesController extends Controller {
 
     public function actionGetImagesById() {
         if (isset($_POST["items"])) {

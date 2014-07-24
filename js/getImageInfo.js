@@ -12,7 +12,7 @@ function getImageInfo(items, id)
         $("#downloading").dialog({title: "Cargando Datos"})
         $("#downloading").dialog("open");
         $("#row" + id).addClass('fetched');
-        $.ajax({url: "/getImagesById/getImagesById",
+        $.ajax({url: "/images/getImagesById",
             context: document.body,
             type: "POST",
             data: "items=" + items + "&infoId=" + infoId + "&query=" + query,
