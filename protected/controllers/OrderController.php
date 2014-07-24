@@ -11,7 +11,7 @@
  *
  * @author aguilangeles@gmail.com
  */
-class SetOrderController extends Controller {
+class OrderController extends Controller {
 
     public function actionSetOrder() {
 

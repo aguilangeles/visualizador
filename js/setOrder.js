@@ -23,7 +23,7 @@ function setOrder(id, order, c1, c2, c3, c4) {
         }
         else {
             //mostrar el gif
-            $.ajax({url: "/setOrder/setOrder",
+            $.ajax({url: "/order/setOrder",
                 context: document.body,
                 type: "POST",
                 data: "id=" + id + "&oldPos=" + oldPos + "&newPos=" + newPos + "&c1=" + c1 + "&c2=" + c2 + "&c3=" + c3 + "&c4=" + c4,
