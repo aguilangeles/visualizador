@@ -406,7 +406,8 @@
         }
         var query = $("#query_" + id).html();
         var fields = $("#fields_" + id).html();
-        $.ajax({url: "/toggleCaratVisibility/toggleCaratVisibility",
+	//CrtVisibController
+        $.ajax({url: "/visible/toggleCaratVisibility",
             context: document.body,
             type: "POST",
             data: "id=" + id + "&query=" + query + "&fields=" + fields + "&action=" + action,
