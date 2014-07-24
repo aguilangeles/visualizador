@@ -337,7 +337,7 @@
         $("#downloading").dialog("open");
         var query = $("#query_" + id).html();
 //                window.open("<?php echo Yii::app()->request->hostinfo ?>/site/exportZIP/?conditions="+query);
-        $.ajax({url: "/exportZIP/exportZIP",
+        $.ajax({url: "/zip/exportZIP",
             context: document.body,
             type: "POST",
             data: "conditions=" + query,
