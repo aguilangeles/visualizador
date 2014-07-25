@@ -11,7 +11,7 @@
         }
     }
 ?>
-<table id="box-table-a" style='width: 100%;table-layout: fixed; word-wrap:break-word'>
+<table id="box-table-a" class="tablesorter" style='width: 100%;table-layout: fixed; word-wrap:break-word'>
     <?php
 	$i=0;
 	$cols = 0;	
@@ -165,6 +165,8 @@ $(document).ready(function(){
     		title:"Modificar Carátula",
     		width: 500
     	});
+	//add tlable sorted
+	 $("#box-table-a").tablesorter(); 
 	});
 function openCartaForm(id){     		   	
 		$("#carat_form").dialog( "option", "buttons", [ 

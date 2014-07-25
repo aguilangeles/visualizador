@@ -12,10 +12,9 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/VBShare/utn-visu/protected/views/site/index.php</file>
-            <file>file:/C:/VBShare/utn-visu/js/setOrder.js</file>
-            <file>file:/C:/VBShare/utn-visu/js/showImage.js</file>
-            <file>file:/C:/VBShare/utn-visu/js/getImageInfo.js</file>
+            <file>file:/C:/VBShare/utn-visu/protected/controllers/MetaController.php</file>
+            <file>file:/C:/VBShare/utn-visu/protected/controllers/Typedocs_Controller.php</file>
+            <file>file:/C:/VBShare/utn-visu/protected/views/getResults/results.php</file>
         </group>
     </open-files>
 </project-private>
