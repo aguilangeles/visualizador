@@ -20,7 +20,6 @@ function getImageInfo(items, id)
             dataType: "json",
             success: function(data) {
                 $("#row" + id).prepend(data.html);
-		
                 $("#imageData" + id).empty();
                 $("#imageData" + id).html(data.imageData);
                 $("#downloading").dialog("close");
@@ -51,7 +50,7 @@ function seeMore(id)
                     $("#seeMore" + data.id).remove();
                 }
                 $("#downloading").dialog("close");
-	    $("#"+id).tablesorter(); 	
+	    $("#"+data.id).tablesorter(); 	
 
             }
         });
