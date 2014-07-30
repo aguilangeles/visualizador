@@ -12,6 +12,7 @@ function getImageInfo(items, id)
         $("#downloading").dialog({title: "Cargando Datos"})
         $("#downloading").dialog("open");
         $("#row" + id).addClass('fetched');
+	
         $.ajax({url: "/images/getImagesById",
             context: document.body,
             type: "POST",
@@ -19,17 +20,20 @@ function getImageInfo(items, id)
             dataType: "json",
             success: function(data) {
                 $("#row" + id).prepend(data.html);
+		
                 $("#imageData" + id).empty();
                 $("#imageData" + id).html(data.imageData);
                 $("#downloading").dialog("close");
-            }
+		   $("#"+id).tablesorter(); 	
+	    }
         });
-    }
+         }
     $("#row" + id).toggle();
+
 }
 function seeMore(id)
     {
-        $("#downloading").dialog({title: "Cargando Datos"})
+        $("#downloading").dialog({title: "Cargando Datos"});
         $("#downloading").dialog("open");
         var query = $("#query_" + id).html();
         var imageList = $("#imageList" + id).html();
@@ -47,6 +51,8 @@ function seeMore(id)
                     $("#seeMore" + data.id).remove();
                 }
                 $("#downloading").dialog("close");
+	    $("#"+id).tablesorter(); 	
+
             }
         });
     }
