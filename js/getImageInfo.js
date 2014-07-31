@@ -37,7 +37,6 @@ function seeMore(id)
         var query = $("#query_" + id).html();
         var imageList = $("#imageList" + id).html();
         $.ajax({url: "/more/seeMore",
-//        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/seeMore/seeMore",
             context: document.body,
             type: "POST",
             data: "query=" + query + "&imageList=" + imageList,
