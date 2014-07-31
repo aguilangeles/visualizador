@@ -23,7 +23,7 @@ function getImageInfo(items, id)
                 $("#imageData" + id).empty();
                 $("#imageData" + id).html(data.imageData);
                 $("#downloading").dialog("close");
-		   $("#"+id).tablesorter(); 	
+	        $("#"+id).tablesorter(); 	
 	    }
         });
          }
@@ -50,7 +50,7 @@ function seeMore(id)
                     $("#seeMore" + data.id).remove();
                 }
                 $("#downloading").dialog("close");
-	    $("#"+data.id).tablesorter(); 	
+		  $("#"+id).tablesorter(); 	
 
             }
         });
