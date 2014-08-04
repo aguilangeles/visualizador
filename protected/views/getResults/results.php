@@ -25,10 +25,10 @@
 			<?php
                             if (Yii::app()->user->isAdmin)
                             {
-				echo '<th scope="col" class="{sorter: false}"style="width:10%">Visible</th>';
+				echo '<th scope="col" class="{sorter: false}" style="width:10%">Visible</th>';
                             }
                             echo '<th scope="col"class="{sorter: false}">Acciones</th>';
-                            echo '<th scope="col">Imagenes</th>';
+                            echo '<th scope="col" class="header">Imagenes</th>';
                             foreach ($fields as $field)
                             {
                                 echo '<th scope="col">'.$field->label.'</th>';

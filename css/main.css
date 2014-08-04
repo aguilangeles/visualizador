@@ -528,6 +528,10 @@ background: #E8EDFF;
 border: 1px solid white;
 text-align: center;
 }
+/*#box-table-a  header th.headerSortDown{
+   background-image: url(../img/desc.gif); 
+    background-color: #3399FF; 
+}*/
 #box-table-a .fetched tr:hover td
 {
 	background: #E5F1F4;
@@ -621,3 +625,11 @@ div .resultCont {
 	color: black;
 	font-weight: bold;
 }
+/* thead.th.header.hheaderSortUp { 
+    background-image: url(../img/asc.gif); 
+    background-color: #3399FF; 
+} 
+ thead.th.header.headerSortDown { 
+    background-image: url(../img/desc.gif); 
+    background-color: #3399FF; 
+}*/
