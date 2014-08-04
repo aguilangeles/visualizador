@@ -25,9 +25,9 @@
 			<?php
                             if (Yii::app()->user->isAdmin)
                             {
-				echo '<th scope="col" style="width:10%">Visible</th>';
+				echo '<th scope="col" class="{sorter: false}"style="width:10%">Visible</th>';
                             }
-                            echo '<th scope="col">Acciones</th>';
+                            echo '<th scope="col"class="{sorter: false}">Acciones</th>';
                             echo '<th scope="col">Imagenes</th>';
                             foreach ($fields as $field)
                             {
@@ -166,7 +166,7 @@ $(document).ready(function(){
     		width: 500
     	});
 	//add tlable sorted
-//	 $("#box-table-a").tablesorter(); 
+	 $("#box-table-a").tablesorter(); 
 	});
 function openCartaForm(id){     		   	
 		$("#carat_form").dialog( "option", "buttons", [ 
