@@ -39,21 +39,21 @@ class ImagesController extends Controller {
             $content = "<div id='imageList" . $items['id'] . "' style='display:none'>" . json_encode($items) . "</div>";
             $content = $content . "<div id='imageList2" . $items2['id'] . "' style='display:none'>" . json_encode($items2) . "</div>";
 	    
-            $content = $content . '<div style="height:400px;position:relative;overflow:auto;">';
+            $content = $content . '<div style="height:600px;position:relative;overflow:auto;">';
 	    
             $content = $content . '<table id="' . $items['id'] . '" class="tablesorter" style="table-layout: fixed; word-wrap:break-word;"><thead><tr>';
             if (Yii::app()->user->isAdmin) {
-                $content = $content . '<th scope="col">Visible</th>';
+                $content = $content . '<th scope="col" class="{sorter: false}">Visible</th>';
             }
             $content .= ($showOrder) ? '<th scope="col">Orden</th>' : '';
             //$content = $content.'<th scope="col">Orden</th>';
-            $content = $content . '<th scope="col" style="width: 65px;">Acciones</th>';
+            $content = $content . '<th scope="col" class="{sorter: false}" style="width: 65px;">Acciones</th>';
             if ($items['images'][0]->oMeta != null) {
                 foreach ($items['images'][0]->oMeta as $campo) {
                     $content = $content . '<th scope="col">' . key($campo) . '</th>';
                 }
             }
-            $content = $content . '</tr></thead><tbody>';
+            $content = $content . '</tr></thead><tbody class="tablesorter">';
             for ($x = 0; $x < count($items['images']); $x++) {
                 $content = $content . '<tr>';
                 if (Yii::app()->user->isAdmin) {
