@@ -39,6 +39,7 @@ function SearchRotulos(page)
         success: function(data) {
             $("#resultsRotulos").empty();
             $("#resultsRotulos").append(data);
+	    $("#box-table-a").tablesorter(); 
         }
     });
 }
