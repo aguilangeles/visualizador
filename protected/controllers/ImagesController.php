@@ -39,7 +39,7 @@ class ImagesController extends Controller {
             $content = "<div id='imageList" . $items['id'] . "' style='display:none'>" . json_encode($items) . "</div>";
             $content = $content . "<div id='imageList2" . $items2['id'] . "' style='display:none'>" . json_encode($items2) . "</div>";
 	    
-            $content = $content . '<div style="height:600px;position:relative;overflow:auto;">';
+            $content = $content . '<div style="height:300px;position:relative;overflow:auto;">';
 	    
             $content = $content . '<table id="' . $items['id'] . '" class="tablesorter" style="table-layout: fixed; word-wrap:break-word;"><thead><tr>';
             if (Yii::app()->user->isAdmin) {

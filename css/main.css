@@ -1,7 +1,7 @@
 html
 {
-      background: #FFFFFF url(../images/bg.jpg);
-      /*background: #63BAD8 url(../images/bg.jpg);*/
+      /*background: #FFFFFF url(../images/bg.jpg);*/
+      background: #63BAD8 url(../images/bg.jpg);
 }
 head
 {
@@ -504,7 +504,8 @@ tr {
 #box-table-a th {
       font-size: 13px;
       font-weight: normal;
-      background: url("bg.gif") repeat-x scroll left top white;
+      background-color: #7FB7D6;
+      /*background: url("bg.gif") repeat-x scroll left top white;*/
       border: 1px solid white;
       color: white;
       font-weight: bold;
@@ -513,7 +514,7 @@ tr {
 }
 #box-table-a.tablesorter thead tr .headerSortDown{
       background-image: url(../img/desc.gif); 
-      background-color: #E5F1F4;
+      background-color: #7FB7D6;
       background-repeat: no-repeat;
       background-position: right center;
       cursor: pointer;
@@ -521,7 +522,7 @@ tr {
 }
 #box-table-a.tablesorter thead tr .headerSortUp{
       background-image: url(../img/asc.gif); 
-      background-color: #E5F1F4;
+      background-color: #7FB7D6;
       background-repeat: no-repeat;
       background-position: right center;
       cursor: pointer;
@@ -529,7 +530,7 @@ tr {
 }
 #box-table-a.tablesorter thead tr .header{
       background-image: url(../img/bg.gif); 
-      background-color: #E5F1F4;
+      background-color: #7FB7D6;
       background-repeat: no-repeat;
       background-position: right center;
       cursor: pointer;
