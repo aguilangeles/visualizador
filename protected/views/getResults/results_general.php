@@ -11,7 +11,7 @@
         }
     }
 ?>
-<table id="box-table-a">
+<table id="box-table-a" class="tablesorter">
 	<?php
 	$i=0;
 	$cols = 0;
@@ -26,7 +26,7 @@
 			<?php
 			if (Yii::app()->user->isAdmin)
 			{
-				echo '<th scope="col">Visible</th>';
+				echo '<th scope="col" class="{sorter: false}">Visible</th>';
 			}
 			echo '<th scope="col">Imagenes</th>';
 			foreach ($fields as $field)

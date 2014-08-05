@@ -44,6 +44,7 @@ function SearchGralDocs(page, docType)
             success: function(data) {
                 $("#resultsGeneral").empty();
                 $("#resultsGeneral").append(data);
+		$("#box-table-a").tablesorter(); 
             }
         });
     }
