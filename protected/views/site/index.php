@@ -281,6 +281,7 @@
 		$this->endWidget('zii.widgets.jui.CJuiDialog');
 		?>
 	</div></div>
+
 <div id="meta_form" class="hidden"></div>
 
 <script type="text/javascript">

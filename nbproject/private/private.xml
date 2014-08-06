@@ -12,11 +12,10 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/VBShare/utn-visu/protected/controllers/ImagesController.php</file>
-            <file>file:/C:/VBShare/utn-visu/js/getImageInfo.js</file>
             <file>file:/C:/VBShare/utn-visu/protected/views/getResults/results.php</file>
-            <file>file:/C:/VBShare/utn-visu/css/main.css</file>
-            <file>file:/C:/VBShare/utn-visu/css/bg.gif</file>
+            <file>file:/C:/VBShare/utn-visu/protected/views/getResults/results_rotulos.php</file>
+            <file>file:/C:/VBShare/utn-visu/js/toggleRotulosSearch.js</file>
+            <file>file:/C:/VBShare/utn-visu/js/searchRotulos.js</file>
         </group>
     </open-files>
 </project-private>

@@ -41,7 +41,9 @@ class GetDocsGeneralByTypeController extends Controller {
                 array_push($fields, Field::getField($caratM, 'CARAT', $docType->doc_type_desc));
             }
             $c->addCond('docType', '==', $docType->doc_type_desc);
+	    
             $currentPage = ($c->getOffset() == 0) ? 1 : (($c->getOffset() / Idc::PAGE_SIZE) + 1);
+	    
             $getGroup = new GetGroupController();
             $group = $getGroup->getGroup($c, $docType, $ocrs, $docType->doc_type_level, 'carat', $fields);
            

@@ -14,6 +14,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/js/jquery-la
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/js/jquery.metadata.js');
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/js/jquery.tablesorter.js');
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/js/jquery.tablesorter.min.js');
+Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/js/jquery.tablesorter.pager.js');
 
 
 
