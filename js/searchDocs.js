@@ -55,8 +55,23 @@ function SearchDocs(page)
 			$("#results").empty();
 			$("#results").append(data);
 			//add tlable sorted
-			$("#box-table-a").tablesorter();
-			$("#box-table-a").tablesorterPager({container: $("#pager")});
+			$("#box-table-a").tablesorter().tablesorterPager({
+			      container:$(".pager")
+			      , ajaxUrl: null
+			      , ajaxProcessing: function(ajax) {
+				    if (ajax && ajax.hasOwnProperty('data')) {
+					  // return [ "data", "total_rows" ]; 
+					  return [ajax.data, ajax.total_rows];
+				    }
+			      }
+			      ,output: '{startRow} to {endRow} ({totalRows})'
+			      ,updateArrows: true
+			      ,page:0
+			      ,size:44
+			      ,fixedHeight: false
+			      ,removeRows: false
+			      ,savePages : false
+			});
 				
 		  }
 	    });

@@ -11,12 +11,14 @@
         }
     }
 ?>
+
 <table id="box-table-a" class="tablesorter" style='width: 100%;table-layout: fixed; word-wrap:break-word'>
-    <?php
+	<?php
 	$i=0;
 	$cols = 0;	
 	$beginIndex = (($currentPage * Idc::PAGE_SIZE)- Idc::PAGE_SIZE);
 	$endIndex = ($pages == $currentPage)?$beginIndex+($cantidad-$beginIndex) : $beginIndex + Idc::PAGE_SIZE;                
+	
 	for ($x =$beginIndex;$x<$endIndex;$x++)
 	{
             if ($i==0){?>
@@ -117,30 +119,13 @@
 	</tr>
 	<?php $i++;}else{break;}}?>
 	</tbody>
-	<tfoot id="pager" class="pager" style="top: 1133px; position: relative;">
-		<tr>
-		    <td colspan=1" style="border-right:0;">
-			    <img src="img/first.png" class="first">
-			    <img src="img/prev.png" class="prev">
-		    </td>
-		    <td colspan=2" style="border-right: 0;" >
-			    
-			    <input type="text" class="pagedisplay">
-		    </td>
-		    <td colspan=1" style="border-left:0;">
-			    
-			    <img src="img/next.png" class="next">
-			    <img src="img/last.png" class="last">
-		    </td>
-	    </tr>
-	</tfoot>
-<!--	<tfoot>
+	<tfoot>
 		<tr>
 			<td class="table-footer" colspan=1" style="border-right:0;">
-				< ?php echo ($currentPage == 1)?'':CHtml::link('Anterior','#',array('onClick'=>'SearchDocs('.($currentPage-1).')')).' ';?>
+				<?php echo ($currentPage == 1)?'':CHtml::link('Anterior','#',array('onClick'=>'SearchDocs('.($currentPage-1).')')).' ';?>
 			</td>
 			<td class="table-footer" style="border-right:0;border-left:0;text-align: center;" colspan="< ?php echo (Yii::app()->user->isAdmin)?$cols+1:$cols;?>">
-				< ?php
+				<?php
 				$pager = ceil($pages/10);
 //				$index = 10;
 				if ($currentPage >= 10/$pager)
@@ -167,12 +152,26 @@
 				?>
 			</td>
 			<td class="table-footer" colspan=1" style="border-left:0;">
-				< ?php echo ($currentPage==$pages)?'':CHtml::link('Siguiente','#',array('onClick'=>'SearchDocs('.($currentPage+1).')')).' ';?>
+				<?php echo ($currentPage==$pages)?'':CHtml::link('Siguiente','#',array('onClick'=>'SearchDocs('.($currentPage+1).')')).' ';?>
 			</td>
 		</tr>
-	</tfoot>-->
-	
+	</tfoot>
 </table>
+<div id="pager" class="pager">
+	<form>
+		<img src="img/first.png" class="first">
+		<img src="img/prev.png" class="prev">
+		<input type="text" class="pagedisplay">
+		<img src="img/next.png" class="next">
+		<img src="img/last.png" class="last">
+		<select class="pagesize">
+			<option selected="selected" value="10">10</option>
+			<option value="20">20</option>
+			<option value="30">30</option>
+			<option value="50">50</option>
+		</select>
+	</form>
+</div>
 <div id="carat_form" class="hidden"></div>
 <script type="text/javascript">
 $(document).ready(function(){

@@ -14,8 +14,11 @@
         <group>
             <file>file:/C:/VBShare/utn-visu/protected/models/Idc.php</file>
             <file>file:/C:/VBShare/utn-visu/protected/views/getResults/results.php</file>
-            <file>file:/C:/VBShare/utn-visu/protected/controllers/GetContentResultController.php</file>
+            <file>file:/C:/VBShare/utn-visu/protected/controllers/GetDocsGeneralByTypeController.php</file>
+            <file>file:/C:/VBShare/utn-visu/js/jquery.tablesorter.pager.js</file>
+            <file>file:/C:/VBShare/utn-visu/protected/controllers/DoctypesController.php</file>
             <file>file:/C:/VBShare/utn-visu/js/searchDocs.js</file>
+            <file>file:/C:/VBShare/utn-visu/protected/controllers/GeneraldocController.php</file>
         </group>
     </open-files>
 </project-private>
