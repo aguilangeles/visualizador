@@ -21,8 +21,9 @@
 					var c = table.config, o = $(table);
 					if(o.offset) {
 						c.container.css({
-							top: o.offset().top + o.height() + 'px',
-							position: 'relative'
+							top: '0px',
+//							top: o.offset().top + o.height() + 'px',
+							position: 'relavite'
 						});
 					}
 					c.pagerPositionSet = true;
@@ -122,7 +123,7 @@
 			};
 			
 			this.defaults = {
-				size: 40,
+				size: 10,
 				offset: 0,
 				page: 0,
 				totalRows: 0,
