@@ -117,8 +117,25 @@
 	</tr>
 	<?php $i++;}else{break;}}?>
 	</tbody>
-	<tfoot>
-<!--		<tr>
+	<tfoot id="pager" class="pager" style="top: 1133px; position: relative;">
+		<tr>
+		    <td colspan=1" style="border-right:0;">
+			    <img src="img/first.png" class="first">
+			    <img src="img/prev.png" class="prev">
+		    </td>
+		    <td colspan=2" style="border-right: 0;" >
+			    
+			    <input type="text" class="pagedisplay">
+		    </td>
+		    <td colspan=1" style="border-left:0;">
+			    
+			    <img src="img/next.png" class="next">
+			    <img src="img/last.png" class="last">
+		    </td>
+	    </tr>
+	</tfoot>
+<!--	<tfoot>
+		<tr>
 			<td class="table-footer" colspan=1" style="border-right:0;">
 				< ?php echo ($currentPage == 1)?'':CHtml::link('Anterior','#',array('onClick'=>'SearchDocs('.($currentPage-1).')')).' ';?>
 			</td>
@@ -152,48 +169,34 @@
 			<td class="table-footer" colspan=1" style="border-left:0;">
 				< ?php echo ($currentPage==$pages)?'':CHtml::link('Siguiente','#',array('onClick'=>'SearchDocs('.($currentPage+1).')')).' ';?>
 			</td>
-		</tr>-->
-		<tr id="pager" class="pager">
- <td>
-  <img src="img/first.png" class="first">
-  <img src="img/prev.png" class="prev">
-  <input type="text" class="pagedisplay">
-  <img src="img/next.png" class="next">
-  <img src="img/last.png" class="last">
-  <select class="pagesize">
-   <option selected="selected" value="10">10</option>
-   <option value="20">20</option>
-   <option value="30">30</option>
-   <option value="50">50</option>
-  </select>
- </td>
-</tr>
+		</tr>
+	</tfoot>-->
 	
 </table>
 <div id="carat_form" class="hidden"></div>
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#carat_form").dialog({        	
-        	autoOpen:false,
-    		modal: true,
-    		resizable: false,
-    		title:"Modificar Carátula",
-    		width: 500
-    	});
+		autoOpen:false,
+		modal: true,
+		resizable: false,
+		title:"Modificar Carátula",
+		width: 500
+	});
 	//add tlable sorted
 	});
 function openCartaForm(id){     		   	
 		$("#carat_form").dialog( "option", "buttons", [ 
 			{ text: "Actualizar", click: function() { modCarat(id); } },
     			
-    		{ text: "Cancelar", click: function() { $( this ).dialog( "close" ); } }
+		{ text: "Cancelar", click: function() { $( this ).dialog( "close" ); } }
 		] );	
 		getCaratData(id); 	
 	}
 
 function getCaratData(id){
 	var query = $("#query_"+id).html();	
-	$.ajax({url: "<?php echo Yii::app()->request->hostinfo?>/Caratmeta/getCaratData",
+	$.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/Caratmeta/getCaratData",
 			context: document.body,
 			type: "POST",
 			data: "conditions="+query,
@@ -214,7 +217,7 @@ function modCarat(id){
 		$(newData).attr(this.id,$(this).val());
 		
 	});		
-		$.ajax({url: "<?php echo Yii::app()->request->hostinfo?>/Caratmeta/ModCaratData",
+		$.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/Caratmeta/ModCaratData",
 			context: document.body,
 			type: "POST",
 			data: {conditions : query, new_data : newData},
