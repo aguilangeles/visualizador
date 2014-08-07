@@ -22,7 +22,6 @@
 					if(o.offset) {
 						c.container.css({
 							top: '0px',
-//							top: o.offset().top + o.height() + 'px',
 							position: 'relavite'
 						});
 					}

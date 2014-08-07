@@ -110,32 +110,32 @@ for ($x = $beginIndex; $x < $endIndex; $x++) {
 	</tbody>
 	<tfoot>
 		<tr>
-			<td class="table-footer" colspan=1" style="border-right:0;">
-<?php echo ($currentPage == 1) ? '' : CHtml::link('Anterior', '#', array('onClick' => 'SearchDocs(' . ($currentPage - 1) . ')')) . ' '; ?>
+<!--			<td class="table-footer" colspan=1" style="border-right:0;">
+				< ?php echo ($currentPage == 1) ? '' : CHtml::link('Anterior', '#', array('onClick' => 'SearchDocs(' . ($currentPage - 1) . ')')) . ' '; ?>
 			</td>
 			<td class="table-footer" style="border-right:0;border-left:0;text-align: center;" colspan="< ?php echo (Yii::app()->user->isAdmin)?$cols+1:$cols;?>">
-<?php
-$pager = ceil($pages / 10);
+				< ?php
+				$pager = ceil($pages / 10);
 //				$index = 10;
-if ($currentPage >= 10 / $pager) {
-	$lastPage = ($currentPage + 5 > $pages) ? $pages : $currentPage + 5;
-	$x = $lastPage - 9;
-} else {
-	$lastPage = ($pages < 10) ? $pages : 10;
-	$x = 1;
-}
-for ($x; $x < ($lastPage + 1); $x++) {
-	if ($currentPage == $x) {
-		echo '<b>' . $x . '</b> ';
-	} else {
-		echo CHtml::link($x, '#', array('onClick' => 'SearchDocs(' . $x . ')')) . ' ';
-	}
-}
-?>
+				if ($currentPage >= 10 / $pager) {
+					$lastPage = ($currentPage + 5 > $pages) ? $pages : $currentPage + 5;
+					$x = $lastPage - 9;
+				} else {
+					$lastPage = ($pages < 10) ? $pages : 10;
+					$x = 1;
+				}
+				for ($x; $x < ($lastPage + 1); $x++) {
+					if ($currentPage == $x) {
+						echo '<b>' . $x . '</b> ';
+					} else {
+						echo CHtml::link($x, '#', array('onClick' => 'SearchDocs(' . $x . ')')) . ' ';
+					}
+				}
+				?>
 			</td>
 			<td class="table-footer" colspan=1" style="border-left:0;">
-				<?php echo ($currentPage == $pages) ? '' : CHtml::link('Siguiente', '#', array('onClick' => 'SearchDocs(' . ($currentPage + 1) . ')')) . ' '; ?>
-			</td>
+				< ?php echo ($currentPage == $pages) ? '' : CHtml::link('Siguiente', '#', array('onClick' => 'SearchDocs(' . ($currentPage + 1) . ')')) . ' '; ?>
+			</td>-->
 		</tr>
 	</tfoot>
 </table>
@@ -154,6 +154,7 @@ for ($x; $x < ($lastPage + 1); $x++) {
 		</select>
 	</form>
 </div>
+
 <div id="carat_form" class="hidden"></div>
 <script type="text/javascript">
 	$(document).ready(function() {
