@@ -119,13 +119,13 @@ class Typedocs_Controller extends Controller {
         $currentPage = ($c->getOffset() == 0) ? 1 : (($c->getOffset() / Idc::PAGE_SIZE) + 1);
         $getGroup = new GetGroupController();
         $group = $getGroup->getGroup($c, $carats, $conditions, $docsLevel, $groupBy, $fields);
-	////////////////////////////////////////////////////////////
-	$finded = (int) $group['data']["keys"];
+		////////////////////////////////////////////////////////////
+		$finded = (int) $group['data']["keys"];
 		$handle = fopen("doctypename.txt", "w");
-		fwrite($handle, var_export("-->".$finded, true));
+		fwrite($handle, var_export("-->" . $finded, true));
 		fclose($handle);
 		////////////////////////////////////////////////////////////
-        $getCResult = new GetContentResultController();
+	$getCResult = new GetContentResultController();
         return $getCResult->getContentResult($group, $currentPage, $docsLevel, $fields,null, '/getResults/results', $groupBy);
     }
 
