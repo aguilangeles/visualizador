@@ -56,10 +56,8 @@ function SearchDocs(page)
 			$("#results").append(data);
 			//add tlable sorted
 			$("#box-table-a").tablesorter();
-//				.tablesorterPager({
-//				      container: $("#pager")
-//				,size:20
-//			});
+			$("#box-table-a").tablesorterPager({container: $("#pager"),size:25});
+				
 		  }
 	    });
       }
