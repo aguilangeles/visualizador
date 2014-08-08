@@ -55,7 +55,8 @@ function SearchDocs(page)
 			$("#results").empty();
 			$("#results").append(data);
 			//add tlable sorted
-			$("#box-table-a").tablesorter().tablesorterPager({
+			$("#box-table-a").tablesorter()
+				.tablesorterPager({
 			      container:$(".pager")
 			      , ajaxUrl: null
 			      , ajaxProcessing: function(ajax) {
@@ -64,13 +65,13 @@ function SearchDocs(page)
 					  return [ajax.data, ajax.total_rows];
 				    }
 			      }
-			      ,output: '{startRow} to {endRow} ({totalRows})'
+			      ,output:'{startRow} - {endRow} / {filteredRows} ({totalRows})'
 			      ,updateArrows: true
 			      ,page:0
-			      ,size:44
-			      ,fixedHeight: false
+			      ,size:20
+			      ,fixedHeight: true
 			      ,removeRows: false
-			      ,savePages : false
+			      ,savePages : true
 			});
 				
 		  }

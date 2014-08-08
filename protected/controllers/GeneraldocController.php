@@ -73,12 +73,7 @@ class GeneraldocController extends Controller {
         }
         $arraydocs = explode(',', $arraydocs);
         $c->addCond("docType", 'in', $arraydocs);
-        ////////////////////////////////////////////////////////////
-        $handle = fopen("doctypename.txt", "w");
-        fwrite($handle, var_export($arraydocs, true));
-        fclose($handle);
-        ////////////////////////////////////////////////////////////
-
+       
         $condition = new Condition("docType", 'in', $arraydocs);
         array_push($conditions, $condition);
         $c->limit(Idc::PAGE_SIZE);

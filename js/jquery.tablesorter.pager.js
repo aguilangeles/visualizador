@@ -22,7 +22,7 @@
 					if(o.offset) {
 						c.container.css({
 							top: '0px',
-							position: 'relavite'
+							position: 'relative'
 						});
 					}
 					c.pagerPositionSet = true;
@@ -122,8 +122,8 @@
 			};
 			
 			this.defaults = {
-				size: 10,
-				offset: 0,
+				size: 20,
+				offset: 20,
 				page: 0,
 				totalRows: 0,
 				totalPages: 0,
