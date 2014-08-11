@@ -56,9 +56,28 @@ function SearchDocs(page)
 			$("#results").append(data);
 			//add tlable sorted
 			$("#box-table-a")
-				.tablesorter({widthFixed: false, widgets: ['zebra']})
-				.tablesorterPager({container: $(".pager")});
-				
+				.tablesorter({widthFixed: false
+				      , cancelSelection: true
+				      , sortMultiSortKey: "shiftKey"
+				})
+				.tablesorterPager(
+					{container: $(".pager")
+					      , ajaxUrl: null
+					      , ajaxProcessing: function(ajax) {
+						    if (ajax && ajax.hasOwnProperty('data')) {
+							  // return [ "data", "total_rows" ]; 
+							  return [ajax.data, ajax.total_rows];
+						    }
+
+					      }
+					      , output: '{startRow} to {endRow} ({totalRows})'
+					      , updateArrows: true
+					      , page:0
+					      , size: 10
+					      , fixedHeight: true
+					      
+			});
+
 		  }
 	    });
       }

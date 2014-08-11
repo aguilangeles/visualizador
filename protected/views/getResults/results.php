@@ -9,7 +9,18 @@ foreach ($results as $result) {
 	}
 }
 ?>
-
+<div id="pager" class="pager">
+	<form>
+		<img src="img/first.png" class="first">
+		<img src="img/prev.png" class="prev">
+		<input type="text" class="pagedisplay">
+		<img src="img/next.png" class="next">
+		<img src="img/last.png" class="last">
+		<select class="pagesize">
+			<option selected="selected" value="20">20</option>
+		</select>
+	</form>
+</div>
 <table id="box-table-a" class="tablesorter" style='width: 100%;table-layout: fixed; word-wrap:break-word'>
 	<?php
 	$i = 0;
@@ -141,18 +152,7 @@ foreach ($results as $result) {
 		</tr>
 	</tfoot>
 </table>
-<div id="pager" class="pager">
-	<form>
-		<img src="img/first.png" class="first">
-		<img src="img/prev.png" class="prev">
-		<input type="text" class="pagedisplay">
-		<img src="img/next.png" class="next">
-		<img src="img/last.png" class="last">
-		<select class="pagesize">
-			<option selected="selected" value="20">20</option>
-		</select>
-	</form>
-</div>
+
 
 <div id="carat_form" class="hidden"></div>
 <script type="text/javascript">
