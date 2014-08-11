@@ -58,20 +58,20 @@ function SearchDocs(page)
 			$("#box-table-a").tablesorter()
 				.tablesorterPager({
 				     container:$(".pager")
-			      , ajaxUrl: null
-			      , ajaxProcessing: function(ajax) {
-				    if (ajax && ajax.hasOwnProperty('data')) {
-					  // return [ "data", "total_rows" ]; 
-					  return [ajax.data, ajax.total_rows];
-				    }
-			      }
-			      ,output:'{startRow} - {endRow} / {filteredRows} ({totalRows})'
-			      ,updateArrows: true
-			      ,page:0
-			      ,size:20
-			      ,fixedHeight: true
-			      ,removeRows: false
-			      ,savePages : true
+//			      , ajaxUrl: null
+//			      , ajaxProcessing: function(ajax) {
+//				    if (ajax && ajax.hasOwnProperty('data')) {
+//					  // return [ "data", "total_rows" ]; 
+//					  return [ajax.data, ajax.total_rows];
+//				    }
+//			      }
+//			      ,output:'{startRow} - {endRow} / {filteredRows} ({totalRows})'
+//			      ,updateArrows: true
+//			      ,page:0
+//			      ,size:20
+//			      ,fixedHeight: true
+//			      ,removeRows: false
+//			      ,savePages : true
 			      });
 				
 		  }
