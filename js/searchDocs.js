@@ -57,7 +57,7 @@ function SearchDocs(page)
 			//add tlable sorted
 			$("#box-table-a").tablesorter()
 				.tablesorterPager({
-			      container:$(".pager")
+				     container:$(".pager")
 			      , ajaxUrl: null
 			      , ajaxProcessing: function(ajax) {
 				    if (ajax && ajax.hasOwnProperty('data')) {
@@ -72,7 +72,7 @@ function SearchDocs(page)
 			      ,fixedHeight: true
 			      ,removeRows: false
 			      ,savePages : true
-			});
+			      });
 				
 		  }
 	    });

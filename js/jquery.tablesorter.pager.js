@@ -123,7 +123,7 @@
 			
 			this.defaults = {
 				size: 20,
-				offset: 20,
+				offset: 0,
 				page: 0,
 				totalRows: 0,
 				totalPages: 0,
@@ -134,7 +134,7 @@
 				cssLast: '.last',
 				cssPageDisplay: '.pagedisplay',
 				cssPageSize: '.pagesize',
-				seperator: "/",
+				seperator: "de",
 				positionFixed: true,
 				appender: this.appender
 			};
