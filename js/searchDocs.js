@@ -55,24 +55,9 @@ function SearchDocs(page)
 			$("#results").empty();
 			$("#results").append(data);
 			//add tlable sorted
-			$("#box-table-a").tablesorter()
-				.tablesorterPager({
-				     container:$(".pager")
-//			      , ajaxUrl: null
-//			      , ajaxProcessing: function(ajax) {
-//				    if (ajax && ajax.hasOwnProperty('data')) {
-//					  // return [ "data", "total_rows" ]; 
-//					  return [ajax.data, ajax.total_rows];
-//				    }
-//			      }
-//			      ,output:'{startRow} - {endRow} / {filteredRows} ({totalRows})'
-//			      ,updateArrows: true
-//			      ,page:0
-//			      ,size:20
-//			      ,fixedHeight: true
-//			      ,removeRows: false
-//			      ,savePages : true
-			      });
+			$("#box-table-a")
+				.tablesorter({widthFixed: false, widgets: ['zebra']})
+				.tablesorterPager({container: $(".pager")});
 				
 		  }
 	    });
