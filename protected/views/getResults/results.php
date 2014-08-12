@@ -141,19 +141,22 @@ foreach ($results as $result) {
 		</tr>
 	</tfoot>
 </table>
-<div id="pager" class="pager">
-	<form>
-		<!--<img src="img/first.png" class="first">-->
-		<img src="img/prev.png" class="prev">
-		<input type="text" class="pagedisplay">
-		<img src="img/next.png" class="next">
-		<!--<img src="img/last.png" class="last">-->
-		<select class="pagesize">
-			<option selected="selected" value="20">20</option>
-		</select>
-	</form>
-</div>
 
+<div id="pager" class="pager">
+  <form>
+    <img src="img/first.png" class="first"/>
+    <img src="img/prev.png" class="prev"/>
+    <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
+    <img src="img/next.png" class="next"/>
+    <img src="img/last.png" class="last"/>
+    <select class="pagesize">
+      <option value="10">10</option>
+      <option value="20">20</option>
+      <option value="30">30</option>
+      <option value="40">40</option>
+    </select>
+  </form>
+</div>
 <div id="carat_form" class="hidden"></div>
 <script type="text/javascript">
 	$(document).ready(function() {
