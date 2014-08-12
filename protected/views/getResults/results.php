@@ -149,7 +149,7 @@ foreach ($results as $result) {
 		<img src="img/next.png" class="next">
 		<!--<img src="img/last.png" class="last">-->
 		<select class="pagesize">
-			<option selected="selected" value="$cantidad = $group['data']["keys"];">20</option>
+			<!--<option selected="selected" value="$cantidad = $group['data']["keys"];">20</option>-->
 		</select>
 	</form>
 </div>

@@ -71,7 +71,7 @@ function SearchDocs(page)
 
 					      }
 					      ,output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
-      					      ,size: 0
+      					      ,size: 10
 					      , updateArrows: true
 					      , page:0
 					      , fixedHeight: true
