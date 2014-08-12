@@ -10,12 +10,8 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/js/getImageI
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/js/setOrder.js');
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/js/showImage.js');
 ///////////sortable and pagination////////
-//Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/js/jquery-latest.js');
-Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/js/jquery.metadata.js');
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/js/jquery.tablesorter.js');
-Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/js/jquery.tablesorter.min.js');
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/js/jquery.tablesorter.pager.js');
-Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/js/jquery.tablesorter.pager.min.js');
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/js/jquery.tablesorter.widgets.js');
 
 
