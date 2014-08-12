@@ -72,7 +72,7 @@ foreach ($results as $result) {
 				echo '<div id="fields_' . key($results[$x]) . '" style="display:none">' . $jsonfields . '</div>';
 				echo '<div id="query_' . key($results[$x]) . '" style="display:none">' . $jsonEcriteria . '</div>';
 				?>
-				<tr>
+				<tr class="{sorter: false}">
 					<?php
 					$editCarat = '';
 					if (Yii::app()->user->isAdmin) {

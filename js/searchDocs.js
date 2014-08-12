@@ -60,13 +60,7 @@ function SearchDocs(page)
 				{widthFixed: false
 				      , cancelSelection: true
 				      , sortMultiSortKey: "shiftKey"
-				}).bind('pagerChange pagerComplete pagerInitialized pageMoved', function(e, c){
-      var msg = '"</span> event triggered, ' + (e.type === 'pagerChange' ? 'going to' : 'now on') +
-        ' page <span class="typ">' + (c.page + 1) + '/' + c.totalPages + '</span>';
-      $('#display')
-        .append('<li><span class="str">"' + e.type + msg + '</li>')
-        .find('li:first').remove();
-    })
+				})
 				.tablesorterPager({
 				      container: '.pager'
 				    , ajaxUrl: null
@@ -78,7 +72,7 @@ function SearchDocs(page)
 						    }
 
 					      }
-					  ,output:' {page}/{totalPages}'
+				    ,output:' {page}/{totalPages}'
 				      , updateArrows: false
 				      , page: 0
 				      , size: 10
@@ -88,7 +82,7 @@ function SearchDocs(page)
 				      , removeRows: false
 				      
 				});
-				
+//				
 					      
 //			}
 
