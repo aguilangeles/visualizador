@@ -61,7 +61,7 @@ function SearchDocs(page)
 				      , sortMultiSortKey: "shiftKey"
 				})
 				.tablesorterPager(
-					{container: $(".pager")
+	    					{container: $(".pager")
 					      , ajaxUrl: null
 					      , ajaxProcessing: function(ajax) {
 						    if (ajax && ajax.hasOwnProperty('data')) {
@@ -70,10 +70,10 @@ function SearchDocs(page)
 						    }
 
 					      }
-					      , output: '{startRow} to {endRow} ({totalRows})'
+					      ,output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+      					      ,size: 0
 					      , updateArrows: true
 					      , page:0
-					      , size: 10
 					      , fixedHeight: true
 					      
 			});

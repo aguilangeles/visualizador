@@ -35,12 +35,6 @@
 				moveToPage(table);
 			}
 			
-			function moveToLastPage(table) {
-				var c = table.config;
-				c.page = (c.totalPages-1);
-				moveToPage(table);
-			}
-			
 			function moveToNextPage(table) {
 				var c = table.config;
 				c.page++;
