@@ -57,29 +57,34 @@ function SearchDocs(page)
 			//add tlable sorted
 			$("#box-table-a")
 				.tablesorter(
-//				{widthFixed: false
-//				      , cancelSelection: true
-//				      , sortMultiSortKey: "shiftKey"
-//				}
-					)
-				.tablesorterPager(
-//	    					{container: $(".pager")
-//					      , ajaxUrl: null
-//					      , ajaxProcessing: function(ajax) {
-//						    if (ajax && ajax.hasOwnProperty('data')) {
-//							  // return [ "data", "total_rows" ]; 
-//							  return [ajax.data, ajax.total_rows];
-//						    }
-//
-//					      }
-//					      ,output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
-//      					      ,size: 10
-//					      , updateArrows: true
-//					      , page:0
-//					      , fixedHeight: true
+				{widthFixed: false
+				      , cancelSelection: true
+				      , sortMultiSortKey: "shiftKey"
+				})
+				.tablesorterPager({
+				      container: '.pager'
+				    , ajaxUrl: null
+				    ,customAjaxUrl: function(table, url) { return url; }
+					      , ajaxProcessing: function(ajax) {
+						    if (ajax && ajax.hasOwnProperty('data')) {
+							  // return [ "data", "total_rows" ]; 
+							  return [ajax.data, ajax.total_rows];
+						    }
+
+					      }
+				    ,output: '{page}/{totalPages}'
+				    , updateArrows: true
+				    , page:0
+				    ,size: 10
+				    , fixedHeight: true
+				    , savePages :true
+				    , storageKey:'tablesorter-pager'
+				    ,removeRows: false
+				      
+				});
+				
 					      
 //			}
-				);
 
 		  }
 	    });

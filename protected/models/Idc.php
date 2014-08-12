@@ -1,7 +1,7 @@
 <?php
 class Idc extends EMongoSoftDocument
     {
-		const PAGE_SIZE = 20;
+		const PAGE_SIZE = 10000;
 		public $id;
 		public $_document=array();
 		public $IDC;
