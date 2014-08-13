@@ -72,7 +72,8 @@ foreach ($results as $result) {
 				echo '<div id="fields_' . key($results[$x]) . '" style="display:none">' . $jsonfields . '</div>';
 				echo '<div id="query_' . key($results[$x]) . '" style="display:none">' . $jsonEcriteria . '</div>';
 				?>
-				<tr class="{sorter: false}">
+				
+				<tr class="tablesorter-childRow">
 					<?php
 					$editCarat = '';
 					if (Yii::app()->user->isAdmin) {
@@ -97,9 +98,9 @@ foreach ($results as $result) {
 					}
 					?>
 				</tr>
+				
 				<tr>
 					<td height="100px" id="row<?php echo key($results[$x]) ?>" style="display: none;padding:0;" colspan="<?php echo (Yii::app()->user->isAdmin) ? $cols + 3 : $cols + 2 ?>">
-
 					</td>
 				</tr>
 				<?php

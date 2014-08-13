@@ -54,12 +54,14 @@ function SearchDocs(page)
 		  success: function(data) {
 			$("#results").empty();
 			$("#results").append(data);
+			$('#tablesorter-childRow td').hide();
 			//add tlable sorted
 			$("#box-table-a")
 				.tablesorter(
 				{widthFixed: false
 				      , cancelSelection: true
 				      , sortMultiSortKey: "shiftKey"
+				      ,cssChildRow: "tablesorter-childRow"
 				})
 				.tablesorterPager({
 				      container: '.pager'
@@ -73,6 +75,7 @@ function SearchDocs(page)
 
 					      }
 				    ,output:' {page}/{totalPages}'
+//				    ,output:'{filteredRows} and {totalRows}'
 				      , updateArrows: false
 				      , page: 0
 				      , size: 10
@@ -80,8 +83,20 @@ function SearchDocs(page)
 				      , savePages: false
 				      , storageKey: 'tablesorter-pager'
 				      , removeRows: false
+				      , positionFixed:false
 				      
 				});
+				  $('#box-table-a').delegate('.toggle', 'click' ,function(){
+
+    // use "nextUntil" to toggle multiple child rows
+    // toggle table cells instead of the row
+    $(this).closest('tr').nextUntil('tr:not(.tablesorter-childRow)').find('td').toggle();
+    // in v2.5.12, the parent row now has the class tablesorter-hasChildRow
+    // so you can use this code as well
+    // $(this).closest('tr').nextUntil('tr.tablesorter-hasChildRow').find('td').toggle();
+
+    return false;
+  });
 //				
 					      
 //			}
