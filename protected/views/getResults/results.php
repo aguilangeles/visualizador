@@ -146,7 +146,7 @@ foreach ($results as $result) {
 	</tfoot>
 </table>
 
-<div id="pager" class="pager">
+<div id="pager" class="pager" align="center">
 	<form>
 		<img src="img/first.png" class="first"/>
 		<img src="img/prev.png" class="prev"/>
