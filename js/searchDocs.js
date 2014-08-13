@@ -76,7 +76,7 @@ function SearchDocs(page)
 				      , output: ' {page}/{totalPages}'
 				      , updateArrows: false
 				      , page: 0
-				      , size: 20
+				      , size: 17
 				      , fixedHeight: false
 				      , savePages: false
 				      , storageKey: 'tablesorter-pager'
