@@ -59,9 +59,9 @@ function SearchDocs(page)
 			$("#box-table-a")
 				.tablesorter(
 					{widthFixed: false
-					      , cancelSelection: true
-					      , sortMultiSortKey: "shiftKey"
-					      , cssChildRow: "tablesorter-childRow"
+//					      , cancelSelection: true
+//					      , sortMultiSortKey: "shiftKey"
+//					      , cssChildRow: "tablesorter-childRow"
 					})
 				.tablesorterPager({
 				      container: '.pager'

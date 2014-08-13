@@ -23,16 +23,16 @@ foreach ($results as $result) {
 			<thead>
 				<tr>
 					<?php
-					if (Yii::app()->user->isAdmin) {
-						echo '<th scope="col" class="{sorter: false}" style="width:10%">Visible</th>';
-					}
-					echo '<th scope="col"class="{sorter: false}">Acciones</th>';
-					echo '<th scope="col" class="header">Imagenes</th>';
-					foreach ($fields as $field) {
-						echo '<th scope="col">' . $field->label . '</th>';
-						$cols++;
-					}
-					?>
+		if (Yii::app()->user->isAdmin) {
+			echo '<th scope="col" class="{sorter: false}" style="width:10%">Visible</th>';
+		}
+		echo '<th scope="col"class="{sorter: false}">Acciones</th>';
+		echo '<th scope="col" class="header">Imagenes</th>';
+		foreach ($fields as $field) {
+			echo '<th scope="col" class="header">' . $field->label . '</th>';
+			$cols++;
+		}
+		?>
 				</tr>
 			</thead>
 			<tbody>
@@ -102,10 +102,10 @@ foreach ($results as $result) {
 				</tr>
 
 				<tr tr class="tablesorter-childRow">
-					<td height="100px" id="row<?php echo key($results[$x]) ?>" style="display: none;padding:0;" colspan="
-		<?php echo (Yii::app()->user->isAdmin) ? $cols + 3 : $cols + 2 ?>">
-					</td>
-				</tr>
+							<td height="100px" id="row<?php echo key($results[$x]) ?>" style="display: none;padding:0;" colspan="
+							    <?php echo (Yii::app()->user->isAdmin) ? $cols + 3 : $cols + 2 ?>">
+							</td>
+						</tr>
 				<?php
 				$i++;
 			} else {

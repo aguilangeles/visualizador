@@ -50,7 +50,7 @@ class ImagesController extends Controller {
             $content = $content . '<th scope="col" class="{sorter: false}" style="width: 65px;">Acciones</th>';
             if ($items['images'][0]->oMeta != null) {
                 foreach ($items['images'][0]->oMeta as $campo) {
-                    $content = $content . '<th scope="col">' . key($campo) . '</th>';
+                    $content = $content . '<th scope="col" class="header">' . key($campo) . '</th>';
                 }
             }
             $content = $content . '</tr></thead><tbody class="tablesorter">';

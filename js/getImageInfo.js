@@ -9,7 +9,7 @@ function getImageInfo(items, id)
       items = $("#imageData" + items).html();
       if (!$("#row" + id).hasClass('fetched'))
       {
-	    $("#downloading").dialog({title: "Cargando Datos"})
+	    $("#downloading").dialog({title: "Cargando Datos"});
 	    $("#downloading").dialog("open");
 	    $("#row" + id).addClass('fetched');
 
@@ -24,10 +24,6 @@ function getImageInfo(items, id)
 			$("#imageData" + id).html(data.imageData);
 			$("#downloading").dialog("close");
 			$("#" + id).tablesorter({
-			      sortReset: true,
-			      sortRestart: true,
-			      sortInitialOrder: 'asc'
-
 			});
 		  }
 	    });
