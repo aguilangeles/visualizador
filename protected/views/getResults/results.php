@@ -72,8 +72,8 @@ foreach ($results as $result) {
 				echo '<div id="fields_' . key($results[$x]) . '" style="display:none">' . $jsonfields . '</div>';
 				echo '<div id="query_' . key($results[$x]) . '" style="display:none">' . $jsonEcriteria . '</div>';
 				?>
-				
-				<tr class="tablesorter-childRow">
+
+				<tr>
 					<?php
 					$editCarat = '';
 					if (Yii::app()->user->isAdmin) {
@@ -90,17 +90,20 @@ foreach ($results as $result) {
 					. CHtml::Link(CHtml::image('/images/pdf_icon.png', 'Exportar a PDF'), '#', array('style' => 'text-decoration:none;',
 					  'onClick' => 'js:exportPDF("' . key($results[$x]) . '");return false;'))
 					. $editCarat . '</td>';
+
 					echo '<td>' . CHtml::Link($resultSet[$x]["index"], '#', array('style' => 'text-decoration:none;',
 					  'onClick' => 'js:getImageInfo("' . key($results[$x]) . '","' . $x . '");return false;')) . '</td>';
+
 					foreach ($fields as $field) {
 						echo '<td>' . CHtml::Link($resultSet[$x][$field->prefix . $field->name], '#', array('style' => 'text-decoration:none;', 'id' => $field->prefix . $field->name . '_' . key($results[$x]),
 						  'onClick' => 'js:getImageInfo("' . key($results[$x]) . '","' . $x . '");return false;')) . '</td>';
 					}
 					?>
 				</tr>
-				
-				<tr>
-					<td height="100px" id="row<?php echo key($results[$x]) ?>" style="display: none;padding:0;" colspan="<?php echo (Yii::app()->user->isAdmin) ? $cols + 3 : $cols + 2 ?>">
+
+				<tr tr class="tablesorter-childRow">
+					<td height="100px" id="row<?php echo key($results[$x]) ?>" style="display: none;padding:0;" colspan="
+		<?php echo (Yii::app()->user->isAdmin) ? $cols + 3 : $cols + 2 ?>">
 					</td>
 				</tr>
 				<?php
@@ -144,19 +147,13 @@ foreach ($results as $result) {
 </table>
 
 <div id="pager" class="pager">
-  <form>
-    <img src="img/first.png" class="first"/>
-    <img src="img/prev.png" class="prev"/>
-    <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
-    <img src="img/next.png" class="next"/>
-    <img src="img/last.png" class="last"/>
-    <select class="pagesize">
-      <option value="10">10</option>
-      <option value="20">20</option>
-      <option value="30">30</option>
-      <option value="40">40</option>
-    </select>
-  </form>
+	<form>
+		<img src="img/first.png" class="first"/>
+		<img src="img/prev.png" class="prev"/>
+		<span class="pagedisplay"></span>   
+		<img src="img/next.png" class="next"/>
+		<img src="img/last.png" class="last"/>
+	</form>
 </div>
 <div id="carat_form" class="hidden"></div>
 <script type="text/javascript">
@@ -168,7 +165,7 @@ foreach ($results as $result) {
 			title: "Modificar Carátula",
 			width: 500
 		});
-		
+
 		//add tlable sorted
 	});
 	function openCartaForm(id) {

@@ -58,49 +58,35 @@ function SearchDocs(page)
 			//add tlable sorted
 			$("#box-table-a")
 				.tablesorter(
-				{widthFixed: false
-				      , cancelSelection: true
-				      , sortMultiSortKey: "shiftKey"
-				      ,cssChildRow: "tablesorter-childRow"
-				})
+					{widthFixed: false
+					      , cancelSelection: true
+					      , sortMultiSortKey: "shiftKey"
+					      , cssChildRow: "tablesorter-childRow"
+					})
 				.tablesorterPager({
 				      container: '.pager'
-				    , ajaxUrl: null
-				    ,customAjaxUrl: function(table, url) { return url; }
-					      , ajaxProcessing: function(ajax) {
-						    if (ajax && ajax.hasOwnProperty('data')) {
-							  // return [ "data", "total_rows" ]; 
-							  return [ajax.data, ajax.total_rows];
-						    }
+				      , ajaxUrl: null
+				      , customAjaxUrl: function(table, url) {
+					    return url;
+				      }
+				      , ajaxProcessing: function(ajax) {
+					    if (ajax && ajax.hasOwnProperty('data')) {
+						  // return [ "data", "total_rows" ]; 
+						  return [ajax.data, ajax.total_rows];
+					    }
 
-					      }
-				    ,output:' {page}/{totalPages}'
-//				    ,output:'{filteredRows} and {totalRows}'
+				      }
+				      , output: ' {page}/{totalPages}'
 				      , updateArrows: false
 				      , page: 0
-				      , size: 10
+				      , size: 20
 				      , fixedHeight: false
 				      , savePages: false
 				      , storageKey: 'tablesorter-pager'
 				      , removeRows: false
-				      , positionFixed:false
-				      
+				      , positionFixed: false
+
 				});
-				  $('#box-table-a').delegate('.toggle', 'click' ,function(){
-
-    // use "nextUntil" to toggle multiple child rows
-    // toggle table cells instead of the row
-    $(this).closest('tr').nextUntil('tr:not(.tablesorter-childRow)').find('td').toggle();
-    // in v2.5.12, the parent row now has the class tablesorter-hasChildRow
-    // so you can use this code as well
-    // $(this).closest('tr').nextUntil('tr.tablesorter-hasChildRow').find('td').toggle();
-
-    return false;
-  });
-//				
-					      
-//			}
-
 		  }
 	    });
       }
