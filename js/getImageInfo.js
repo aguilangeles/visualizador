@@ -24,6 +24,8 @@ function getImageInfo(items, id)
 			$("#imageData" + id).html(data.imageData);
 			$("#downloading").dialog("close");
 			$("#" + id).tablesorter({
+			      sortReset: true,
+			      sortRestart: true
 			});
 		  }
 	    });
@@ -50,7 +52,11 @@ function seeMore(id)
 			$("#seeMore" + data.id).remove();
 		  }
 		  $("#downloading").dialog("close");
-		$("#"+id).tablesorter().trigger('update'); 	
+		$("#"+id).tablesorter({
+			sortReset: true,
+			sortRestart: true
+		}
+			).trigger('update'); 	
 		$("#"+id).tablesorter().trigger('"appendCache"'); 	
 	    }
       });

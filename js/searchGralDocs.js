@@ -45,7 +45,9 @@ function SearchGralDocs(page, docType)
                 $("#resultsGeneral").empty();
                 $("#resultsGeneral").append(data);
 		$('#tablesorter-childRow td').hide();
-		$("#box-table-a").tablesorter({widthFixed: false
+		$("#box-table-a").tablesorter({widthFixed: false,
+		      sortReset: true,
+					      sortRestart: true
 					}
 			).tablesorterPager({
 				      container: '.pager'

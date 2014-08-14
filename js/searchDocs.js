@@ -58,7 +58,9 @@ function SearchDocs(page)
 			//add tlable sorted
 			$("#box-table-a")
 				.tablesorter(
-					{widthFixed: false
+					{widthFixed: false,
+					      sortReset: true,
+					      sortRestart: true
 					})
 				.tablesorterPager({
 				      container: '.pager'

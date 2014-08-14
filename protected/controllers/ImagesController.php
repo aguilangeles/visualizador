@@ -45,7 +45,7 @@ class ImagesController extends Controller {
             if (Yii::app()->user->isAdmin) {
                 $content = $content . '<th scope="col" class="{sorter: false}">Visible</th>';
             }
-            $content .= ($showOrder) ? '<th scope="col">Orden</th>' : '';
+            $content .= ($showOrder) ? '<th scope="col" class="{sorter: false}" >Orden</th>' : '';
             //$content = $content.'<th scope="col">Orden</th>';
             $content = $content . '<th scope="col" class="{sorter: false}" style="width: 65px;">Acciones</th>';
             if ($items['images'][0]->oMeta != null) {
@@ -53,7 +53,7 @@ class ImagesController extends Controller {
                     $content = $content . '<th scope="col" class="header">' . key($campo) . '</th>';
                 }
             }
-            $content = $content . '</tr></thead><tbody class="tablesorter">';
+            $content = $content . '</tr></thead><tbody">';
             for ($x = 0; $x < count($items['images']); $x++) {
                 $content = $content . '<tr>';
                 if (Yii::app()->user->isAdmin) {
