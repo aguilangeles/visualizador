@@ -44,7 +44,33 @@ function SearchGralDocs(page, docType)
             success: function(data) {
                 $("#resultsGeneral").empty();
                 $("#resultsGeneral").append(data);
-		$("#box-table-a").tablesorter(); 
+		$('#tablesorter-childRow td').hide();
+		$("#box-table-a").tablesorter({widthFixed: false
+					}
+			).tablesorterPager({
+				      container: '.pager'
+				      , ajaxUrl: null
+				      , customAjaxUrl: function(table, url) {
+					    return url;
+				      }
+				      , ajaxProcessing: function(ajax) {
+					    if (ajax && ajax.hasOwnProperty('data')) {
+						  // return [ "data", "total_rows" ]; 
+						  return [ajax.data, ajax.total_rows];
+					    }
+
+				      }
+				      , output: ' {page}/{totalPages}'
+				      , updateArrows: false
+				      , page: 0
+				      , size: 17
+				      , fixedHeight: false
+				      , savePages: false
+				      , storageKey: 'tablesorter-pager'
+				      , removeRows: false
+				      , positionFixed: false
+
+				});
             }
         });
     }
