@@ -36,6 +36,7 @@ $conditions = $group['keys'];
 			<tbody>
 				<?php
 			}if ($resultSet[$x] != null) {
+				
 				$setConditions = $conditions;
 				$condition = new Condition('docType', '==', $resultSet[$x]["docType"]);
 				array_push($setConditions, $condition);
