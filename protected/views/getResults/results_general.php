@@ -66,7 +66,7 @@ $conditions = $group['keys'];
 					}
 					?>
 				</tr>
-				<tr>
+				<tr class="tablesorter-childRow">
 					<td height="100px" id="row<?php echo key($results[$x]) ?>" style="display: none;padding:0;" colspan="<?php echo (Yii::app()->user->isAdmin) ? $cols + 3 : $cols + 2 ?>">
 
 					</td>
@@ -79,45 +79,11 @@ $conditions = $group['keys'];
 		}
 		?>
 	</tbody>
-<!--	<tfoot>
+	<tfoot class="table-footer">
 		<tr>
-			<td class="table-footer" colspan=1" style="border-right:0;">
-				< ?php echo ($currentPage == 1)?'':CHtml::link('Anterior','#',array('onClick'=>'SearchGralDocs('.($currentPage-1).','.$document->doc_type_id.')')).' ';?>
-			</td>
-			<td class="table-footer" style="border-right:0;border-left:0;text-align: center;" colspan="< ?php echo (Yii::app()->user->isAdmin) ? $cols : $cols - 1; ?>">
-				< ?php
-				$pager = ceil($pages/10);
-//				$index = 10;
-				if ($currentPage >= 10/$pager)
-				{
-					$lastPage = ($currentPage + 5>$pages)?$pages:$currentPage + 5;
-					$x = $lastPage -9;
-				}
-				else
-				{
-					$lastPage = ($pages < 10)?$pages:10;
-					$x=1;
-				}
-//				$p = ($pages<$index)?$pages:10;
-
-				for($x;$x<($lastPage+1);$x++)
-				{
-					if($currentPage == $x)
-					{
-						echo '<b>'.$x.'</b> ';
-					}
-					else
-					{
-						echo CHtml::link($x,'#',array('onClick'=>'SearchGralDocs('.$x.','.$document->doc_type_id.')')).' ';
-					}
-				}
-				?>
-			</td>
-			<td class="table-footer" colspan=1" style="border-left:0;">
-				< ?php echo ($currentPage==$pages)?'':CHtml::link('Siguiente','#',array('onClick'=>'SearchGralDocs('.($currentPage+1).','.$document->doc_type_id.')')).' ';?>
-			</td>
+			
 		</tr>
-	</tfoot>-->
+	</tfoot>
 </table>
 <div id="pager" class="pager" align="center">
 	<form>
