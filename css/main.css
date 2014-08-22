@@ -512,7 +512,7 @@ tr {
       padding: 8px;
       text-align: center;
 }
-#box-table-a.tablesorter thead tr .headerSortDown{
+/*#box-table-a.tablesorter thead tr .headerSortDown{
       background-image: url(../img/desc.gif); 
       background-color: #7FB7D6;
       background-repeat: no-repeat;
@@ -527,7 +527,7 @@ tr {
       background-position: right center;
       cursor: pointer;
 
-}
+}*/
 #box-table-a.tablesorter thead tr .header{
       background-image: url(../img/bg.gif); 
       background-color: #7FB7D6;

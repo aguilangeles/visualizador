@@ -47,8 +47,8 @@
             {
                 $fieldc = $field->prefix.$field->name;
                 $value = $resultSet[$x][$field->prefix.$field->name];
-                $condition = new Condition($fieldc,'==',$value);
-                array_push($setConditions, $condition);
+                $acondition = new Condition($fieldc,'==',$value);
+                array_push($setConditions, $acondition);
             }            
             $jsonEcriteria = json_encode($setConditions);
             $jsonfields = json_encode($fields);

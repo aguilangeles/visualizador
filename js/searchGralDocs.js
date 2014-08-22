@@ -44,37 +44,39 @@ function SearchGralDocs(page, docType)
             success: function(data) {
                 $("#resultsGeneral").empty();
                 $("#resultsGeneral").append(data);
-		$('#tablesorter-childRow td').hide();
-		$("#box-table-a").tablesorter({widthFixed: false,
-		      sortReset: true,
-					      sortRestart: true
-					}
+			$('#box-table-a-childRow td').hide();
+			$("#box-table-a").tablesorter({
+			      widthFixed: false,
+			      sortReset: true,
+			      sortRestart: true
+			}
 			).tablesorterPager({
-				      container: '.pager'
-				      , ajaxUrl: null
-				      , customAjaxUrl: function(table, url) {
-					    return url;
-				      }
-				      , ajaxProcessing: function(ajax) {
-					    if (ajax && ajax.hasOwnProperty('data')) {
-						  // return [ "data", "total_rows" ]; 
-						  return [ajax.data, ajax.total_rows];
-					    }
+			      container: '.pager'
+			      , ajaxUrl: null
+			      , customAjaxUrl: function(table, url) {
+				    return url;
+			      }
+			      , ajaxProcessing: function(ajax) {
+				    if (ajax && ajax.hasOwnProperty('data')) {
+					  // return [ "data", "total_rows" ]; 
+					  return [ajax.data, ajax.total_rows];
+				    }
 
-				      }
-				      , output: ' {page}/{totalPages}'
-				      , updateArrows: false
-				      , page: 0
-				      , size: 17
-				      , fixedHeight: false
-				      , savePages: false
-				      , storageKey: 'tablesorter-pager'
-				      , removeRows: false
-				      , positionFixed: false
+			      }
+			      , output: ' {page}/{totalPages}'
+			      , updateArrows: false
+			      , page: 0
+			      , size: 10
+			      , fixedHeight: false
+			      , savePages: false
+			      , storageKey: 'tablesorter-pager'
+			      , removeRows: false
+			      , positionFixed: false
 
-				});
-            }
-        });
+			});
+			$('#box-table-a').trigger("update");
+		  }
+	    });
     }
 }
 
