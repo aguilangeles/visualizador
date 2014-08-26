@@ -36,6 +36,7 @@ function SearchGralDocs(page, docType)
     }
     else {
         $("#resultsGeneral").empty().html('<img src="../images/ajax-loader.gif" />');
+	alert(Docs);
         $.ajax({url: "/generaldoc/searchGeneralDoc",
             context: document.body,
             type: "POST",
@@ -44,37 +45,9 @@ function SearchGralDocs(page, docType)
             success: function(data) {
                 $("#resultsGeneral").empty();
                 $("#resultsGeneral").append(data);
-			$('#box-table-a-childRow td').hide();
-			$("#box-table-a").tablesorter({
-			      widthFixed: false,
-			      sortReset: true,
-			      sortRestart: true
-			}
-			).tablesorterPager({
-			      container: '.pager'
-			      , ajaxUrl: null
-			      , customAjaxUrl: function(table, url) {
-				    return url;
-			      }
-			      , ajaxProcessing: function(ajax) {
-				    if (ajax && ajax.hasOwnProperty('data')) {
-					  // return [ "data", "total_rows" ]; 
-					  return [ajax.data, ajax.total_rows];
-				    }
-
-			      }
-			      , output: ' {page}/{totalPages}'
-			      , updateArrows: false
-			      , page: 0
-			      , size: 10
-			      , fixedHeight: false
-			      , savePages: false
-			      , storageKey: 'tablesorter-pager'
-			      , removeRows: false
-			      , positionFixed: false
-
-			});
-			$('#box-table-a').trigger("update");
+			//split para separar Docs
+			//hacer un for para asignarselo a la tabla
+			
 		  }
 	    });
     }

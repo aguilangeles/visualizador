@@ -49,7 +49,9 @@ class GetContentResultController extends Controller {
                                   , 'group' => $result
                                   , 'docsLevel' => $docsLevel
                                   , 'fields' => $fields
-                                  , 'groupBy' => $groupBy)
+                                  , 'groupBy' => $groupBy
+                                  , 'namesdoc' => $doctypedes
+				)
                                     , true
                                     , false);
                         }

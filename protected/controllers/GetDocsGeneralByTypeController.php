@@ -15,6 +15,7 @@ include('GetContentResultController.php');
  * @author aguilangeles@gmail.com
  */
 class GetDocsGeneralByTypeController extends Controller {
+	
 
     function GetDocsGeneralByTypeController() {
         
@@ -46,7 +47,6 @@ class GetDocsGeneralByTypeController extends Controller {
 	    
             $getGroup = new GetGroupController();
             $group = $getGroup->getGroup($c, $docType, $ocrs, $docType->doc_type_level, 'carat', $fields);
-           
             $result = new GetContentResultController();
             $content = $content . $result->getContentResult($group, $currentPage, $docType->doc_type_level, $fields, $docType->doc_type_label, '/getResults/results_general' );
         }
