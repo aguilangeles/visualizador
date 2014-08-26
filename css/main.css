@@ -486,6 +486,7 @@ select
       margin-bottom: 20px;
       font-weight: bold;
 }
+
 #box-table-a {
       font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
       font-size: 12px;
@@ -501,68 +502,7 @@ tr {
       vertical-align: inherit;
       border-color: inherit;
 }
-#box-table-a th {
-      font-size: 13px;
-      font-weight: normal;
-      background-color: #7FB7D6;
-      /*background: url("bg.gif") repeat-x scroll left top white;*/
-      border: 1px solid white;
-      color: white;
-      font-weight: bold;
-      padding: 8px;
-      text-align: center;
-}
-/*#box-table-a.tablesorter thead tr .headerSortDown{
-      background-image: url(../img/desc.gif); 
-      background-color: #7FB7D6;
-      background-repeat: no-repeat;
-      background-position: right center;
-      cursor: pointer;
 
-}
-#box-table-a.tablesorter thead tr .headerSortUp{
-      background-image: url(../img/asc.gif); 
-      background-color: #7FB7D6;
-      background-repeat: no-repeat;
-      background-position: right center;
-      cursor: pointer;
-
-}*/
-#box-table-a.tablesorter thead tr .header{
-      background-image: url(../img/bg.gif); 
-      background-color: #7FB7D6;
-      background-repeat: no-repeat;
-      background-position: right center;
-      cursor: pointer;
-
-}
-.table-footer
-{
-      font-size: 13px;
-      font-weight: normal;
-      font-weight: bold;
-      padding: 8px;
-      
-}
-tbody {
-      display: table-row-group;
-      vertical-align: middle;
-      border-color: inherit;
-}
-#box-table-a td {
-      background: #E8EDFF;
-      border: 1px solid white;
-      text-align: center;
-}
-#box-table-a .fetched tr:hover td
-{
-      background: #E5F1F4;
-}
-#box-table-a tr:hover td
-{
-      background: #d0dafd;
-      color: #339;
-}
 fieldset{
       background-color: #DEEAF5;
       border-top: 1px solid #1B6F94;
@@ -646,6 +586,68 @@ div .resultCont {
       text-decoration: blink;
       color: black;
       font-weight: bold;
+}
+#box-table-a th {
+      font-size: 13px;
+      font-weight: normal;
+      background-color: #7FB7D6;
+      background: url("bg.gif") repeat-x scroll left top white;
+      border: 1px solid white;
+      color: white;
+      font-weight: bold;
+      padding: 8px;
+      text-align: center;
+}
+#box-table-a.tablesorter thead tr .headerSortDown{
+      background-image: url(../img/desc.gif); 
+      background-color: #7FB7D6;
+      background-repeat: no-repeat;
+      background-position: right center;
+      cursor: pointer;
+
+}
+#box-table-a.tablesorter thead tr .headerSortUp{
+      background-image: url(../img/asc.gif); 
+      background-color: #7FB7D6;
+      background-repeat: no-repeat;
+      background-position: right center;
+      cursor: pointer;
+
+}
+#box-table-a.tablesorter thead tr .header{
+      background-image: url(../img/bg.gif); 
+      background-color: #7FB7D6;
+      background-repeat: no-repeat;
+      background-position: right center;
+      cursor: pointer;
+
+}
+.table-footer
+{
+      font-size: 13px;
+      font-weight: normal;
+      font-weight: bold;
+      padding: 8px;
+      
+}
+tbody {
+      display: table-row-group;
+      vertical-align: middle;
+      border-color: inherit;
+}
+#box-table-a td {
+      background: #E8EDFF;
+      border: 1px solid white;
+      text-align: center;
+}
+#box-table-a .fetched tr:hover td
+{
+      background: #E5F1F4;
+}
+#box-table-a tr:hover td
+{
+      background: #d0dafd;
+      color: #339;
 }
 /* pager wrapper, div */
 .tablesorter-pager {

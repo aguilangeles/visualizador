@@ -3,12 +3,11 @@ $resultSet = $group["data"]["retval"];
 $cantidad = $group["data"]["keys"];
 $results = Image::writeImageData($resultSet);
 $conditions = $group['keys'];
-//$currentdoc = $_POST['docType'];
 //$docs = explode(',', $_POST['docs']);
 $index = $namesdoc;
 
 //}
-//solo quien sepa hacer esto de una manera mas prolija puede juzgarme, Dios me perdone.
+//solo quien sepa hacer esto de una manera mas prolija puede juzgarme.
 //$total= count($docs);
 /////////////////////////////////////Dios me perdone.
 ?>
