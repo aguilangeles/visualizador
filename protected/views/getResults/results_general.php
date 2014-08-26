@@ -21,23 +21,31 @@ $index = $namesdoc;
 	for ($x = $beginIndex; $x < $endIndex; $x++) {
 		$document = DocTypes::model()->find('doc_type_desc = :doc', array(':doc' => $resultSet[$x]["docType"]));
 		if ($i == 0) {
-//			$index++;
 			?>
-			<thead>
+			<thead id="box-table-a">
 				<tr>
 		<?php
 		if (Yii::app()->user->isAdmin) {
-			echo '<th scope="col" class="{sorter: false}">Visible</th>';
+			echo '<th id="box-table-a" scope="col" class="{sorter: false}">Visible</th>';
 		}
-		echo '<th scope="col" class="header">Imagenes</th>';
+		echo '<th scope="col" '
+		. 'style="background-image: url(../img/bg.gif); 
+      background-color: #7FB7D6;
+      background-repeat: no-repeat;
+      background-position: right center;
+      cursor: pointer;">Imagenes</th>';
 		foreach ($fields as $field) {
-			echo '<th scope="col" class="header">' . $field->label . '</th>';
+			echo '<th scope="col" style="background-image: url(../img/bg.gif); 
+      background-color: #7FB7D6;
+      background-repeat: no-repeat;
+      background-position: right center;
+      cursor: pointer;">' . $field->label . '</th>';
 			$cols++;
 		}
 		?>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody id="box-table-a">
 		<?php
 	}if ($resultSet[$x] != null) {
 
@@ -93,6 +101,7 @@ $index = $namesdoc;
 <script type="text/javascript" >
 	$(document).ready(function() {
 		$('#box-table-<?php echo $index ?>childRow td').hide();
+		
 		$("#box-table-<?php echo $index ?>").tablesorter({
 			widthFixed: false,
 			sortReset: true,
