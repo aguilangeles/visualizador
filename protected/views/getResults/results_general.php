@@ -3,11 +3,17 @@ $resultSet = $group["data"]["retval"];
 $cantidad = $group["data"]["keys"];
 $results = Image::writeImageData($resultSet);
 $conditions = $group['keys'];
-//foreach ($results as $result) {
-//	foreach ($result as $key => $value) {
-//		echo $value;
-//	}
-//}
+$currentdoc = $_POST['docType'];
+//solo quien sepa hacer esto de una manera mas prolija puede juzgarme, Dios me perdone.
+$docs = explode(',', $_POST['docs']);
+$index=0;
+//$total= count($docs);
+/////////////////////////////////////Dios me perdone.
+for ($index = 0; $index < count($docs); $index++) {
+	echo $index;
+	
+
+}
 ?>
 <table id="box-table-a" class="tablesorter">
 	<?php
