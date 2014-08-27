@@ -38,20 +38,22 @@ class ImagesController extends Controller {
             $imageData = str_replace(array('\\', '"'), array('|', '\"'), $imageData);
             $content = "<div id='imageList" . $items['id'] . "' style='display:none'>" . json_encode($items) . "</div>";
             $content = $content . "<div id='imageList2" . $items2['id'] . "' style='display:none'>" . json_encode($items2) . "</div>";
-            $content = $content . '<div style="height:200px;position:relative;overflow:auto;">';
-            $content = $content . '<table id="' . $items['id'] . '" style="table-layout: fixed; word-wrap:break-word;"><thead><tr>';
+	    
+            $content = $content . '<div style="height:300px;position:relative;overflow:auto;">';
+	    
+            $content = $content . '<table id="' . $items['id'] . '" class="tablesorter" style="table-layout: fixed; word-wrap:break-word;"><thead><tr>';
             if (Yii::app()->user->isAdmin) {
-                $content = $content . '<th scope="col">Visible</th>';
+                $content = $content . '<th scope="col" class="{sorter: false}">Visible</th>';
             }
-            $content .= ($showOrder) ? '<th scope="col">Orden</th>' : '';
+            $content .= ($showOrder) ? '<th scope="col" class="{sorter: false}" >Orden</th>' : '';
             //$content = $content.'<th scope="col">Orden</th>';
-            $content = $content . '<th scope="col" style="width: 65px;">Acciones</th>';
+            $content = $content . '<th scope="col" class="{sorter: false}" style="width: 65px;">Acciones</th>';
             if ($items['images'][0]->oMeta != null) {
                 foreach ($items['images'][0]->oMeta as $campo) {
-                    $content = $content . '<th scope="col">' . key($campo) . '</th>';
+                    $content = $content . '<th scope="col" class="header">' . key($campo) . '</th>';
                 }
             }
-            $content = $content . '</tr></thead><tbody>';
+            $content = $content . '</tr></thead><tbody">';
             for ($x = 0; $x < count($items['images']); $x++) {
                 $content = $content . '<tr>';
                 if (Yii::app()->user->isAdmin) {

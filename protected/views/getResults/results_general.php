@@ -1,120 +1,144 @@
-<?php 
-    $resultSet = $group["data"]["retval"];
-    $cantidad = $group["data"]["keys"];
-    $results = Image::writeImageData($resultSet);
-    $conditions = $group['keys'];
-    foreach($results as $result)
-    {
-        foreach( $result as $key => $value )
-        {
-            echo $value;
-        }
-    }
+<?php
+$resultSet = $group["data"]["retval"];
+$cantidad = $group["data"]["keys"];
+$results = Image::writeImageData($resultSet);
+$conditions = $group['keys'];
+//$docs = explode(',', $_POST['docs']);
+$index = $namesdoc;
+
+//}
+//solo quien sepa hacer esto de una manera mas prolija puede juzgarme.
+//$total= count($docs);
+/////////////////////////////////////Dios me perdone.
 ?>
-<table id="box-table-a">
+<table id="box-table-<?php echo $index ?>"class="tablesorter">
 	<?php
-	$i=0;
+	$i = 0;
 	$cols = 0;
-	$beginIndex = (($currentPage * Idc::PAGE_SIZE)- Idc::PAGE_SIZE);
-	$endIndex = ($pages == $currentPage)?$beginIndex+($cantidad-$beginIndex) : $beginIndex + Idc::PAGE_SIZE;
-	for ($x =$beginIndex;$x<$endIndex;$x++)
-	{
-		$document = DocTypes::model()->find('doc_type_desc = :doc',array(':doc'=>$resultSet[$x]["docType"]));
-	if ($i==0){?>
-	<thead>
-		<tr>
-			<?php
-			if (Yii::app()->user->isAdmin)
-			{
-				echo '<th scope="col">Visible</th>';
-			}
-			echo '<th scope="col">Imagenes</th>';
-			foreach ($fields as $field)
-                            {
-                                echo '<th scope="col">'.$field->label.'</th>';
-                                $cols++;
-                            }
+	$beginIndex = (($currentPage * Idc::PAGE_SIZE) - Idc::PAGE_SIZE);
+	$endIndex = ($pages == $currentPage) ? $beginIndex + ($cantidad - $beginIndex) : $beginIndex + Idc::PAGE_SIZE;
+
+	for ($x = $beginIndex; $x < $endIndex; $x++) {
+		$document = DocTypes::model()->find('doc_type_desc = :doc', array(':doc' => $resultSet[$x]["docType"]));
+		if ($i == 0) {
 			?>
-		</tr>
-	</thead>
-	<tbody>
-	<?php }if ($resultSet[$x]!=null){
-            $setConditions = $conditions;
-            foreach ($fields as $field)
-            {
-                $fieldc = $field->prefix.$field->name;
-                $value = $resultSet[$x][$field->prefix.$field->name];
-                $condition = new Condition($fieldc,'==',$value);
-                array_push($setConditions, $condition);
-            }
-            $jsonEcriteria = json_encode($setConditions);
-            $jsonfields = json_encode($fields);
-            echo '<div id="fields_'.key($results[$x]).'" style="display:none">'.$jsonfields.'</div>';
-            echo '<div id="query_'.key($results[$x]).'" style="display:none">'.$jsonEcriteria.'</div>';
-        ?>
-	<tr>
+			<thead id="box-table-a">
+				<tr>
 		<?php
-			if (Yii::app()->user->isAdmin)
-			{                               
-				$ver = array_keys($resultSet[$x]["images"]);
-                                echo '<td>'.CHtml::checkBox('check',$resultSet[$x]["images"][$ver[3]],array('id'=>'check_set_'.key($results[$x]),                            
-					'onClick'=>'js:toogleCaratVisibility("'.key($results[$x]).'")')).'</td>';
-			}                        
-			echo '<td>'.CHtml::Link($resultSet[$x]["index"],'#',
-						array('style'=>'text-decoration:none;',
-					'onClick'=>'js:getImageInfo("'.key($results[$x]).'","'.$x.'");return false;')).'</td>';
-			foreach ($document->Carats as $carat)
-			{
-				echo '<td>'.CHtml::Link($resultSet[$x]["CMETA_".$carat->carat_meta_desc],'#',
-						array('style'=>'text-decoration:none;',
-					'onClick'=>'js:getImageInfo("'.key($results[$x]).'","'.$x.'");return false;')).'</td>';
-			}			
-			?>
-	</tr>
-	<tr>
-		<td height="100px" id="row<?php echo key($results[$x])?>" style="display: none;padding:0;" colspan="<?php echo (Yii::app()->user->isAdmin)?$cols+3:$cols+2?>">
+		if (Yii::app()->user->isAdmin) {
+			echo '<th id="box-table-a" scope="col" class="{sorter: false}">Visible</th>';
+		}
+		echo '<th scope="col" '
+		. 'style="background-image: url(../img/bg.gif); 
+      background-color: #7FB7D6;
+      background-repeat: no-repeat;
+      background-position: right center;
+      cursor: pointer;">Imagenes</th>';
+		foreach ($fields as $field) {
+			echo '<th scope="col" style="background-image: url(../img/bg.gif); 
+      background-color: #7FB7D6;
+      background-repeat: no-repeat;
+      background-position: right center;
+      cursor: pointer;">' . $field->label . '</th>';
+			$cols++;
+		}
+		?>
+				</tr>
+			</thead>
+			<tbody id="box-table-a">
+		<?php
+	}if ($resultSet[$x] != null) {
 
-		</td>
-	</tr>
-	<?php $i++;}else{break;}}?>
-	</tbody>
-	<tfoot>
-		<tr>
-			<td class="table-footer" colspan=1" style="border-right:0;">
-				<?php echo ($currentPage == 1)?'':CHtml::link('Anterior','#',array('onClick'=>'SearchGralDocs('.($currentPage-1).','.$document->doc_type_id.')')).' ';?>
-			</td>
-			<td class="table-footer" style="border-right:0;border-left:0;text-align: center;" colspan="<?php echo (Yii::app()->user->isAdmin)?$cols:$cols-1;?>">
+		$setConditions = $conditions;
+		$condition = new Condition('docType', '==', $resultSet[$x]["docType"]);
+		array_push($setConditions, $condition);
+
+		foreach ($fields as $field) {
+			$fieldc = $field->prefix . $field->name;
+			$value = $resultSet[$x][$field->prefix . $field->name];
+			$acondition = new Condition($fieldc, '==', $value);
+			array_push($setConditions, $acondition);
+		}
+		$jsonEcriteria = json_encode($setConditions);
+		$jsonfields = json_encode($fields);
+		echo '<div id="fields_' . key($results[$x]) . '" style="display:none">' . $jsonfields . '</div>';
+		echo '<div id="query_' . key($results[$x]) . '" style="display:none">' . $jsonEcriteria . '</div>';
+		?>
+				<tr>
 				<?php
-				$pager = ceil($pages/10);
-//				$index = 10;
-				if ($currentPage >= 10/$pager)
-				{
-					$lastPage = ($currentPage + 5>$pages)?$pages:$currentPage + 5;
-					$x = $lastPage -9;
+				if (Yii::app()->user->isAdmin) {
+					$ver = array_keys($resultSet[$x]["images"]);
+					echo '<td>' . CHtml::checkBox('check', $resultSet[$x]["images"][$ver[3]], array('id' => 'check_set_' . key($results[$x]),
+					  'onClick' => 'js:toogleCaratVisibility("' . key($results[$x]) . '")')) . '</td>';
 				}
-				else
-				{
-					$lastPage = ($pages < 10)?$pages:10;
-					$x=1;
-				}
-//				$p = ($pages<$index)?$pages:10;
-
-				for($x;$x<($lastPage+1);$x++)
-				{
-					if($currentPage == $x)
-					{
-						echo '<b>'.$x.'</b> ';
-					}
-					else
-					{
-						echo CHtml::link($x,'#',array('onClick'=>'SearchGralDocs('.$x.','.$document->doc_type_id.')')).' ';
-					}
+				echo '<td>' . CHtml::Link($resultSet[$x]["index"], '#', array('style' => 'text-decoration:none;',
+				  'onClick' => 'js:getImageInfo("' . key($results[$x]) . '","' . $x . '");return false;')) . '</td>';
+				foreach ($document->Carats as $carat) {
+					echo '<td>' . CHtml::Link($resultSet[$x]["CMETA_" . $carat->carat_meta_desc], '#', array('style' => 'text-decoration:none;',
+					  'onClick' => 'js:getImageInfo("' . key($results[$x]) . '","' . $x . '");return false;')) . '</td>';
 				}
 				?>
-			</td>
-			<td class="table-footer" colspan=1" style="border-left:0;">
-				<?php echo ($currentPage==$pages)?'':CHtml::link('Siguiente','#',array('onClick'=>'SearchGralDocs('.($currentPage+1).','.$document->doc_type_id.')')).' ';?>
-			</td>
+				</tr>
+				<tr class="tablesorter-childRow">
+					<td height="100px" id="row<?php echo key($results[$x]) ?>" style="display: none;padding:0;" colspan="<?php echo (Yii::app()->user->isAdmin) ? $cols + 3 : $cols + 2 ?>">
+
+					</td>
+				</tr>
+		<?php
+		$i++;
+	} else {
+		break;
+	}
+}
+?>
+	</tbody>
+	<tfoot class="table-footer">
+		<tr>
+
 		</tr>
 	</tfoot>
 </table>
+<!--<div id="pager" class="pager" align="center">
+	<form>
+		<img src="img/first.png" class="first"/>
+		<img src="img/prev.png" class="prev"/>
+		<span class="pagedisplay"></span>   
+		<img src="img/next.png" class="next"/>
+		<img src="img/last.png" class="last"/>
+	</form>
+</div>-->
+<script type="text/javascript" >
+	$(document).ready(function() {
+		$('#box-table-<?php echo $index ?>childRow td').hide();
+		
+		$("#box-table-<?php echo $index ?>").tablesorter({
+			widthFixed: false,
+			sortReset: true,
+			sortRestart: true
+		}
+		).tablesorterPager({
+			container: '.pager'
+			, ajaxUrl: null
+			, customAjaxUrl: function(table, url) {
+				return url;
+			}
+			, ajaxProcessing: function(ajax) {
+				if (ajax && ajax.hasOwnProperty('data')) {
+					// return [ "data", "total_rows" ]; 
+					return [ajax.data, ajax.total_rows];
+				}
+
+			}
+			, output: ' {page}/{totalPages}'
+			, updateArrows: false
+			, page: 0
+			, size: 10
+			, fixedHeight: false
+			, savePages: false
+			, storageKey: 'tablesorter-pager'
+			, removeRows: false
+			, positionFixed: false
+
+		});
+	});
+</script>

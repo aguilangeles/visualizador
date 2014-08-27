@@ -8,6 +8,6 @@
         foreach( $result as $key => $value )
         {
             echo $value;
+	    
         }
     }
-?>

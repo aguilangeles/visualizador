@@ -3,15 +3,15 @@
     $cantidad = $group["data"]["keys"];
     $results = Image::writeImageData($resultSet);
     $conditions = $group['keys'];
-    foreach($results as $result)
-    {
-        foreach( $result as $key => $value )
-        {
-            echo $value;
-        }
-    }
+//    foreach($results as $result)
+//    {
+//        foreach( $result as $key => $value )
+//        {
+//            echo $value;
+//        }
+//    }
 ?>
-<table id="box-table-a">
+<table id="box-table-a" class="tablesorter">
 	<?php
 	$i=0;
 	$cols = 0;
@@ -26,12 +26,12 @@
 			<?php
 			if (Yii::app()->user->isAdmin)
 			{
-				echo '<th scope="col">Visible</th>';
+				echo '<th scope="col" class="{sorter: false}">Visible</th>';
 			}
-			echo '<th scope="col">Imagenes</th>';
+			echo '<th scope="col" class="header" >Imagenes</th>';
 			foreach ($fields as $field)
                             {
-                                echo '<th scope="col">'.$field->label.'</th>';
+                                echo '<th scope="col" class="header">'.$field->label.'</th>';
                                 $cols++;
                             }
                         echo '<th scope="col">Tipo Documento</th>';
@@ -43,12 +43,13 @@
             $setConditions = $conditions;
             $condition = new Condition('docType', '==',$resultSet[$x]["docType"]);
             array_push($setConditions, $condition);
+	    
             foreach ($fields as $field)
             {
                 $fieldc = $field->prefix.$field->name;
                 $value = $resultSet[$x][$field->prefix.$field->name];
-                $condition = new Condition($fieldc,'==',$value);
-                array_push($setConditions, $condition);
+                $acondition = new Condition($fieldc,'==',$value);
+                array_push($setConditions, $acondition);
             }            
             $jsonEcriteria = json_encode($setConditions);
             $jsonfields = json_encode($fields);
@@ -81,7 +82,7 @@
 						array('style'=>'text-decoration:none;',
 					'onClick'=>'js:getImageInfo("'.key($results[$x]).'","'.$x.'");return false;'))?></td>
 	</tr>
-	<tr>
+	<tr class="tablesorter-childRow">
 		<td height="100px" id="row<?php echo key($results[$x])?>" style="display: none;padding:0;" colspan="<?php echo (Yii::app()->user->isAdmin)?$cols+3:$cols+2?>">
 
 		</td>
@@ -90,11 +91,11 @@
 	</tbody>
 	<tfoot>
 		<tr>
-			<td class="table-footer" colspan=1" style="border-right:0;">
-				<?php echo ($currentPage == 1)?'':CHtml::link('Anterior','#',array('onClick'=>'SearchRotulos('.($currentPage-1).','.$document->doc_type_id.')')).' ';?>
+<!--			<td class="table-footer" colspan=1" style="border-right:0;">
+				< ?php echo ($currentPage == 1)?'':CHtml::link('Anterior','#',array('onClick'=>'SearchRotulos('.($currentPage-1).','.$document->doc_type_id.')')).' ';?>
 			</td>
-			<td class="table-footer" style="border-right:0;border-left:0;text-align: center;" colspan="<?php echo (Yii::app()->user->isAdmin)?$cols+1:$cols;?>">
-				<?php
+			<td class="table-footer" style="border-right:0;border-left:0;text-align: center;" colspan="< ?php echo (Yii::app()->user->isAdmin)?$cols+1:$cols;?>">
+				< ?php
 				$pager = ceil($pages/10);
 //				$index = 10;
 				if ($currentPage >= 10/$pager)
@@ -123,8 +124,17 @@
 				?>
 			</td>                        
 			<td class="table-footer" colspan=1" style="border-left:0;">
-				<?php echo ($currentPage==$pages)?'':CHtml::link('Siguiente','#',array('onClick'=>'SearchRotulos('.($currentPage+1).','.$document->doc_type_id.')')).' ';?>
-			</td>
+				< ?php echo ($currentPage==$pages)?'':CHtml::link('Siguiente','#',array('onClick'=>'SearchRotulos('.($currentPage+1).','.$document->doc_type_id.')')).' ';?>
+			</td>-->
 		</tr>
 	</tfoot>
 </table>
+<div id="pager" class="pager" align="center">
+	<form>
+		<img src="img/first.png" class="first"/>
+		<img src="img/prev.png" class="prev"/>
+		<span class="pagedisplay"></span>   
+		<img src="img/next.png" class="next"/>
+		<img src="img/last.png" class="last"/>
+	</form>
+</div>

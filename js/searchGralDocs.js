@@ -44,8 +44,11 @@ function SearchGralDocs(page, docType)
             success: function(data) {
                 $("#resultsGeneral").empty();
                 $("#resultsGeneral").append(data);
-            }
-        });
+			//split para separar Docs
+			//hacer un for para asignarselo a la tabla
+			
+		  }
+	    });
     }
 }
 

@@ -1,7 +1,7 @@
 <?php
 class Idc extends EMongoSoftDocument
     {
-		const PAGE_SIZE = 20;
+		const PAGE_SIZE = 10000;
 		public $id;
 		public $_document=array();
 		public $IDC;
@@ -96,6 +96,7 @@ class Idc extends EMongoSoftDocument
 		$reduce2 = 'prev.images.push("'.$o.'");';
 		$reduce = $reduce1.$reduce2.$reduce3;
                 $group = Idc::model()->group($keys, $initial, $reduce, $criteria);
+		
 		//return $this->orderResults($group);
                 return $group;
 	}

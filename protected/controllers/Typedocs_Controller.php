@@ -101,7 +101,9 @@ class Typedocs_Controller extends Controller {
                     }
                     $i++;
                 }
-                $c->limit(Idc::PAGE_SIZE);
+		
+		
+		$c->limit(Idc::PAGE_SIZE);
                 $c->offset(($currentPage - 1) * Idc::PAGE_SIZE);
                 $content = $content . $this->getDocsByType($c, $docType, $conditions, $docsLevel, $groupBy, $fields);
             }
@@ -117,7 +119,8 @@ class Typedocs_Controller extends Controller {
         $currentPage = ($c->getOffset() == 0) ? 1 : (($c->getOffset() / Idc::PAGE_SIZE) + 1);
         $getGroup = new GetGroupController();
         $group = $getGroup->getGroup($c, $carats, $conditions, $docsLevel, $groupBy, $fields);
-        $getCResult = new GetContentResultController();
+	
+	$getCResult = new GetContentResultController();
         return $getCResult->getContentResult($group, $currentPage, $docsLevel, $fields,null, '/getResults/results', $groupBy);
     }
 
