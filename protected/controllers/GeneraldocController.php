@@ -14,7 +14,6 @@ include('GetDocsGeneralByTypeController.php');
  */
 class GeneraldocController extends Controller
 {
-	
 
 	public function actionSearchGeneralDoc($currentPage = 1, $currentdoc = null)
 	{
@@ -33,7 +32,6 @@ class GeneraldocController extends Controller
 		}
 		$currentPage = $_POST['page'];
 		$currentdoc = $_POST['docType'];
-
 		$docsLevel1 = Users::getAllDocTypes((int) Yii::app()->user->id, 1);
 
 		$ocrs = null; //$this->getOcrMeta($docsLevel1);
@@ -41,31 +39,35 @@ class GeneraldocController extends Controller
 		$searchType = $_POST['searchType'];
 		$searchText = $_POST['field'];
 		$docs = explode(',', $_POST['docs']);
-		
-		$arraydocs = "";
-		//
-		count($docs);
-		//
+
+		$arraydocs = array();
+		$arraydocs_id = array();
 		$hasSpecialField = false;
 		foreach ($docs as $doc) {
 			$fields = array();
 			$docType = DocTypes::model()->findByPk($doc);
-			$arraydocs = $arraydocs . $docType->doc_type_desc . ',';
 			foreach ($docType->Carats as $carat) {
 				array_push($fields, Field::getField($carat->carat_meta_desc, 'CARAT', $docType->doc_type_desc));
 				if ($carat->is_special) {
 					$hasSpecialField = TRUE;
+//					$arraydocs = $docType->doc_type_desc.', ';
+					array_push($arraydocs, $docType->doc_type_desc);
+					array_push($arraydocs_id, $docType->doc_type_id);
 					if ($searchType == "Parecida") {
 						$query = new MongoRegex('/' . $searchText . '/i');
 						$c->addCond('CMETA_' . $carat->carat_meta_desc, 'or', $query);
+						$condition = new Condition('CMETA_' . $carat->carat_meta_desc, 'regex', $query);
 					} else {
 						$c->addCond('CMETA_' . $carat->carat_meta_desc, 'or', $searchText);
+						$condition = new Condition('CMETA_' . $carat->carat_meta_desc, 'or', $searchText);
 					}
+					array_push($conditions, $condition);
 				}
 			}
 			foreach ($docType->OCRs as $ocr) {
 				if ($ocr->is_special) {
 					$hasSpecialField = TRUE;
+//					array_push($arraydocs, $docType->doc_type_desc);
 					if ($searchType == "Parecida") {
 						$query = new MongoRegex('/' . $searchText . '/i');
 						$c->addCond('OCR_' . $ocr->ocr_meta_desc, 'or', $query);
@@ -78,16 +80,21 @@ class GeneraldocController extends Controller
 				}
 			}
 		}
-		$arraydocs = explode(',', $arraydocs);
+		
+		echo count($arraydocs);
 		$c->addCond("docType", 'in', $arraydocs);
-
 		$condition = new Condition("docType", 'in', $arraydocs);
 		array_push($conditions, $condition);
+			     ///////////////////////////////
+                            $handle = fopen("doctypename.txt", "w");
+                            fwrite($handle, var_export($arraydocs, true));
+                            fclose($handle);
+//                            ////////////////////////////////////////////////////////////
 		$c->limit(Idc::PAGE_SIZE);
 		$c->offset(($currentPage - 1) * Idc::PAGE_SIZE);
 		if ($hasSpecialField) {
 			$getDocsGenByType = new GetDocsGeneralByTypeController();
-			echo $getDocsGenByType->getDocsGeneralByType($c, $docType, $conditions, $docs, $currentdoc, $arraydocs);
+			echo $getDocsGenByType->getDocsGeneralByType($c, $docType, $conditions, $docs, $currentdoc, $arraydocs, $arraydocs_id);
 		} else {
 			echo '<div class="errorMessage"><img src="../images/error.png" '
 			. 'style="height:25px;margin-bottom:-6px;"> No hay definido ningún campo especial. '
@@ -95,5 +102,4 @@ class GeneraldocController extends Controller
 		}
 	}
 
-	
 }
