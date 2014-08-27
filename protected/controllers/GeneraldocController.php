@@ -17,9 +17,14 @@ class GeneraldocController extends Controller
 
 	public function actionSearchGeneralDoc($currentPage = 1, $currentdoc = null)
 	{
-		$c = new EMongoCriteria;
+		$docNameArray = array();
+		$docIdArray = array();
 		$conditions = array();
-		if (!Yii::app()->user->isAdmin) {
+		$ocrs = null; //$this->getOcrMeta($docsLevel1);
+		$carats = null; //$this->getCaratMeta($docsLevel1);
+		
+		$c = new EMongoCriteria;
+		if (!Yii::app()->user->isAdmin) { //--> condiciones para el usuario admin
 			$c->addCond('visibleCarat', '==', TRUE);
 			$condition = new Condition('visibleCarat', '==', TRUE);
 			array_push($conditions, $condition);
@@ -32,16 +37,11 @@ class GeneraldocController extends Controller
 		}
 		$currentPage = $_POST['page'];
 		$currentdoc = $_POST['docType'];
-		$docsLevel1 = Users::getAllDocTypes((int) Yii::app()->user->id, 1);
+//		$docsLevel1 = Users::getAllDocTypes((int) Yii::app()->user->id, 1);//no usado
 
-		$ocrs = null; //$this->getOcrMeta($docsLevel1);
-		$carats = null; //$this->getCaratMeta($docsLevel1);
 		$searchType = $_POST['searchType'];
 		$searchText = $_POST['field'];
-		$docs = explode(',', $_POST['docs']);
-
-		$arraydocs = array();
-		$arraydocs_id = array();
+		$docs = explode(',', $_POST['docs']);//--> trae los elementos seleccionados 
 		$hasSpecialField = false;
 		foreach ($docs as $doc) {
 			$fields = array();
@@ -50,9 +50,8 @@ class GeneraldocController extends Controller
 				array_push($fields, Field::getField($carat->carat_meta_desc, 'CARAT', $docType->doc_type_desc));
 				if ($carat->is_special) {
 					$hasSpecialField = TRUE;
-//					$arraydocs = $docType->doc_type_desc.', ';
-					array_push($arraydocs, $docType->doc_type_desc);
-					array_push($arraydocs_id, $docType->doc_type_id);
+					array_push($docNameArray, $docType->doc_type_desc);
+					array_push($docIdArray, $docType->doc_type_id);
 					if ($searchType == "Parecida") {
 						$query = new MongoRegex('/' . $searchText . '/i');
 						$c->addCond('CMETA_' . $carat->carat_meta_desc, 'or', $query);
@@ -67,11 +66,11 @@ class GeneraldocController extends Controller
 			foreach ($docType->OCRs as $ocr) {
 				if ($ocr->is_special) {
 					$hasSpecialField = TRUE;
-//					array_push($arraydocs, $docType->doc_type_desc);
+					array_push($docNameArray, $docType->doc_type_id);
 					if ($searchType == "Parecida") {
 						$query = new MongoRegex('/' . $searchText . '/i');
 						$c->addCond('OCR_' . $ocr->ocr_meta_desc, 'or', $query);
-						$condition = new Condition('OCR_' . $ocr->ocr_meta_desc, 'regex', $searchText);
+						$condition = new Condition('OCR_' . $ocr->ocr_meta_desc, 'regex', $query);
 					} else {
 						$c->addCond('OCR_' . $ocr->ocr_meta_desc, 'or', $searchText);
 						$condition = new Condition('OCR_' . $ocr->ocr_meta_desc, 'or', $searchText);
@@ -81,20 +80,14 @@ class GeneraldocController extends Controller
 			}
 		}
 		
-		echo count($arraydocs);
-		$c->addCond("docType", 'in', $arraydocs);
-		$condition = new Condition("docType", 'in', $arraydocs);
+		$c->addCond("docType", 'in', $docNameArray);
+		$condition = new Condition("docType", 'in', $docNameArray);
 		array_push($conditions, $condition);
-			     ///////////////////////////////
-                            $handle = fopen("doctypename.txt", "w");
-                            fwrite($handle, var_export($arraydocs, true));
-                            fclose($handle);
-//                            ////////////////////////////////////////////////////////////
 		$c->limit(Idc::PAGE_SIZE);
 		$c->offset(($currentPage - 1) * Idc::PAGE_SIZE);
 		if ($hasSpecialField) {
 			$getDocsGenByType = new GetDocsGeneralByTypeController();
-			echo $getDocsGenByType->getDocsGeneralByType($c, $docType, $conditions, $docs, $currentdoc, $arraydocs, $arraydocs_id);
+			echo $getDocsGenByType->getDocsGeneralByType($c, $conditions, $docs, $currentdoc, $docIdArray);
 		} else {
 			echo '<div class="errorMessage"><img src="../images/error.png" '
 			. 'style="height:25px;margin-bottom:-6px;"> No hay definido ningún campo especial. '

@@ -21,26 +21,21 @@ class GetDocsGeneralByTypeController extends Controller {
         
     }
 
-    public function getDocsGeneralByType($c, $carats, $ocrs, $docsLevel1 = null, $currentdoc = null,$arraydocs, $iddoc) {
+    public function getDocsGeneralByType($c, $carats, $ocrs, $currentdoc = null, $arrayIdDocs) {
         $content = "";
         $offset = $c->getOffset();
-        foreach ($iddoc as $docl) {
+        foreach ($arrayIdDocs as $doctypeId) {
             if (isset($currentdoc)) {
-                if ($currentdoc == $docl) {
+                if ($currentdoc == $doctypeId) {
                     $c->setOffset($offset);
                 } else {
                     $c->setOffset(0);
                 }
             }
-            $d = array($docl => 'doc');
-            $docType = DocTypes::model()->findByPk($docl);
-  ///////////////////////////////
-                            $handle = fopen("doctypename.txt", "w");
-                            fwrite($handle, var_export($docl, true));
-                            fclose($handle);
-////                            ////////////////////////////////////////////////////////////
+            $document = array($doctypeId => 'doc');
+            $docType = DocTypes::model()->findByPk($doctypeId);
             $getCrtMeta = new GetCaratMetaController();
-            $caratList = $getCrtMeta->getCaratMeta($d);
+            $caratList = $getCrtMeta->getCaratMeta($document);
             $fields = array();
             foreach ($caratList as $caratM) {
                 array_push($fields, Field::getField($caratM, 'CARAT', $docType->doc_type_desc));
