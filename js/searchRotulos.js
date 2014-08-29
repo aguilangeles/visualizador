@@ -61,7 +61,7 @@ function SearchRotulos(page)
 			      , output: ' {page}/{totalPages}'
 			      , updateArrows: false
 			      , page: 0
-			      , size: 10
+			      , size: 20
 			      , fixedHeight: false
 			      , savePages: false
 			      , storageKey: 'tablesorter-pager'

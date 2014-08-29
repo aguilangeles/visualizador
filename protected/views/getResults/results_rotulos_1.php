@@ -10,11 +10,6 @@
 //            echo $value;
 //        }
 //    }
-			////////////////////////////////////////////////////////////
-                            $handle = fopen("doctypename.txt", "w");
-                            fwrite($handle, var_export($conditions, true));
-                            fclose($handle);
-//                            ////////////////////////////////////////////////////////////
 ?>
 <table id="box-table-a" class="tablesorter">
 	<?php
