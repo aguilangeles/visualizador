@@ -21,7 +21,7 @@ class GetDocsGeneralByTypeController extends Controller {
         
     }
 
-    public function getDocsGeneralByType($c, $carats, $ocrs, $docsLevel1 = null, $currentdoc = null,$arraydocs, $iddoc) {
+    public function getDocsGeneralByType($c, $carats, $ocrs, $docsLevel1 = null, $currentdoc = null, $iddoc) {
         $content = "";
         $offset = $c->getOffset();
         foreach ($iddoc as $docl) {
@@ -34,11 +34,7 @@ class GetDocsGeneralByTypeController extends Controller {
             }
             $d = array($docl => 'doc');
             $docType = DocTypes::model()->findByPk($docl);
-  ///////////////////////////////
-                            $handle = fopen("doctypename.txt", "w");
-                            fwrite($handle, var_export($docl, true));
-                            fclose($handle);
-////                            ////////////////////////////////////////////////////////////
+
             $getCrtMeta = new GetCaratMetaController();
             $caratList = $getCrtMeta->getCaratMeta($d);
             $fields = array();

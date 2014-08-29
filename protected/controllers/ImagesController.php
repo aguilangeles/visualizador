@@ -41,7 +41,7 @@ class ImagesController extends Controller {
 	    
             $content = $content . '<div style="height:300px;position:relative;overflow:auto;">';
 	    
-            $content = $content . '<table id="' . $items['id'] . '" class="tablesorter" style="table-layout: fixed; word-wrap:break-word;"><thead><tr>';
+            $content = $content . '<table id="' . $items['id'] . '" class="tablesorter" style="table-layout: fixed; word-wrap:break-word;"><thead ><tr>';
             if (Yii::app()->user->isAdmin) {
                 $content = $content . '<th scope="col" class="{sorter: false}">Visible</th>';
             }
@@ -82,7 +82,7 @@ class ImagesController extends Controller {
                 for ($i = 0; $i < count($items['images'][$x]->oMeta); $i++) {
                     $ocr_field_name = OcrMeta::getOCRNameByLabel(key($items['images'][$x]->oMeta[$i]));
                     $field_name = 'OCR_' . strtoupper($ocr_field_name) . '_';
-                    $content = $content . '<td id="' . $field_name . $items['images'][$x]->id . '">' . current($items['images'][$x]->oMeta[$i]) . '</td>';
+                    $content = $content . '<td id="' . $field_name . $items['images'][$x]->id . '" >' . current($items['images'][$x]->oMeta[$i]) . '</td>';
                 }
                 $content = $content . '</tr>';
             }

@@ -81,20 +81,19 @@ class GeneraldocController extends Controller
 			}
 		}
 		
-		echo count($arraydocs);
 		$c->addCond("docType", 'in', $arraydocs);
 		$condition = new Condition("docType", 'in', $arraydocs);
 		array_push($conditions, $condition);
 			     ///////////////////////////////
-                            $handle = fopen("doctypename.txt", "w");
-                            fwrite($handle, var_export($arraydocs, true));
-                            fclose($handle);
+                           // $handle = fopen("doctypename.txt", "w");
+                           // fwrite($handle, var_export($arraydocs, true));
+                           // fclose($handle);
 //                            ////////////////////////////////////////////////////////////
 		$c->limit(Idc::PAGE_SIZE);
 		$c->offset(($currentPage - 1) * Idc::PAGE_SIZE);
 		if ($hasSpecialField) {
 			$getDocsGenByType = new GetDocsGeneralByTypeController();
-			echo $getDocsGenByType->getDocsGeneralByType($c, $docType, $conditions, $docs, $currentdoc, $arraydocs, $arraydocs_id);
+			echo $getDocsGenByType->getDocsGeneralByType($c, $docType, $conditions, $docs, $currentdoc, $arraydocs_id);
 		} else {
 			echo '<div class="errorMessage"><img src="../images/error.png" '
 			. 'style="height:25px;margin-bottom:-6px;"> No hay definido ningún campo especial. '
