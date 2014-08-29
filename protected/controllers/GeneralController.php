@@ -14,7 +14,6 @@
 class GeneralController extends Controller {
 
     public function actionSearchGeneral() {
-        $result = "";
         $docsLevel1 = Users::getAllDocTypes((int) Yii::app()->user->id, 1);
         echo CHtml::checkBoxList('DocRest', array_keys($docsLevel1), 
 	    $docsLevel1, array('labelOptions' => array('style' => 'text-align:left;width:100px;')));
