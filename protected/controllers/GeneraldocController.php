@@ -32,7 +32,7 @@ class GeneraldocController extends Controller
 		}
 		$currentPage = $_POST['page'];
 		$currentdoc = $_POST['docType'];
-		$docsLevel1 = Users::getAllDocTypes((int) Yii::app()->user->id, 1);
+//		$docsLevel1 = Users::getAllDocTypes((int) Yii::app()->user->id, 1);
 
 		$ocrs = null; //$this->getOcrMeta($docsLevel1);
 		$carats = null; //$this->getCaratMeta($docsLevel1);

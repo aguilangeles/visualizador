@@ -2,8 +2,7 @@
 $resultSet = $group["data"]["retval"];
 $cantidad = $group["data"]["keys"];
 $results = Image::writeImageData($resultSet);
-$conditions = $group['keys'];
-//$docs = explode(',', $_POST['docs']);
+$conditions = $group['keys'];//ya tiene contenido
 $index = $namesdoc;
 
 //}

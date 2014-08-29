@@ -20,6 +20,7 @@ class GetGroupController extends Controller {
         $keys = array('docType');
         if ($groupBy == 'carat') {
             $keys = array($docsLevel, 'docType');
+	    //c1 => doctype;
         }
         foreach ($fields as $field) {
             array_push($keys, $field->prefix . $field->name);
