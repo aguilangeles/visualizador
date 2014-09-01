@@ -9,7 +9,7 @@
 /**
  * Description of GetGroupController
  *
- * @author aguilangeles@gmail.com
+ * @author nonames@gmail.com
  */
 class GetGroupController extends Controller {
 
@@ -20,7 +20,6 @@ class GetGroupController extends Controller {
         $keys = array('docType');
         if ($groupBy == 'carat') {
             $keys = array($docsLevel, 'docType');
-	    //c1 => doctype;
         }
         foreach ($fields as $field) {
             array_push($keys, $field->prefix . $field->name);
