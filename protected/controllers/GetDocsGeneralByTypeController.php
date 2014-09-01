@@ -12,7 +12,7 @@ include('GetContentResultController.php');
 /**
  * Description of GetDocsGeneralByTypeController
  *
- * @author aguilangeles@gmail.com
+ * @author nomame@gmail.com
  */
 class GetDocsGeneralByTypeController extends Controller {
 	
@@ -48,7 +48,8 @@ class GetDocsGeneralByTypeController extends Controller {
             $getGroup = new GetGroupController();
             $group = $getGroup->getGroup($c, $docType, $ocrs, $docType->doc_type_level, 'carat', $fields);
             $result = new GetContentResultController();
-            $content = $content . $result->getContentResult($group, $currentPage, $docType->doc_type_level, $fields, $docType->doc_type_label, '/getResults/results_general' );
+            $content = $content . $result->getContentResult($group, $currentPage,
+		$docType->doc_type_level, $fields, $docType->doc_type_label, '/getResults/results_general' );
         }
         return $content;
     }
