@@ -26,8 +26,8 @@
 		'ocr_meta_desc',
 		'ocr_meta_label',
 		array(            // display 'author.username' using an expression
-                     'name'=>'doc_type_id',
-                     'value'=>'$data->Doc->doc_type_label',
+                     'name'=>'Doc.doc_type_label',
+                     'filter'=>CHtml::activeTextField($model, 'documento'),
                      ),		             
                 array(
                         'name'=>'is_special',

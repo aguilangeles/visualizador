@@ -11,6 +11,7 @@
  */
 class OcrMeta extends CActiveRecord
 {
+		public $documento;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return OcrMeta the static model class
@@ -40,6 +41,7 @@ class OcrMeta extends CActiveRecord
 			array('doc_type_id', 'numerical', 'integerOnly'=>true),
 			array('ocr_meta_desc', 'length', 'max'=>255),
 			array('is_special', 'boolean'),
+			array('documento', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('ocr_meta_id, ocr_meta_desc, doc_type_id', 'safe', 'on'=>'search'),
@@ -82,6 +84,9 @@ class OcrMeta extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
+		$criteria->with=array('Doc',);
+		$criteria->addSearchCondition('Doc.doc_type_label', $this->documento);
+		
 
 		$criteria->compare('ocr_meta_id',$this->ocr_meta_id);
 		$criteria->compare('ocr_meta_desc',$this->ocr_meta_desc,true);
