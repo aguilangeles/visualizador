@@ -39,40 +39,30 @@ class SearchByRotuloController extends Controller
 				$condition = new Condition('visibleImagen', '==', TRUE);
 				array_push($conditions, $condition);
 			}//
-			foreach ($rotulo->Docs as $doc) {//>> tipos de documentos involucrados.
-
-				$document = DocTypes::model()->findByPk($doc->doc_type_id);
-				$c->addCond('docType', 'or', $document->doc_type_desc);
+			foreach ($rotulo->Docs as $doc) {//>> tipos de documentos involucrados en el rotulo
+				$document = DocTypes::model()->findByPk($doc->doc_type_id) ;// trae todos los documentos segun id
+				$c->addCond('docType', 'or', $document->doc_type_desc);//
 				$condition = new Condition('docType', 'or', $document->doc_type_desc);
 				array_push($conditions, $condition);
 			}
 			$getCrtMeta = new GetCaratMetaController();
 
 			$carats = $getCrtMeta->getCaratMeta(array($doc->doc_type_id => $doc->doc_type_id));
-			//////////////////////////////////////////////////////////
-//			$handle = fopen("doctypename.txt", "w");
-//			fwrite($handle, var_export($doc->doc_type_id, true));
-//			fclose($handle);
-			////////////////////////////////////////////////////////////
-//            $carats = $getCrtMeta->getCaratMeta($doc->doc_type_id);
-
 			$i = 0;
 			foreach ($carats as $caratM) {
+			
 				array_push($fields, Field::getField($caratM, 'CARAT', $document->doc_type_desc));
 				$carat = CaratMeta::model()->find('carat_meta_desc = :desc', array(':desc' => $caratM));
-				$campo = $carat->carat_meta_desc;
 				if ($_POST['CMETA_'][$i] != '') {
 					if ($searchType == "Parecida") {
 						$query = new MongoRegex('/' . $_POST['CMETA_'][$i] . '/i');
 						$c->addCond('CMETA_' . $carat->carat_meta_desc, '==', $query);
-						//$condition = new Condition('CMETA_' . $carat->carat_meta_desc, '==', $query);
-						//array_push($conditions, $condition);
+						$condition = new Condition('CMETA_' . $carat->carat_meta_desc, '==', $query);
+						array_push($conditions, $condition);
 					} else {
 						$c->addCond('CMETA_' . $carat->carat_meta_desc, '==', $_POST['CMETA_'][$i]);
-						//$condition = new Condition('CMETA_' . $carat->carat_meta_desc, '==', $_POST['CMETA_'][$i]);
-						//array_push($conditions, $condition);
-					
-						
+						$condition = new Condition('CMETA_' . $carat->carat_meta_desc, '==', $_POST['CMETA_'][$i]);
+						array_push($conditions, $condition);
 					}
 				}
 				$i++;
@@ -80,7 +70,7 @@ class SearchByRotuloController extends Controller
 
 			$c->limit(Idc::PAGE_SIZE);
 			$c->offset(($currentPage - 1) * Idc::PAGE_SIZE);
-			$c->setSort(array('order'=>EMongoCriteria::SORT_ASC));
+			$c->setSort(array('order' => EMongoCriteria::SORT_ASC));
 			echo $this->getDocsByRotulo($c, $document, $conditions, $fields);
 		}
 	}
@@ -89,7 +79,7 @@ class SearchByRotuloController extends Controller
 	 * Busqueda inicial por rótulo. Devuelve las caratulas.
 	 *
 	 */
-	private function getDocsByRotulo($c, $carats, $ocrs, $fields, $docsLevel = 'c1')
+	private function getDocsByRotulo($c, $carats, $ocrs, $fields, $docsLevel = '1')//--> cambio 'c1' por el level de la database
 	{
 		$currentPage = ($c->getOffset() == 0) ? 1 : (($c->getOffset() / Idc::PAGE_SIZE) + 1);
 		$getGroup = new GetGroupController();

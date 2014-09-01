@@ -8,8 +8,7 @@
 
 /**
  * Description of GetCaratMetaController
- *
- * @author aguilangeles@gmail.com
+ * noname@noname
  */
 class GetCaratMetaController extends Controller {
 

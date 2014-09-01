@@ -3,9 +3,11 @@ $resultSet = $group["data"]["retval"];
 $cantidad = $group["data"]["keys"];
 $results = Image::writeImageData($resultSet);
 $conditions = $group['keys']; //-> esta vacio
-$handle = fopen("doctypename.txt", "w");
-fwrite($handle, var_export($conditions, true));
-fclose($handle);
+//		//////////////////////////////////////////////////////
+//		$handle = fopen("doctypename.txt", "w");
+//		fwrite($handle, var_export($conditions, true));
+//		fclose($handle);
+//		//////////////////////////////////////////////////////
 //'docType', 'or', $document->doc_type_desc
 //    foreach($results as $result)
 //    {
@@ -43,6 +45,7 @@ fclose($handle);
 			<tbody>
 	<?php
 	}if ($resultSet[$x] != null) {
+//		
 		$setConditions = $conditions;
 		$condition = new Condition('docType', '==', $resultSet[$x]["docType"]);
 		array_push($setConditions, $condition);

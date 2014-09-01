@@ -10,7 +10,7 @@ include('GetDocsGeneralByTypeController.php');
 /**
  * Description of SearchGeneralDoc
  *
- * @author aguilangeles@gmail.com
+ * @author nonames@gmail.com
  */
 class GeneraldocController extends Controller
 {
@@ -32,7 +32,6 @@ class GeneraldocController extends Controller
 		}
 		$currentPage = $_POST['page'];
 		$currentdoc = $_POST['docType'];
-//		$docsLevel1 = Users::getAllDocTypes((int) Yii::app()->user->id, 1);
 
 		$ocrs = null; //$this->getOcrMeta($docsLevel1);
 		$carats = null; //$this->getCaratMeta($docsLevel1);
@@ -67,7 +66,8 @@ class GeneraldocController extends Controller
 			foreach ($docType->OCRs as $ocr) {
 				if ($ocr->is_special) {
 					$hasSpecialField = TRUE;
-//					array_push($arraydocs, $docType->doc_type_desc);
+					array_push($arraydocs, $docType->doc_type_desc);
+					array_push($arraydocs_id, $docType->doc_type_id);
 					if ($searchType == "Parecida") {
 						$query = new MongoRegex('/' . $searchText . '/i');
 						$c->addCond('OCR_' . $ocr->ocr_meta_desc, 'or', $query);
@@ -84,11 +84,6 @@ class GeneraldocController extends Controller
 		$c->addCond("docType", 'in', $arraydocs);
 		$condition = new Condition("docType", 'in', $arraydocs);
 		array_push($conditions, $condition);
-			     ///////////////////////////////
-                           // $handle = fopen("doctypename.txt", "w");
-                           // fwrite($handle, var_export($arraydocs, true));
-                           // fclose($handle);
-//                            ////////////////////////////////////////////////////////////
 		$c->limit(Idc::PAGE_SIZE);
 		$c->offset(($currentPage - 1) * Idc::PAGE_SIZE);
 		if ($hasSpecialField) {
@@ -100,5 +95,4 @@ class GeneraldocController extends Controller
 			. 'Por favor, configure un campo especial antes de usar esta búsqueda.</div>';
 		}
 	}
-
 }
