@@ -3,19 +3,6 @@ $resultSet = $group["data"]["retval"];
 $cantidad = $group["data"]["keys"];
 $results = Image::writeImageData($resultSet);
 $conditions = $group['keys']; //-> esta vacio
-//		//////////////////////////////////////////////////////
-//		$handle = fopen("doctypename.txt", "w");
-//		fwrite($handle, var_export($conditions, true));
-//		fclose($handle);
-//		//////////////////////////////////////////////////////
-//'docType', 'or', $document->doc_type_desc
-//    foreach($results as $result)
-//    {
-//        foreach( $result as $key => $value )
-//        {
-//            echo $value;
-//        }
-//    }
 ?>
 <table id="box-table-a" class="tablesorter">
 	<?php
@@ -38,7 +25,7 @@ $conditions = $group['keys']; //-> esta vacio
 						echo '<th scope="col" class="header">' . $field->label . '</th>';
 						$cols++;
 					}
-					echo '<th scope="col">Tipo Documento</th>';
+					echo '<th scope="col" class="header" >Tipo Documento</th>';
 					?>
 				</tr>
 			</thead>
@@ -97,41 +84,6 @@ $conditions = $group['keys']; //-> esta vacio
 	</tbody>
 	<tfoot>
 		<tr>
-<!--			<td class="table-footer" colspan=1" style="border-right:0;">
-				< ?php echo ($currentPage == 1)?'':CHtml::link('Anterior','#',array('onClick'=>'SearchRotulos('.($currentPage-1).','.$document->doc_type_id.')')).' ';?>
-			</td>
-			<td class="table-footer" style="border-right:0;border-left:0;text-align: center;" colspan="< ?php echo (Yii::app()->user->isAdmin)?$cols+1:$cols;?>">
-				< ?php
-				$pager = ceil($pages/10);
-//				$index = 10;
-				if ($currentPage >= 10/$pager)
-				{
-					$lastPage = ($currentPage + 5>$pages)?$pages:$currentPage + 5;
-					$x = $lastPage -9;
-				}
-				else
-				{
-					$lastPage = ($pages < 10)?$pages:10;
-					$x=1;
-				}
-//				$p = ($pages<$index)?$pages:10;
-
-				for($x;$x<($lastPage+1);$x++)
-				{
-					if($currentPage == $x)
-					{
-						echo '<b>'.$x.'</b> ';
-					}
-					else
-					{
-						echo CHtml::link($x,'#',array('onClick'=>'SearchRotulos('.$x.','.$document->doc_type_id.')')).' ';
-					}
-				}
-				?>
-			</td>                        
-			<td class="table-footer" colspan=1" style="border-left:0;">
-				< ?php echo ($currentPage==$pages)?'':CHtml::link('Siguiente','#',array('onClick'=>'SearchRotulos('.($currentPage+1).','.$document->doc_type_id.')')).' ';?>
-			</td>-->
 		</tr>
 	</tfoot>
 </table>
