@@ -14,10 +14,10 @@ include('GetCaratMetaController.php');
  *
  * @author aguilangeles@gmail.com
  */
-class SearchByRotuloController extends Controller
+class Rotulos_searchController extends Controller
 {
 
-	public function actionSearchByRotulo($currentPage = 1)
+	public function actionRotulos_search($currentPage = 1)
 	{
 
 		if (isset($_POST['rotulo'])) {

@@ -5,9 +5,9 @@
  * Description of SearchRotulosController
  *
  */
-class Rotulos1Controller extends Controller {
+class RotulosesController extends Controller {
 
-    public function actionSearchRotulos() {
+    public function actionGetRotulos() {
         if (isset($_POST['rotulo_id'])) {
             $content = "";
             $rotuloId = (int) $_POST['rotulo_id'];
