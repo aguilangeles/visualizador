@@ -31,7 +31,7 @@ function SearchRotulos(page)
     {
         CmetaFields = CmetaFields + "&CMETA_[" + i + "]=" + dataCMeta[i];
     }
-    $.ajax({url: "/searchByRotulo/searchByRotulo",
+    $.ajax({url: "/rotulos_search/rotulos_search",
         context: document.body,
         type: "POST",
         data: "page=" + page + "&rotulo=" + rotuloId + CmetaFields + "&searchType=" + searchType,
@@ -61,7 +61,7 @@ function SearchRotulos(page)
 			      , output: ' {page}/{totalPages}'
 			      , updateArrows: false
 			      , page: 0
-			      , size: 10
+			      , size: 20
 			      , fixedHeight: false
 			      , savePages: false
 			      , storageKey: 'tablesorter-pager'

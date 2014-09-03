@@ -9,7 +9,7 @@
 /**
  * Description of GetGroupController
  *
- * @author aguilangeles@gmail.com
+ * @author nonames@gmail.com
  */
 class GetGroupController extends Controller {
 
@@ -17,6 +17,7 @@ class GetGroupController extends Controller {
     
     }
     public function getGroup($criteria, $doctype, $conditions, $docsLevel = 'c1', $groupBy = 'carat', $fields = null) {
+		MongoCursor::$timeout = -1;
         $keys = array('docType');
         if ($groupBy == 'carat') {
             $keys = array($docsLevel, 'docType');
@@ -50,6 +51,7 @@ class GetGroupController extends Controller {
         $reduce4 = 'prev.images.push("' . $o . '");' . $reduce4;
         $reduce6 = 'prev.index += 1;}';
         $reduce = $reduce1 . $reduce2 . $reduce3 . $reduce5 . $reduce4 . $reduce6;
+	
         $group = Idc::model()->group($keys, $initial, $reduce, $criteria);
         $result = array('keys' => $conditions, 'data' => $group);
 

@@ -2,8 +2,7 @@
 $resultSet = $group["data"]["retval"];
 $cantidad = $group["data"]["keys"];
 $results = Image::writeImageData($resultSet);
-$conditions = $group['keys'];
-//$docs = explode(',', $_POST['docs']);
+$conditions = $group['keys'];//ya tiene contenido
 $index = $namesdoc;
 
 //}
@@ -84,21 +83,18 @@ $index = $namesdoc;
 
 					</td>
 				</tr>
+				
 		<?php
 		$i++;
 	} else {
 		break;
 	}
 }
-?>
-	</tbody>
-	<tfoot class="table-footer">
-		<tr>
+	?>
+</tbody>
 
-		</tr>
-	</tfoot>
 </table>
-<!--<div id="pager" class="pager" align="center">
+<div id="pager-<?php echo $index ?>" class="pager" align="center">
 	<form>
 		<img src="img/first.png" class="first"/>
 		<img src="img/prev.png" class="prev"/>
@@ -106,7 +102,7 @@ $index = $namesdoc;
 		<img src="img/next.png" class="next"/>
 		<img src="img/last.png" class="last"/>
 	</form>
-</div>-->
+</div>
 <script type="text/javascript" >
 	$(document).ready(function() {
 		$('#box-table-<?php echo $index ?>childRow td').hide();
@@ -117,7 +113,7 @@ $index = $namesdoc;
 			sortRestart: true
 		}
 		).tablesorterPager({
-			container: '.pager'
+			container: '#pager-<?php echo $index ?>'
 			, ajaxUrl: null
 			, customAjaxUrl: function(table, url) {
 				return url;
@@ -127,7 +123,6 @@ $index = $namesdoc;
 					// return [ "data", "total_rows" ]; 
 					return [ajax.data, ajax.total_rows];
 				}
-
 			}
 			, output: ' {page}/{totalPages}'
 			, updateArrows: false

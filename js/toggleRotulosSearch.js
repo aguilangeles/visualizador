@@ -6,7 +6,7 @@ function toggleRotulosSearch()
     {
         $("#first-search").slideToggle();
         $("#second-rotulos-search").slideToggle();
-        $.ajax({url: "/rotulos1/searchRotulos",
+        $.ajax({url: "/rotuloses/getRotulos",
 //        $.ajax({url: "<?php echo Yii::app()->request->hostinfo ?>/searchRotulos/searchRotulos",
             context: document.body,
             type: "POST",

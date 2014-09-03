@@ -5,13 +5,14 @@
             <url>protected/controllers/GetContentResultController.php</url>
             <bookmark id="1">
                 <name/>
-                <line>73</line>
+                <line>75</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/VBShare/utn-visu/protected/models/DocTypes.php</file>
             <file>file:/C:/VBShare/utn-visu/protected/controllers/GetDocsGeneralByTypeController.php</file>
             <file>file:/C:/VBShare/utn-visu/protected/controllers/GeneraldocController.php</file>
@@ -20,6 +21,13 @@
             <file>file:/C:/VBShare/utn-visu/doctypename.txt</file>
             <file>file:/C:/VBShare/utn-visu/protected/controllers/GeneralController.php</file>
             <file>file:/C:/VBShare/utn-visu/protected/models/Users.php</file>
+=======
+            <file>file:/C:/VBShare/utn-visu/protected/controllers/Rotulos_searchController.php</file>
+            <file>file:/C:/VBShare/utn-visu/protected/controllers/OrderController.php</file>
+            <file>file:/C:/VBShare/utn-visu/js/searchRotulos.js</file>
+            <file>file:/C:/VBShare/utn-visu/protected/views/getResults/results_general.php</file>
+            <file>file:/C:/VBShare/utn-visu/protected/controllers/GetGroupController.php</file>
+>>>>>>> 20140902
         </group>
     </open-files>
 </project-private>

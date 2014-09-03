@@ -12,7 +12,7 @@ include('GetContentResultController.php');
 /**
  * Description of GetDocsGeneralByTypeController
  *
- * @author aguilangeles@gmail.com
+ * @author nomame@gmail.com
  */
 class GetDocsGeneralByTypeController extends Controller {
 	
@@ -21,7 +21,11 @@ class GetDocsGeneralByTypeController extends Controller {
         
     }
 
+<<<<<<< HEAD
     public function getDocsGeneralByType($c, $carats, $ocrs, $currentdoc = null, $arrayIdDocs) {
+=======
+    public function getDocsGeneralByType($c, $carats, $ocrs, $docsLevel1 = null, $currentdoc = null, $iddoc) {
+>>>>>>> 20140902
         $content = "";
         $offset = $c->getOffset();
         foreach ($arrayIdDocs as $doctypeId) {
@@ -32,8 +36,14 @@ class GetDocsGeneralByTypeController extends Controller {
                     $c->setOffset(0);
                 }
             }
+<<<<<<< HEAD
             $document = array($doctypeId => 'doc');
             $docType = DocTypes::model()->findByPk($doctypeId);
+=======
+            $d = array($docl => 'doc');
+            $docType = DocTypes::model()->findByPk($docl);
+
+>>>>>>> 20140902
             $getCrtMeta = new GetCaratMetaController();
             $caratList = $getCrtMeta->getCaratMeta($document);
             $fields = array();
@@ -47,7 +57,8 @@ class GetDocsGeneralByTypeController extends Controller {
             $getGroup = new GetGroupController();
             $group = $getGroup->getGroup($c, $docType, $ocrs, $docType->doc_type_level, 'carat', $fields);
             $result = new GetContentResultController();
-            $content = $content . $result->getContentResult($group, $currentPage, $docType->doc_type_level, $fields, $docType->doc_type_label, '/getResults/results_general' );
+            $content = $content . $result->getContentResult($group, $currentPage,
+		$docType->doc_type_level, $fields, $docType->doc_type_label, '/getResults/results_general' );
         }
         return $content;
     }
