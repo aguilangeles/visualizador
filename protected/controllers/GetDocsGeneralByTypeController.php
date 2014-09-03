@@ -21,11 +21,11 @@ class GetDocsGeneralByTypeController extends Controller {
         
     }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
     public function getDocsGeneralByType($c, $carats, $ocrs, $currentdoc = null, $arrayIdDocs) {
-=======
-    public function getDocsGeneralByType($c, $carats, $ocrs, $docsLevel1 = null, $currentdoc = null, $iddoc) {
->>>>>>> 20140902
+//=======
+//    public function getDocsGeneralByType($c, $carats, $ocrs, $docsLevel1 = null, $currentdoc = null, $iddoc) {
+//>>>>>>> 20140902
         $content = "";
         $offset = $c->getOffset();
         foreach ($arrayIdDocs as $doctypeId) {
@@ -36,14 +36,14 @@ class GetDocsGeneralByTypeController extends Controller {
                     $c->setOffset(0);
                 }
             }
-<<<<<<< HEAD
+//<<<<<<< HEAD
             $document = array($doctypeId => 'doc');
             $docType = DocTypes::model()->findByPk($doctypeId);
-=======
-            $d = array($docl => 'doc');
-            $docType = DocTypes::model()->findByPk($docl);
-
->>>>>>> 20140902
+////=======
+//            $d = array($docl => 'doc');
+//            $docType = DocTypes::model()->findByPk($docl);
+//
+//>>>>>>> 20140902
             $getCrtMeta = new GetCaratMetaController();
             $caratList = $getCrtMeta->getCaratMeta($document);
             $fields = array();

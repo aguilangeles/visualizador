@@ -37,10 +37,10 @@ class GeneraldocController extends Controller
 		}
 		$currentPage = $_POST['page'];
 		$currentdoc = $_POST['docType'];
-<<<<<<< HEAD
-//		$docsLevel1 = Users::getAllDocTypes((int) Yii::app()->user->id, 1);//no usado
-=======
->>>>>>> 20140902
+//<<<<<<< HEAD
+////		$docsLevel1 = Users::getAllDocTypes((int) Yii::app()->user->id, 1);//no usado
+//=======
+//>>>>>>> 20140902
 
 		$searchType = $_POST['searchType'];
 		$searchText = $_POST['field'];
@@ -69,12 +69,13 @@ class GeneraldocController extends Controller
 			foreach ($docType->OCRs as $ocr) {
 				if ($ocr->is_special) {
 					$hasSpecialField = TRUE;
-<<<<<<< HEAD
-					array_push($docNameArray, $docType->doc_type_id);
-=======
-					array_push($arraydocs, $docType->doc_type_desc);
-					array_push($arraydocs_id, $docType->doc_type_id);
->>>>>>> 20140902
+//<<<<<<< HEAD
+					array_push($docNameArray, $docType->doc_type_desc);
+					array_push($docIdArray, $docType->doc_type_id);
+//=======
+//					array_push($arraydocs, $docType->doc_type_desc);
+//					array_push($arraydocs_id, $docType->doc_type_id);
+//>>>>>>> 20140902
 					if ($searchType == "Parecida") {
 						$query = new MongoRegex('/' . $searchText . '/i');
 						$c->addCond('OCR_' . $ocr->ocr_meta_desc, 'or', $query);
@@ -88,23 +89,23 @@ class GeneraldocController extends Controller
 			}
 		}
 		
-<<<<<<< HEAD
+//<<<<<<< HEAD
 		$c->addCond("docType", 'in', $docNameArray);
 		$condition = new Condition("docType", 'in', $docNameArray);
-=======
-		$c->addCond("docType", 'in', $arraydocs);
-		$condition = new Condition("docType", 'in', $arraydocs);
->>>>>>> 20140902
+//=======
+//		$c->addCond("docType", 'in', $arraydocs);
+//		$condition = new Condition("docType", 'in', $arraydocs);
+//>>>>>>> 20140902
 		array_push($conditions, $condition);
 		$c->limit(Idc::PAGE_SIZE);
 		$c->offset(($currentPage - 1) * Idc::PAGE_SIZE);
 		if ($hasSpecialField) {
 			$getDocsGenByType = new GetDocsGeneralByTypeController();
-<<<<<<< HEAD
+//<<<<<<< HEAD
 			echo $getDocsGenByType->getDocsGeneralByType($c, $conditions, $docs, $currentdoc, $docIdArray);
-=======
-			echo $getDocsGenByType->getDocsGeneralByType($c, $docType, $conditions, $docs, $currentdoc, $arraydocs_id);
->>>>>>> 20140902
+//=======
+//			echo $getDocsGenByType->getDocsGeneralByType($c, $docType, $conditions, $docs, $currentdoc, $arraydocs_id);
+//>>>>>>> 20140902
 		} else {
 			echo '<div class="errorMessage"><img src="../images/error.png" '
 			. 'style="height:25px;margin-bottom:-6px;"> No hay definido ningún campo especial. '
