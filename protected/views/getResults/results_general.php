@@ -4,10 +4,7 @@ $cantidad = $group["data"]["keys"];
 $results = Image::writeImageData($resultSet);
 $conditions = $group['keys'];//ya tiene contenido
 $index = $namesdoc;
-
-//}
 //solo quien sepa hacer esto de una manera mas prolija puede juzgarme.
-//$total= count($docs);
 /////////////////////////////////////Dios me perdone.
 ?>
 <table id="box-table-<?php echo $index ?>"class="tablesorter">
@@ -103,7 +100,7 @@ $index = $namesdoc;
 		<img src="img/last.png" class="last"/>
 	</form>
 </div>
-<script type="text/javascript" >
+<script type="text/javascript">
 	$(document).ready(function() {
 		$('#box-table-<?php echo $index ?>childRow td').hide();
 		
