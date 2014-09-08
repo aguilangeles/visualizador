@@ -513,22 +513,6 @@ tr {
       padding: 8px;
       text-align: center;
 }
-/*#box-table-a.tablesorter thead tr .headerSortDown{
-      background-image: url(../img/desc.gif); 
-      background-color: #7FB7D6;
-      background-repeat: no-repeat;
-      background-position: right center;
-      cursor: pointer;
-
-}
-#box-table-a.tablesorter thead tr .headerSortUp{
-      background-image: url(../img/asc.gif); 
-      background-color: #7FB7D6;
-      background-repeat: no-repeat;
-      background-position: right center;
-      cursor: pointer;
-
-}*/
 #box-table-a.tablesorter thead tr .header{
       background-image: url(../images/bg.gif); 
       background-color: #7FB7D6;
