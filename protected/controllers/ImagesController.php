@@ -50,7 +50,7 @@ class ImagesController extends Controller {
             $content = $content . '<th scope="col" class="{sorter: false}" style="width: 65px;">Acciones</th>';
             if ($items['images'][0]->oMeta != null) {
                 foreach ($items['images'][0]->oMeta as $campo) {
-                    $content = $content . '<th scope="col" style="background-image: url(../img/bg.gif); 
+                    $content = $content . '<th scope="col" style="background-image: url(../images/bg.gif); 
       background-color: #7FB7D6;
       background-repeat: no-repeat;
       background-position: right center;

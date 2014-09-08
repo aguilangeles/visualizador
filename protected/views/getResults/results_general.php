@@ -25,13 +25,13 @@ $index = $namesdoc;
 			echo '<th id="box-table-a" scope="col" class="{sorter: false}">Visible</th>';
 		}
 		echo '<th scope="col" '
-		. 'style="background-image: url(../img/bg.gif); 
+		. 'style="background-image: url(../images/bg.gif); 
       background-color: #7FB7D6;
       background-repeat: no-repeat;
       background-position: right center;
       cursor: pointer;">Imagenes</th>';
 		foreach ($fields as $field) {
-			echo '<th scope="col" style="background-image: url(../img/bg.gif); 
+			echo '<th scope="col" style="background-image: url(../images/bg.gif); 
       background-color: #7FB7D6;
       background-repeat: no-repeat;
       background-position: right center;
