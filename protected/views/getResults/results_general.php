@@ -93,11 +93,11 @@ $index = $namesdoc;
 </table>
 <div id="pager-<?php echo $index ?>" class="pager" align="center">
 	<form>
-		<img src="img/first.png" class="first"/>
-		<img src="img/prev.png" class="prev"/>
+		<img src="images/first.png" class="first"/>
+		<img src="images/prev.png" class="prev"/>
 		<span class="pagedisplay"></span>   
-		<img src="img/next.png" class="next"/>
-		<img src="img/last.png" class="last"/>
+		<img src="images/next.png" class="next"/>
+		<img src="images/last.png" class="last"/>
 	</form>
 </div>
 <script type="text/javascript">
