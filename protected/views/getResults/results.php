@@ -127,6 +127,7 @@ foreach ($results as $result) {
 		<img src="images/last.png" class="last"/>
 	</form>
 </div>
+
 <div id="carat_form" class="hidden"></div>
 <script type="text/javascript">
 	$(document).ready(function() {

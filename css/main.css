@@ -284,6 +284,9 @@ div.search-form
 {
       float: left;
 }
+/*************************************************************************
+      LOGIN FORM
+************************************************************************/
 #login-form
 {
       text-align: center;
@@ -423,6 +426,14 @@ div.search-form
       height:16px;
       text-decoration: none;
 }
+.login-form {
+       /*style="margin:0;padding: 0;padding-top:10px;*/
+       margin: 0;
+       padding:  0;
+       padding-top: 10px;
+}
+/////////////////////////////////////////////////////////////////////////////
+
 button:hover{
       color:#1B6F94;
 }
