@@ -1,4 +1,5 @@
-<?php include 'botonera.php';
+<?php
+include 'botonera.php';
 include('searchtype.php');
 ?>
 <div id="login-dark-banner">
@@ -9,9 +10,7 @@ include('searchtype.php');
 <?php $this->pageTitle = Yii::app()->name; ?>
 <div class="container">
     <div id="content">
-	<!--	/******************************************************************
-		    PRESENTACION BUSQUEDA POR TIPO DE DOCUMENTO
-		*******************************************************************/-->
+<!--/************PRESENTACION BUSQUEDA POR TIPO DE DOCUMENTO***********************************************************/-->
 	<div id="first-search">
 	    <div class="by-doc-type">
 		<fieldset class="form">
@@ -40,9 +39,7 @@ include('searchtype.php');
 		    </div>
 		</fieldset>
 	    </div>
-	    <!--/******************************************************************
-		PRESENTACION BUSQUEDA GENERAL -POR CAMPO ESPECIAL
-	    *******************************************************************/-->
+<!--/*****************PRESENTACION BUSQUEDA GENERAL -POR CAMPO ESPECIAL*********************************************************/-->
 	    <div class="by-doc-type">
 		<fieldset class="form">
 		    <legend>Búsqueda general</legend>
@@ -57,9 +54,7 @@ include('searchtype.php');
 		    </div>
 		</fieldset>
 	    </div>
-	    <!--******************************************************************
-	    PRESENTACION BUSQUEDA POR ROTULOS
-	*******************************************************************/-->
+<!--******************PRESENTACION BUSQUEDA POR ROTULOS*************************************/-->
 	    <div class="by-doc-type">
 		<fieldset class="form">
 		    <legend>Por rótulos</legend>
@@ -76,10 +71,7 @@ include('searchtype.php');
 		</fieldset>
 	    </div>
 	</div>
-	<!--/******************************************************************
-	    BUSQUEDA POR TIPO DE DOCUMENTO
-	*******************************************************************/-->
-	<!--BLOQUE DE DEFINICION POR NIVEL Y CARACTER-->
+<!--/******************BUSQUEDA POR TIPO DE DOCUMENTO************************************/-->
 	<div id="second-search">
 	    <div id="second-search-left">
 		<?php
@@ -99,9 +91,7 @@ include('searchtype.php');
 			?>
 		    </fieldset>
 		</div>
-
-		<!-- BLOQUE DE BUSSQUEDA POR METADATOS  -->
-
+<!-- BLOQUE DE BUSSQUEDA POR METADATOS  -->
 		<div id="filtersMeta" style="float:left;">
 		    <div id="filter">
 			<fieldset class="form" style="width:260px;">
@@ -121,16 +111,14 @@ include('searchtype.php');
 		$boton_doc2->backAndSearch('SearchDocs()');
 		?>
 	    </div>
-	    <!--BLOQUE DE AGRUPACION-->
+<!--BLOQUE DE AGRUPACION-->
 	    <div id="second-search-right" style="padding-left:10px;">
-			<!--/*******SEARCHTYPE**/-->
 		<div id="searchType" style="margin-left: 20px;width:100%;float:left;padding: 20px 0 0 0;">
 		    <div style="float:left;width:100%;padding: 0px;">
 			<?php echo CHtml::label('Agrupar por', 'searchType', array('style' => 'text-align: left;')) ?>
 			<?php echo CHtml::radioButtonList('groupType', '0', array('0' => 'Carátula', '1' => 'Imagen'), array('onClick' => 'checkImageSelection()', 'style' => 'width:50px;float:left;', 'labelOptions' => array('style' => 'width:60px;text-align: left;'), 'separator' => " ")) ?>
 		    </div>
 		</div>
-			<!--/*******SEARCHTYPE**/-->
 		<fieldset class="form" style="width:auto">
 		    <legend>Resultados</legend>
 		    <div id="results">
@@ -138,9 +126,7 @@ include('searchtype.php');
 		</fieldset>
 	    </div>
 	</div>
-	<!--	/******************************************************************
-	     BUSQUEDA GENERAL
-	*******************************************************************/-->
+<!--	/**************BUSQUEDA GENERAL*****************************/-->
 	<div id="second-general-search" style="display:none;">
 	    <div id="second-search-left">
 		<?php
@@ -151,10 +137,10 @@ include('searchtype.php');
 		    <div id="filterField" style="float:left;">
 			<fieldset class="form" style="width:260px;">
 			    <legend>Búsqueda general</legend>
-			    <div id="searchType" style="width: 260px;float:left;">
-				<div style="float:left;width:100%;padding: 0 0 10px 10px;"><?php echo CHtml::label('Tipo de Busqueda', 'searchType', array('style' => 'text-align: left;')) ?></div>
-				<?php echo CHtml::radioButtonList('searchGeneralType', '0', array('0' => 'Exacta', '1' => 'Parecida'), array('style' => 'width:50px;float:left;', 'labelOptions' => array('style' => 'width:60px;text-align: left;'), 'separator' => " ")) ?>
-			    </div>
+			    <?php
+			    $radioButton_gral = new searchtype();
+			    $radioButton_gral->searchRadioButton('searchGeneralType');
+			    ?>
 			    <div id="field" style="width: 250px;padding-left:10px">
 				<?php echo CHtml::label('Buscar', 'searchField', array('style' => 'text-align:left;')) ?>
 				<?php echo CHtml::textField('searchField') ?>
@@ -180,14 +166,11 @@ include('searchtype.php');
 		<fieldset class="form" style="width:auto">
 		    <legend>Resultados</legend>
 		    <div id="resultsGeneral">
-
 		    </div>
 		</fieldset>
 	    </div>
 	</div>
-	<!--	/******************************************************************
-		     BUSQUEDA POR ROTULOS
-	********************************/-->
+	<!--	/************BUSQUEDA POR ROTULOS********************************/-->
 	<div id="second-rotulos-search" style="display:none;">
 	    <div id="second-search-left">
 		<?php
@@ -198,10 +181,10 @@ include('searchtype.php');
 		    <div id="filtersRotulosCarat" style="float:left;">
 			<fieldset class="form" style="width:260px;">
 			    <legend>Búsqueda por rótulos</legend>
-			    <div id="searchType" style="width: 260px;float:left;padding: 20px 0 10px 0;">
-				<div style="float:left;width:100%;padding: 0 0 10px;"><?php echo CHtml::label('Tipo de Busqueda', 'searchType', array('style' => 'text-align: left;')) ?></div>
-				<?php echo CHtml::radioButtonList('searchRotType', '0', array('0' => 'Exacta', '1' => 'Parecida'), array('style' => 'width:50px;float:left;', 'labelOptions' => array('style' => 'width:60px;text-align: left;'), 'separator' => " ")) ?>
-			    </div>
+			    <?php
+			    $radioButton_rotulos = new searchtype();
+			    $radioButton_rotulos->searchRadioButton('searchRotType');
+			    ?>
 			    <div id="MetaRotulosCarats" style="width: 260px;"></div>
 			</fieldset>
 		    </div>
@@ -215,7 +198,6 @@ include('searchtype.php');
 		</fieldset>
 	    </div>
 	</div>
-	<!--			Busqueda x rótulos-->
 	<div id="result"></div>
 	<?php
 	$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
