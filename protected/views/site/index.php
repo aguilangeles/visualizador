@@ -219,7 +219,7 @@
 		    </div>
 		</div>
 		     <?php $boton_gral2 = new Botones();
-			    $boton_gral2->botonera('SearchGralDocs()')?>
+			   $boton_gral2->botonera('SearchGralDocs()')?>
 <!--		<div id="buttons" style="float:left;width: 260px;padding: 30px 0 0 0;">
 		    <div class="login-form" style="float:left;">
 			<button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="goBack();">
@@ -244,27 +244,27 @@
 		</fieldset>
 	    </div>
 	</div>
-	<!--			Busqueda general-->
 	<!--	/******************************************************************
 		     BUSQUEDA POR ROTULOS
 	********************************/-->
-	<!--			Busqueda x rótulos-->
 	<div id="second-rotulos-search" style="display:none;">
 	    <div id="second-search-left">
-		<div id="buttons" style="float:left;width: 260px;padding: 30px 0 0 0;">
+<!--		<div id="buttons" style="float:left;width: 260px;padding: 30px 0 0 0;">
 		    <div class="login-form" style="float:left;">
 			<button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="goBack();">
-			    <?php echo CHtml::image('../images/back.png', 'Ingresar'); ?>
+			    < ?php echo CHtml::image('../images/back.png', 'Ingresar'); ?>
 			    Volver
 			</button>
 		    </div>
 		    <div class="login-form" style="float:left;">
 			<button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="SearchRotulos();">
-			    <?php echo CHtml::image('../images/xmag.png', 'Ingresar'); ?>
+			    < ?php echo CHtml::image('../images/xmag.png', 'Ingresar'); ?>
 			    Buscar
 			</button>
 		    </div>
-		</div>
+		</div>-->
+		    <?php $boton_rotulo = new Botones();
+		    $boton_rotulo->botonera('SearchRotulos()')?>
 		<div id="searchBox">
 		    <div id="filtersRotulosCarat" style="float:left;">
 			<fieldset class="form" style="width:260px;">

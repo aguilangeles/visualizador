@@ -7,31 +7,12 @@
  */
 
 /**
- * Description of boton
+ * Botones de busqueda y de retorno a la pagina anterior.
  *
  * @author aguilangeles@gmail.com
  */
 class Botones
 {
-//    public function back(){
-//	echo '<div class="login-form" style="float:left;">
-//	<button class="back" style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="goBack();">';
-//	echo CHtml::image('../images/back.png', 'Ingresar');
-//	echo 'Volver
-//	</button>
-//    </div>';
-//    }
-//    
-//    public function buscar($metodo)
-//    {
-//	echo '<div class="login-form" style="float:left;">
-//			<button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="'.$metodo.';">';
-//	echo CHtml::image('../images/xmag.png', 'Ingresar');
-//	echo 'Buscar
-//			</button>
-//		    </div>';
-//    }
-
     public function botonera($search)
     {
 
