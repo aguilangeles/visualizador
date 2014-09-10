@@ -11,9 +11,9 @@
  *
  * @author aguilangeles@gmail.com
  */
-class Botones
+class botonera
 {
-    public function botonera($search)
+    public function backAndSearch($search)
     {
 
 	echo '<div id="buttons" style="float:left;width: 260px;padding: 30px 0 0 0;">
@@ -30,6 +30,14 @@ class Botones
 			</button>
 		    </div>
 		</div>';
+    }
+    
+    public function continuar($toggle)
+    {
+	echo '<button type="submit" name="Submit" onClick="' . $toggle . ';">';
+	echo CHtml::image('../images/filter.png', 'Ingresar');
+	echo 'Continuar
+			</button>';
     }
 
 }

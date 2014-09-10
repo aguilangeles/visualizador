@@ -1,4 +1,4 @@
-<?php include 'Botones.php';
+<?php include 'botonera.php';
 ?>
 <div id="login-dark-banner">
     <?php echo CHtml::image('../images/searchDocs.png', '', array('style' => 'height:50px;float:left')) ?>
@@ -32,10 +32,15 @@
 			<div class="ddlsearch"><?php echo CHtml::dropDownList('docLevel4', '0', $docLevel4); ?></div>
 		    </div>
 		    <div class="login-form" style="float:right;margin-right: 40px;">
-			<button type="submit" name="Submit" onClick="toggleFirstSearch();">
-			    <?php echo CHtml::image('../images/filter.png', 'Ingresar'); ?>
-			    Continuar
-			</button>
+
+			<?php
+			$bContinuar_1 = new botonera();
+			$bContinuar_1->continuar('toggleFirstSearch()')
+			?>
+			<!--			<button type="submit" name="Submit" onClick="toggleFirstSearch();">
+						    < ?php echo CHtml::image('../images/filter.png', 'Ingresar'); ?>
+						    Continuar
+						</button>-->
 		    </div>
 		</fieldset>
 	    </div>
@@ -48,10 +53,14 @@
 		    <div class="search">
 			<div class="level-tag">Buscará en todos los campos definidos para búsqueda especial.</div>
 			<div class="login-form" style="float:right;margin-right: 40px;">
-			    <button type="submit" name="Submit2" onClick="toggleGeneralSearch();">
-				<?php echo CHtml::image('../images/filter.png', 'Ingresar'); ?>
-				Continuar
-			    </button>
+			    <?php
+			    $bContinuar_2 = new botonera();
+			    $bContinuar_2->continuar('toggleGeneralSearch()')
+			    ?>
+			    <!--			    <button type="submit" name="Submit2" onClick="toggleGeneralSearch();">
+							    < ?php echo CHtml::image('../images/filter.png', 'Ingresar'); ?>
+							    Continuar
+							</button>-->
 			</div>
 		    </div>
 		</fieldset>
@@ -66,10 +75,15 @@
 			<div class="level-tag">Nivel 1</div>
 			<div class="ddlsearch"><?php echo CHtml::dropDownList('rotulo', '0', $rotulos); ?></div>
 			<div class="login-form" style="float:right;margin-right: 40px;">
-			    <button type="submit" onClick="toggleRotulosSearch()" name="Submit3" >
-				<?php echo CHtml::image('../images/filter.png', 'Ingresar'); ?>
-				Continuar
-			    </button>
+			    <?php
+			    $bContinuar_3 = new botonera();
+			    $bContinuar_3->continuar('toggleRotulosSearch()')
+			    ?>
+
+			    <!--			    <button type="submit" onClick="toggleRotulosSearch()" name="Submit3" >
+							    < ?php echo CHtml::image('../images/filter.png', 'Ingresar'); ?>
+							    Continuar
+							</button>-->
 			</div>
 		    </div>
 		</fieldset>
@@ -88,8 +102,8 @@
 	<div id="second-search">
 	    <div id="second-search-left">
 		<?php
-		$boton_doc = new Botones();
-		$boton_doc->botonera('SearchDocs()');
+		$boton_doc = new botonera();
+		$boton_doc->backAndSearch('SearchDocs()');
 		?>
 		<!--		<div id="buttons" style="float:left;width: 260px;padding: 30px 0 0 0;">
 							<div class="login-form" style="float:left;">
@@ -136,8 +150,8 @@
 		    </div>
 		</div>
 		<?php
-		$boton_doc2 = new Botones();
-		$boton_doc2->botonera('SearchDocs()');
+		$boton_doc2 = new botonera();
+		$boton_doc2->backAndSearch('SearchDocs()');
 		?>
 		<!--		<div id="buttons" style="float:left;width: 260px;padding: 30px 0 0 0;">
 				    <div class="login-form" style="float:left;">
@@ -178,33 +192,34 @@
 	*******************************************************************/-->
 	<div id="second-general-search" style="display:none;">
 	    <div id="second-search-left">
-			    <?php $boton_gral = new Botones();
-			    $boton_gral->botonera('SearchGralDocs()')?>
-<!--		<div id="buttons" style="float:left;width: 260px;padding: 30px 0 0 0;">
-		    <div class="login-form" style="float:left;">
-			<button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="goBack();">
-			    < ?php echo CHtml::image('../images/back.png', 'Ingresar'); ?>
-			    Volver
-			</button>
-		    </div>
-		    <div class="login-form" style="float:left;">
-			<button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="SearchGralDocs();">
-			    < ?php echo CHtml::image('../images/xmag.png', 'Ingresar'); ?>
-			    Buscar
-			</button>
-		    </div>
-		</div>-->
+		<?php $boton_gral = new botonera();
+		$boton_gral->backAndSearch('SearchGralDocs()')
+		?>
+		<!--		<div id="buttons" style="float:left;width: 260px;padding: 30px 0 0 0;">
+				    <div class="login-form" style="float:left;">
+					<button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="goBack();">
+					    < ?php echo CHtml::image('../images/back.png', 'Ingresar'); ?>
+					    Volver
+					</button>
+				    </div>
+				    <div class="login-form" style="float:left;">
+					<button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="SearchGralDocs();">
+					    < ?php echo CHtml::image('../images/xmag.png', 'Ingresar'); ?>
+					    Buscar
+					</button>
+				    </div>
+				</div>-->
 		<div id="searchBox">
 		    <div id="filterField" style="float:left;">
 			<fieldset class="form" style="width:260px;">
 			    <legend>Búsqueda general</legend>
 			    <div id="searchType" style="width: 260px;float:left;">
 				<div style="float:left;width:100%;padding: 0 0 10px 10px;"><?php echo CHtml::label('Tipo de Busqueda', 'searchType', array('style' => 'text-align: left;')) ?></div>
-				<?php echo CHtml::radioButtonList('searchGeneralType', '0', array('0' => 'Exacta', '1' => 'Parecida'), array('style' => 'width:50px;float:left;', 'labelOptions' => array('style' => 'width:60px;text-align: left;'), 'separator' => " ")) ?>
+<?php echo CHtml::radioButtonList('searchGeneralType', '0', array('0' => 'Exacta', '1' => 'Parecida'), array('style' => 'width:50px;float:left;', 'labelOptions' => array('style' => 'width:60px;text-align: left;'), 'separator' => " ")) ?>
 			    </div>
 			    <div id="field" style="width: 250px;padding-left:10px">
 				<?php echo CHtml::label('Buscar', 'searchField', array('style' => 'text-align:left;')) ?>
-				<?php echo CHtml::textField('searchField') ?>
+<?php echo CHtml::textField('searchField') ?>
 			    </div>
 			</fieldset>
 		    </div>
@@ -218,22 +233,23 @@
 			</fieldset>
 		    </div>
 		</div>
-		     <?php $boton_gral2 = new Botones();
-			   $boton_gral2->botonera('SearchGralDocs()')?>
-<!--		<div id="buttons" style="float:left;width: 260px;padding: 30px 0 0 0;">
-		    <div class="login-form" style="float:left;">
-			<button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="goBack();">
-			    < ?php echo CHtml::image('../images/back.png', 'Ingresar'); ?>
-			    Volver
-			</button>
-		    </div>
-		    <div class="login-form" style="float:left;">
-			<button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="SearchGralDocs();">
-			    < ?php echo CHtml::image('../images/xmag.png', 'Ingresar'); ?>
-			    Buscar
-			</button>
-		    </div>
-		</div>-->
+		<?php $boton_gral2 = new botonera();
+		$boton_gral2->backAndSearch('SearchGralDocs()')
+		?>
+		<!--		<div id="buttons" style="float:left;width: 260px;padding: 30px 0 0 0;">
+				    <div class="login-form" style="float:left;">
+					<button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="goBack();">
+					    < ?php echo CHtml::image('../images/back.png', 'Ingresar'); ?>
+					    Volver
+					</button>
+				    </div>
+				    <div class="login-form" style="float:left;">
+					<button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="SearchGralDocs();">
+					    < ?php echo CHtml::image('../images/xmag.png', 'Ingresar'); ?>
+					    Buscar
+					</button>
+				    </div>
+				</div>-->
 	    </div>
 	    <div id="second-search-right" style="padding-left:10px;padding-top:57px;">
 		<fieldset class="form" style="width:auto">
@@ -249,29 +265,30 @@
 	********************************/-->
 	<div id="second-rotulos-search" style="display:none;">
 	    <div id="second-search-left">
-<!--		<div id="buttons" style="float:left;width: 260px;padding: 30px 0 0 0;">
-		    <div class="login-form" style="float:left;">
-			<button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="goBack();">
-			    < ?php echo CHtml::image('../images/back.png', 'Ingresar'); ?>
-			    Volver
-			</button>
-		    </div>
-		    <div class="login-form" style="float:left;">
-			<button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="SearchRotulos();">
-			    < ?php echo CHtml::image('../images/xmag.png', 'Ingresar'); ?>
-			    Buscar
-			</button>
-		    </div>
-		</div>-->
-		    <?php $boton_rotulo = new Botones();
-		    $boton_rotulo->botonera('SearchRotulos()')?>
+		<!--		<div id="buttons" style="float:left;width: 260px;padding: 30px 0 0 0;">
+				    <div class="login-form" style="float:left;">
+					<button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="goBack();">
+					    < ?php echo CHtml::image('../images/back.png', 'Ingresar'); ?>
+					    Volver
+					</button>
+				    </div>
+				    <div class="login-form" style="float:left;">
+					<button style="margin:0 10px 0 0;" type="submit" name="Submit2" onClick="SearchRotulos();">
+					    < ?php echo CHtml::image('../images/xmag.png', 'Ingresar'); ?>
+					    Buscar
+					</button>
+				    </div>
+				</div>-->
+<?php $boton_rotulo = new botonera();
+$boton_rotulo->backAndSearch('SearchRotulos()')
+?>
 		<div id="searchBox">
 		    <div id="filtersRotulosCarat" style="float:left;">
 			<fieldset class="form" style="width:260px;">
 			    <legend>Búsqueda por rótulos</legend>
 			    <div id="searchType" style="width: 260px;float:left;padding: 20px 0 10px 0">
 				<div style="float:left;width:100%;padding: 0 0 10px;"><?php echo CHtml::label('Tipo de Busqueda', 'searchType', array('style' => 'text-align: left;')) ?></div>
-				<?php echo CHtml::radioButtonList('searchRotType', '0', array('0' => 'Exacta', '1' => 'Parecida'), array('style' => 'width:50px;float:left;', 'labelOptions' => array('style' => 'width:60px;text-align: left;'), 'separator' => " ")) ?>
+<?php echo CHtml::radioButtonList('searchRotType', '0', array('0' => 'Exacta', '1' => 'Parecida'), array('style' => 'width:50px;float:left;', 'labelOptions' => array('style' => 'width:60px;text-align: left;'), 'separator' => " ")) ?>
 			    </div>
 			    <div id="MetaRotulosCarats" style="width: 260px;"></div>
 			</fieldset>
