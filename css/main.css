@@ -1,6 +1,6 @@
 html
 {
-      /*background: #FFFFFF url(../images/bg.jpg);*/
+    
       background: #63BAD8 url(../images/bg.jpg);
 }
 head
@@ -51,7 +51,6 @@ button {
 
 #logo
 {
-      /*background: ;*/
       padding: 10px 20px;
       float: left;
 }
@@ -160,11 +159,6 @@ div.search-form
       padding: 10px;
       margin: 10px 0;
       background: #eee;
-}
-
-.portlet
-{
-
 }
 
 .portlet-decoration
@@ -497,6 +491,9 @@ select
       margin-bottom: 20px;
       font-weight: bold;
 }
+/***************************************************************
+      TABLE
+*****************************************************************/
 #box-table-a {
       font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
       font-size: 12px;
