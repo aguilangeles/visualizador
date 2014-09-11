@@ -35,10 +35,10 @@ class botonera
     
     public function continuar($toggle)
     {
-	echo '<button type="submit" name="Submit" onClick="' . $toggle . ';">';
-	echo CHtml::image('../images/filter.png', 'Ingresar');
-	echo 'Continuar
-			</button>';
+	echo '<button type="submit" name="Submit" onClick="' . $toggle . ';">'.
+		CHtml::image('../images/filter.png', 'Ingresar').
+		    'Continuar
+	    </button>';
     }
 
 }

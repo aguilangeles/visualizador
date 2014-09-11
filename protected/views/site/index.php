@@ -87,7 +87,7 @@ include('searchtype.php');
 			<div id="filterLevel4" class="level-tag"></div>
 			<?php
 			$radioButton_doc = new searchtype();
-			$radioButton_doc->searchRadioButton('searchType')
+			$radioButton_doc->searchRadioButton('searchType', true)
 			?>
 		    </fieldset>
 		</div>
@@ -139,7 +139,7 @@ include('searchtype.php');
 			    <legend>Búsqueda general</legend>
 			    <?php
 			    $radioButton_gral = new searchtype();
-			    $radioButton_gral->searchRadioButton('searchGeneralType');
+			    $radioButton_gral->searchRadioButton('searchGeneralType', false);
 			    ?>
 			    <div id="field" style="width: 250px;padding-left:10px">
 				<?php echo CHtml::label('Buscar', 'searchField', array('style' => 'text-align:left;')) ?>
@@ -183,7 +183,7 @@ include('searchtype.php');
 			    <legend>Búsqueda por rótulos</legend>
 			    <?php
 			    $radioButton_rotulos = new searchtype();
-			    $radioButton_rotulos->searchRadioButton('searchRotType');
+			    $radioButton_rotulos->searchRadioButton('searchRotType', true);
 			    ?>
 			    <div id="MetaRotulosCarats" style="width: 260px;"></div>
 			</fieldset>
