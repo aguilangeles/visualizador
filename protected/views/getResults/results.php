@@ -10,7 +10,7 @@ foreach ($results as $result) {
 }
 ?>
 
-<table id="box-table-a" class="tablesorter" style='width: 100%;table-layout: fixed; word-wrap:break-word'>
+<table id="box-table-a" class="tablesorter">
 	<?php
 	$i = 0;
 	$cols = 0;
@@ -121,6 +121,7 @@ foreach ($results as $result) {
 <?php include 'pager.php'?>
 
 <div id="carat_form" class="hidden"></div>
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#carat_form").dialog({
