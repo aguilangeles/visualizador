@@ -118,15 +118,7 @@ foreach ($results as $result) {
 	</tfoot>
 </table>
 
-<div id="pager" class="pager" align="center">
-	<form>
-		<img src="images/first.png" class="first"/>
-		<img src="images/prev.png" class="prev"/>
-		<span class="pagedisplay"></span>   
-		<img src="images/next.png" class="next"/>
-		<img src="images/last.png" class="last"/>
-	</form>
-</div>
+<?php include 'pager.php'?>
 
 <div id="carat_form" class="hidden"></div>
 <script type="text/javascript">
