@@ -57,7 +57,7 @@ class Rotulos_searchController extends Controller
 					if ($searchType == "Parecida") {
 						$query = new MongoRegex('/' . $_POST['CMETA_'][$i] . '/i');
 						$c->addCond('CMETA_' . $carat->carat_meta_desc, '==', $query);
-						$condition = new Condition('CMETA_' . $carat->carat_meta_desc, '==', $query);
+						$condition = new Condition('CMETA_' . $carat->carat_meta_desc, 'regex', $_POST['CMETA_'][$i]);
 						array_push($conditions, $condition);
 					} else {
 						$c->addCond('CMETA_' . $carat->carat_meta_desc, '==', $_POST['CMETA_'][$i]);

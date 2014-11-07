@@ -1,6 +1,6 @@
 html
 {
-      /*background: #FFFFFF url(../images/bg.jpg);*/
+    
       background: #63BAD8 url(../images/bg.jpg);
 }
 head
@@ -51,7 +51,6 @@ button {
 
 #logo
 {
-      /*background: ;*/
       padding: 10px 20px;
       float: left;
 }
@@ -160,11 +159,6 @@ div.search-form
       padding: 10px;
       margin: 10px 0;
       background: #eee;
-}
-
-.portlet
-{
-
 }
 
 .portlet-decoration
@@ -284,6 +278,9 @@ div.search-form
 {
       float: left;
 }
+/*************************************************************************
+      LOGIN FORM
+************************************************************************/
 #login-form
 {
       text-align: center;
@@ -423,6 +420,14 @@ div.search-form
       height:16px;
       text-decoration: none;
 }
+.login-form {
+       /*style="margin:0;padding: 0;padding-top:10px;*/
+       margin: 0;
+       padding:  0;
+       padding-top: 10px;
+}
+/////////////////////////////////////////////////////////////////////////////
+
 button:hover{
       color:#1B6F94;
 }
@@ -486,6 +491,9 @@ select
       margin-bottom: 20px;
       font-weight: bold;
 }
+/***************************************************************
+      TABLE
+*****************************************************************/
 #box-table-a {
       font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
       font-size: 12px;
@@ -493,7 +501,7 @@ select
       border-collapse: collapse;
 }
 thead {
-      
+
       display: table-header-group;
       vertical-align: middle;
 }
@@ -513,24 +521,8 @@ tr {
       padding: 8px;
       text-align: center;
 }
-/*#box-table-a.tablesorter thead tr .headerSortDown{
-      background-image: url(../img/desc.gif); 
-      background-color: #7FB7D6;
-      background-repeat: no-repeat;
-      background-position: right center;
-      cursor: pointer;
-
-}
-#box-table-a.tablesorter thead tr .headerSortUp{
-      background-image: url(../img/asc.gif); 
-      background-color: #7FB7D6;
-      background-repeat: no-repeat;
-      background-position: right center;
-      cursor: pointer;
-
-}*/
 #box-table-a.tablesorter thead tr .header{
-      background-image: url(../img/bg.gif); 
+      background-image: url(../images/bg.gif); 
       background-color: #7FB7D6;
       background-repeat: no-repeat;
       background-position: right center;
@@ -543,7 +535,7 @@ tr {
       font-weight: normal;
       font-weight: bold;
       padding: 8px;
-      
+
 }
 tbody {
       display: table-row-group;
@@ -650,46 +642,45 @@ div .resultCont {
 }
 /* pager wrapper, div */
 .tablesorter-pager {
-	padding: 5px;
+      padding: 5px;
 }
 /* pager wrapper, in thead/tfoot */
 td.tablesorter-pager {
-	background-color: #e6eeee;
-	margin: 0; /* needed for bootstrap .pager gets a 18px bottom margin */
+      background-color: #e6eeee;
+      margin: 0; /* needed for bootstrap .pager gets a 18px bottom margin */
 }
 /* pager navigation arrows */
 .tablesorter-pager img {
-	vertical-align: top;
-	margin-right: 2px;
-	cursor: pointer;
+      vertical-align: top;
+      margin-right: 2px;
+      cursor: pointer;
 }
 
 /* pager output text */
 .tablesorter-pager .pagedisplay {
-	padding: 0 5px 0 5px;
-	width: auto;
-	white-space: nowrap;
-	text-align: center;
-        font-weight: bold;
+      padding: 0 5px 0 5px;
+      width: auto;
+      white-space: nowrap;
+      text-align: center;
+      font-weight: bold;
 
 }
 /* pager element reset (needed for bootstrap) */
 .tablesorter-pager select {
-	margin: 0;
-	padding: 0;
+      margin: 0;
+      padding: 0;
 }
 
 /*** css used when "updateArrows" option is true ***/
 /* the pager itself gets a disabled class when the number of rows is less than the size */
 .tablesorter-pager.disabled {
-	display: none;
+      display: none;
 }
 /* hide or fade out pager arrows when the first or last row is visible */
 .tablesorter-pager .disabled {
-	/* visibility: hidden */
-	opacity: 0.5;
-	filter: alpha(opacity=50);
-	cursor: default;
+      /* visibility: hidden */
+      opacity: 0.5;
+      filter: alpha(opacity=50);
+      cursor: default;
 }
 
-  

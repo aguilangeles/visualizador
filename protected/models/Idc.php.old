@@ -74,30 +74,16 @@ class Idc extends EMongoSoftDocument
         public static function getGroup($criteria,$carats=null,$ocrs=null,$docsLevel1=null)
 	{
 		$keys = array('c1','docType');
-		//$qty =  count($ocrs) + 8;
-		//foreach ($carats as $caratM)
-		//{
-		//	array_push($keys, 'CMETA_'.$caratM);
-		//}
 		$keys = array_flip($keys);
 		$initial = array("images" => array(),"index"=>0,"info"=>array());
 		$reduce1 = "function (obj, prev) { ";
 		$reduce3 = 'prev.info.push(obj.order);prev.images.push(obj.docType);prev.images.push(obj.docSubtipo);prev.images.push(obj.visibleCarat);prev.images.push(obj.order);prev.images.push(obj.visibleImagen);prev.images.push(obj.fileName);prev.images.push(obj.filePath);';
 		$o = "";
-//		if ($ocrs != null)
-//		{
-//			foreach ($ocrs as $ocr)
-//			{
-//				$reduce3 = $reduce3.'prev.images.push(obj.' .'OCR_'.$ocr.');';
-//				$o = $o.$ocr.",";
-//			}
-//		}
 		$reduce3 = $reduce3. 'prev.index += 1;';
 		$reduce3 = $reduce3. '}';
 		$reduce2 = 'prev.images.push("'.$o.'");';
 		$reduce = $reduce1.$reduce2.$reduce3;
                 $group = Idc::model()->group($keys, $initial, $reduce, $criteria);
-		//return $this->orderResults($group);
                 return $group;
 	}
 

@@ -141,12 +141,6 @@ class Image {
             self::setCmeta($image, $img);
             if ($img->face == 'Anverso')
             {
-//                if ($imageCounter +1 == $limit +1)
-//                {
-//                    $imageList['lastIndex'] = $index;
-//                    $imageList['hasMore'] = ($index+1 < $qty);
-//                    return $imageList;
-//                }
                 $img->currImageIndex = $imageCounter;
                 $img->prevImageIndex = ($imageCounter == 0)?$imageCounter:$imageCounter-1;
                 $img->nextImageIndex = $imageCounter;//($index+1 < $qty)?$imageCounter + 1: $imageCounter;
@@ -363,7 +357,6 @@ class Image {
         {
             $record->softAttributes[$key] = $value;                                                        
         }   
-        //var_dump($record->filePath);die();
         $result['success'] = $record->save(false);
         return $result;
     }

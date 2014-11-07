@@ -10,7 +10,7 @@ foreach ($results as $result) {
 }
 ?>
 
-<table id="box-table-a" class="tablesorter">
+<table id="box-table-a" class="tablesorter" style='width: 100%;table-layout: fixed; word-wrap:break-word'>
 	<?php
 	$i = 0;
 	$cols = 0;

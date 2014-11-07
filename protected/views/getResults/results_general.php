@@ -4,10 +4,7 @@ $cantidad = $group["data"]["keys"];
 $results = Image::writeImageData($resultSet);
 $conditions = $group['keys'];//ya tiene contenido
 $index = $namesdoc;
-
-//}
 //solo quien sepa hacer esto de una manera mas prolija puede juzgarme.
-//$total= count($docs);
 /////////////////////////////////////Dios me perdone.
 ?>
 <table id="box-table-<?php echo $index ?>"class="tablesorter">
@@ -28,13 +25,13 @@ $index = $namesdoc;
 			echo '<th id="box-table-a" scope="col" class="{sorter: false}">Visible</th>';
 		}
 		echo '<th scope="col" '
-		. 'style="background-image: url(../img/bg.gif); 
+		. 'style="background-image: url(../images/bg.gif); 
       background-color: #7FB7D6;
       background-repeat: no-repeat;
       background-position: right center;
       cursor: pointer;">Imagenes</th>';
 		foreach ($fields as $field) {
-			echo '<th scope="col" style="background-image: url(../img/bg.gif); 
+			echo '<th scope="col" style="background-image: url(../images/bg.gif); 
       background-color: #7FB7D6;
       background-repeat: no-repeat;
       background-position: right center;
@@ -96,14 +93,14 @@ $index = $namesdoc;
 </table>
 <div id="pager-<?php echo $index ?>" class="pager" align="center">
 	<form>
-		<img src="img/first.png" class="first"/>
-		<img src="img/prev.png" class="prev"/>
+		<img src="images/first.png" class="first"/>
+		<img src="images/prev.png" class="prev"/>
 		<span class="pagedisplay"></span>   
-		<img src="img/next.png" class="next"/>
-		<img src="img/last.png" class="last"/>
+		<img src="images/next.png" class="next"/>
+		<img src="images/last.png" class="last"/>
 	</form>
 </div>
-<script type="text/javascript" >
+<script type="text/javascript">
 	$(document).ready(function() {
 		$('#box-table-<?php echo $index ?>childRow td').hide();
 		

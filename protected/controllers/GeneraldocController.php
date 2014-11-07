@@ -58,7 +58,7 @@ class GeneraldocController extends Controller
 					if ($searchType == "Parecida") {
 						$query = new MongoRegex('/' . $searchText . '/i');
 						$c->addCond('CMETA_' . $carat->carat_meta_desc, 'or', $query);
-						$condition = new Condition('CMETA_' . $carat->carat_meta_desc, 'regex', $query);
+						$condition = new Condition('CMETA_' . $carat->carat_meta_desc, 'regex', $searchText);
 					} else {
 						$c->addCond('CMETA_' . $carat->carat_meta_desc, 'or', $searchText);
 						$condition = new Condition('CMETA_' . $carat->carat_meta_desc, 'or', $searchText);

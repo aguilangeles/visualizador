@@ -87,12 +87,4 @@ $conditions = $group['keys']; //-> esta vacio
 		</tr>
 	</tfoot>
 </table>
-<div id="pager" class="pager" align="center">
-	<form>
-		<img src="img/first.png" class="first"/>
-		<img src="img/prev.png" class="prev"/>
-		<span class="pagedisplay"></span>   
-		<img src="img/next.png" class="next"/>
-		<img src="img/last.png" class="last"/>
-	</form>
-</div>
+<?php include 'pager.php'?>
